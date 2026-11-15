@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-15T21:42:15.321Z",
+  "atualizado": "2026-11-15T22:42:24.713Z",
   "guia": {
     "playlists": [
       {
@@ -161,6 +161,13 @@
     ],
     "shorts": [
       {
+        "id": "yv-Q276VFRk",
+        "titulo": "Raiden Densetsu: Como Conseguir Be Merciful IV",
+        "data": "2026-11-15T13:51:54Z",
+        "jogo": "",
+        "console": ""
+      },
+      {
         "id": "uEftuAZpc3A",
         "titulo": "Raiden Densetsu: Como Conseguir Be Merciful II",
         "data": "2026-11-10T16:58:15Z",
@@ -236,42 +243,36 @@
         "data": "2026-10-25T14:55:26Z",
         "jogo": "",
         "console": ""
-      },
-      {
-        "id": "B9tmZxWX-ss",
-        "titulo": "Parasite Eve: Como Conseguir Evolution 1/2",
-        "data": "2026-10-24T23:32:53Z",
-        "jogo": "",
-        "console": ""
       }
     ]
   },
   "ultimoShort": {
-    "id": "uEftuAZpc3A",
-    "titulo": "Raiden Densetsu: Como Conseguir Be Merciful II",
-    "data": "2026-11-10T16:58:15Z",
+    "id": "yv-Q276VFRk",
+    "titulo": "Raiden Densetsu: Como Conseguir Be Merciful IV",
+    "data": "2026-11-15T13:51:54Z",
     "jogo": "",
     "console": ""
   },
   "gameplayAtual": {
-    "id": "m5F_Od52WtU",
-    "titulo": "Megaman X4 Recomp - Co Op  @Zerei0game ​",
-    "data": "2026-11-08T04:29:56Z",
-    "playlist": "envios do canal",
-    "jogo": null
-  },
-  "aoVivo": {
     "id": "1hSrApLj0oU",
-    "titulo": "Mario Kart DS Online @primo_wit @Zerei0game"
+    "titulo": "Mario Kart DS Online @primo_wit @Zerei0game",
+    "data": "2026-11-15T19:56:16Z",
+    "playlist": "envios do canal",
+    "jogo": {
+      "id": 12711,
+      "titulo": "Mario Kart DS",
+      "console": "Nintendo DS",
+      "imagem": "https://media.retroachievements.org/Images/072928.png",
+      "ganhas": 132,
+      "conquistas": 132
+    }
   },
-  "aoVivoVertical": {
-    "id": "TbKtcLEAqZM",
-    "titulo": "📱 VERTICAL | Mario Kart DS Online @primo_wit  @Zerei0game"
-  },
+  "aoVivo": null,
+  "aoVivoVertical": null,
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-15T21:42:15.319Z",
+    "atualizado": "2026-11-15T22:42:24.711Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -350,7 +351,7 @@
         "sigla": "NDS",
         "platinados": 1,
         "zerados": 1,
-        "emLive": 0,
+        "emLive": 1,
         "emAndamento": 0,
         "tempoSeg": 185530
       },
@@ -1103,7 +1104,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2025-11-19T19:47:46+00:00",
-        "emLive": false,
+        "emLive": true,
         "tempoSeg": 185530
       },
       {
