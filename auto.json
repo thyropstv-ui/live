@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-15T19:46:04.607Z",
+  "atualizado": "2026-11-15T20:43:18.698Z",
   "guia": {
     "playlists": [
       {
@@ -260,20 +260,18 @@
     "playlist": "envios do canal",
     "jogo": null
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
-  "proxima": {
+  "aoVivo": {
     "id": "1hSrApLj0oU",
-    "titulo": "Mario Kart DS Online",
-    "inicio": "2026-11-15T19:40:00Z"
+    "titulo": "Mario Kart DS Online @primo_wit @Zerei0game"
   },
-  "proximaVertical": {
+  "aoVivoVertical": {
     "id": "TbKtcLEAqZM",
-    "titulo": "📱 VERTICAL | Mario Kart DS Online",
-    "inicio": "2026-11-15T19:40:00Z"
+    "titulo": "📱 VERTICAL | Mario Kart DS Online @primo_wit  @Zerei0game"
   },
+  "proxima": null,
+  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-15T19:46:04.604Z",
+    "atualizado": "2026-11-15T20:43:18.697Z",
     "consoles": [
       {
         "nome": "PlayStation",
