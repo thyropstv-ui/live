@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-15T16:45:48.333Z",
+  "atualizado": "2026-11-15T17:41:03.450Z",
   "guia": {
     "playlists": [
       {
@@ -271,7 +271,7 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-15T16:45:48.331Z",
+    "atualizado": "2026-11-15T17:41:03.449Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -316,7 +316,7 @@
         "zerados": 6,
         "emLive": 4,
         "emAndamento": 1,
-        "tempoSeg": 430317
+        "tempoSeg": 436398
       },
       {
         "nome": "NES/Famicom",
@@ -398,13 +398,13 @@
         "console": "Genesis/Mega Drive",
         "imagem": "https://media.retroachievements.org/Images/064550.png",
         "conquistas": 85,
-        "ganhas": 54,
-        "pct": 64,
+        "ganhas": 55,
+        "pct": 65,
         "platinado": false,
         "zerado": false,
-        "data": "2026-11-13T03:05:14+00:00",
+        "data": "2026-11-15T16:54:07+00:00",
         "emLive": true,
-        "tempoSeg": 136805
+        "tempoSeg": 142886
       },
       {
         "id": 3492,
