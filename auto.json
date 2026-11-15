@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-15T15:43:01.212Z",
+  "atualizado": "2026-11-15T16:45:48.333Z",
   "guia": {
     "playlists": [
       {
@@ -260,20 +260,18 @@
     "playlist": "envios do canal",
     "jogo": null
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
-  "proxima": {
+  "aoVivo": {
     "id": "J1TEB7eee7A",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆54/85 #17 #halldosconquistadores #lixao",
-    "inicio": "2026-11-15T16:00:00Z"
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆54/85 #17 #halldosconquistadores #lixao"
   },
-  "proximaVertical": {
+  "aoVivoVertical": {
     "id": "8dbLICOjOqs",
-    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 54/85 #17 | #HallDosConquistadores #Lixao",
-    "inicio": "2026-11-15T16:00:00Z"
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 54/85 #17 | #HallDosConquistadores #Lixao"
   },
+  "proxima": null,
+  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-15T15:43:01.210Z",
+    "atualizado": "2026-11-15T16:45:48.331Z",
     "consoles": [
       {
         "nome": "PlayStation",
