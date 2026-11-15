@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-15T18:47:26.373Z",
+  "atualizado": "2026-11-15T19:46:04.607Z",
   "guia": {
     "playlists": [
       {
@@ -260,18 +260,20 @@
     "playlist": "envios do canal",
     "jogo": null
   },
-  "aoVivo": {
-    "id": "J1TEB7eee7A",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆54/85 #17 #halldosconquistadores #lixao"
+  "aoVivo": null,
+  "aoVivoVertical": null,
+  "proxima": {
+    "id": "1hSrApLj0oU",
+    "titulo": "Mario Kart DS Online",
+    "inicio": "2026-11-15T19:40:00Z"
   },
-  "aoVivoVertical": {
-    "id": "8dbLICOjOqs",
-    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 54/85 #17 | #HallDosConquistadores #Lixao"
+  "proximaVertical": {
+    "id": "TbKtcLEAqZM",
+    "titulo": "📱 VERTICAL | Mario Kart DS Online",
+    "inicio": "2026-11-15T19:40:00Z"
   },
-  "proxima": null,
-  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-15T18:47:26.371Z",
+    "atualizado": "2026-11-15T19:46:04.604Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -316,7 +318,7 @@
         "zerados": 6,
         "emLive": 4,
         "emAndamento": 1,
-        "tempoSeg": 440352
+        "tempoSeg": 443564
       },
       {
         "nome": "NES/Famicom",
@@ -398,13 +400,13 @@
         "console": "Genesis/Mega Drive",
         "imagem": "https://media.retroachievements.org/Images/064550.png",
         "conquistas": 85,
-        "ganhas": 56,
-        "pct": 66,
+        "ganhas": 57,
+        "pct": 67,
         "platinado": false,
         "zerado": false,
-        "data": "2026-11-15T17:58:01+00:00",
+        "data": "2026-11-15T19:02:33+00:00",
         "emLive": true,
-        "tempoSeg": 146840
+        "tempoSeg": 150052
       },
       {
         "id": 3492,
