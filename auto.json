@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-15T14:24:09.155Z",
+  "atualizado": "2026-11-15T15:43:01.212Z",
   "guia": {
     "playlists": [
       {
@@ -273,7 +273,7 @@
     "inicio": "2026-11-15T16:00:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-15T14:24:09.152Z",
+    "atualizado": "2026-11-15T15:43:01.210Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -282,7 +282,7 @@
         "zerados": 21,
         "emLive": 3,
         "emAndamento": 1,
-        "tempoSeg": 2631672
+        "tempoSeg": 2726548
       },
       {
         "nome": "SNES/Super Famicom",
@@ -300,7 +300,7 @@
         "zerados": 13,
         "emLive": 0,
         "emAndamento": 0,
-        "tempoSeg": 935971
+        "tempoSeg": 1037704
       },
       {
         "nome": "Nintendo 64",
@@ -372,7 +372,7 @@
         "zerados": 1,
         "emLive": 0,
         "emAndamento": 2,
-        "tempoSeg": 54005
+        "tempoSeg": 149874
       },
       {
         "nome": "GameCube",
@@ -1525,7 +1525,8 @@
         "platinado": true,
         "zerado": true,
         "data": "2025-04-11T23:03:28+00:00",
-        "emLive": false
+        "emLive": false,
+        "tempoSeg": 36232
       },
       {
         "id": 10907,
@@ -1538,7 +1539,8 @@
         "platinado": false,
         "zerado": true,
         "data": "2025-04-07T12:56:22+00:00",
-        "emLive": false
+        "emLive": false,
+        "tempoSeg": 58644
       },
       {
         "id": 5030,
@@ -1551,7 +1553,8 @@
         "platinado": true,
         "zerado": true,
         "data": "2025-04-06T22:14:19+00:00",
-        "emLive": false
+        "emLive": false,
+        "tempoSeg": 49856
       },
       {
         "id": 20589,
@@ -1564,7 +1567,8 @@
         "platinado": true,
         "zerado": true,
         "data": "2025-03-27T22:26:27+00:00",
-        "emLive": false
+        "emLive": false,
+        "tempoSeg": 95869
       },
       {
         "id": 515,
@@ -1577,7 +1581,8 @@
         "platinado": true,
         "zerado": true,
         "data": "2025-03-11T21:45:42+00:00",
-        "emLive": false
+        "emLive": false,
+        "tempoSeg": 51877
       }
     ],
     "comVideoAoVivo": true
