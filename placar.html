@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Placar | Thyrops Live</title>
+<meta name="description" content="Quantos jogos já platinados e zerados em cada console.">
+<meta name="theme-color" content="#050718">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="tema.js"></script>
+<link rel="stylesheet" href="tema.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-pagina="placar.html">
+<div class="pagina">
+  <header id="topo"></header>
+  <main>
+    <p class="intro">Placar de conquistas do RetroAchievements por console. A barra mostra quantas platinas foram feitas ao vivo.</p>
+    <a class="link-ra" href="" id="lra" target="_blank" rel="noopener">Ver perfil e progresso no RetroAchievements ↗</a>
+    <div id="topo-placar" style="margin-top:18px"></div>
+    <div class="chips" id="ordem" role="group" aria-label="Ordenar">
+      <button class="chip" data-o="platinados" aria-pressed="true">Mais platinados</button>
+      <button class="chip" data-o="zerados" aria-pressed="false">Mais zerados</button>
+      <button class="chip" data-o="nome" aria-pressed="false">A–Z</button>
+    </div>
+    <div class="grade-s" id="consoles"></div>
+    <div class="titulo"><h2>Refazer em live</h2></div>
+    <p class="intro" id="vtxt"></p>
+    <div class="chips" id="vcons" role="group" aria-label="Filtrar por console"></div>
+    <div id="votos" style="display:grid;gap:10px;margin-top:14px"></div>
+    <button type="button" class="botao botao--sec mais" id="mais" hidden>Mostrar todos</button>
+  </main>
+  <footer id="rodape"></footer>
+</div>
+<script src="site.js"></script>
+<script>
+let D,ord="platinados",vc="Todos",todos=false;
+function desenha(){
+  const cs=[...D.placar.consoles].sort((a,b)=>ord==="nome"?a.nome.localeCompare(b.nome):b[ord]-a[ord]);
+  qs("#consoles").innerHTML=cs.map(c=>{const p=c.platinados?Math.round(c.emLive/c.platinados*100):0;
+    return '<div class="console"><div class="hud"><div class="hud-in"><div class="sigla">'+esc(c.sigla)+'</div><h3>'+esc(c.nome)+'</h3>'+
+    '<div class="num"><b>'+c.platinados+'</b><span>platinados</span></div>'+
+    '<div class="linha"><span>Zerados</span><b>'+c.zerados+'</b></div>'+
+    (c.tempoSeg?'<div class="linha"><span>Tempo de jogo</span><b>'+fmtTempo(c.tempoSeg)+'</b></div>':'')+'<div class="linha"><span>Platinas em live</span><b>'+c.emLive+' / '+c.platinados+'</b></div>'+
+    '<div class="barra-p"><i style="width:'+p+'%"></i></div></div></div></div>';}).join("");
+}
+function candidatos(){
+  const v=D.votacao,j=D.placar.jogos;
+  if(j&&j.length)return j.filter(x=>x.platinado&&!x.emLive).map(x=>({jogo:x.titulo,console:x.console}));
+  return v&&v.opcoes||[];
+}
+function desenhaVotos(){
+  const v=D.votacao,todosC=candidatos();
+  if(!v||!v.ativa||!todosC.length){qs("#vtxt").textContent="Nenhuma votação aberta no momento.";qs("#votos").innerHTML="";qs("#mais").hidden=true;qs("#vcons").hidden=true;return}
+  qs("#vtxt").textContent=(v.texto||"")+" "+todosC.length+" jogos ainda não foram platinados em live.";
+  const cons=["Todos",...new Set(todosC.map(o=>o.console).filter(Boolean))];
+  const f=qs("#vcons");f.hidden=cons.length<3;
+  f.innerHTML=cons.map(c=>'<button type="button" class="chip" data-c="'+esc(c)+'" aria-pressed="'+(c===vc)+'">'+esc(c)+'</button>').join("");
+  qsa(".chip",f).forEach(b=>b.onclick=()=>{vc=b.dataset.c;todos=false;desenhaVotos()});
+  const l=todosC.filter(o=>vc==="Todos"||o.console===vc),vis=todos?l:l.slice(0,10);
+  qs("#votos").innerHTML=vis.map(o=>'<div class="hud"><div class="hud-in vota"><div><b>'+esc(o.jogo)+'</b><small>'+esc(o.console||"")+'</small></div><button type="button" class="botao botao--sec cmd" data-c="'+esc(v.comando+" "+o.jogo)+'">Copiar voto</button></div></div>').join("");
+  qsa("#votos .cmd").forEach(b=>b.onclick=async()=>toast((await copiar(b.dataset.c))?"Copiado: "+b.dataset.c:"Não foi possível copiar"));
+  const m=qs("#mais");m.hidden=todos||l.length<=10;m.textContent="Mostrar todos ("+l.length+")";m.onclick=()=>{todos=true;desenhaVotos()};
+}
+(async function(){
+  try{D=await carregaDados()}catch(e){return erroCarga(qs("main"),"Não foi possível carregar o dados.json.")}
+  avisoExemplo(D);
+  qs("#lra").href=RA_PROGRESSO;
+  const cs=D.placar.consoles,tot=cs.reduce((s,c)=>s+c.platinados,0),zer=cs.reduce((s,c)=>s+c.zerados,0),live=cs.reduce((s,c)=>s+c.emLive,0),pct=tot?Math.round(live/tot*100):0,horas=Math.round(cs.reduce((s,c)=>s+(c.tempoSeg||0),0)/3600);
+  qs("#topo-placar").innerHTML='<div class="hud"><div class="hud-in pad placar-topo"><div class="anel" style="--p:'+pct+'"><div>'+pct+'%<small>em live</small></div></div><div class="totais"><div><div class="n" id="n1">0</div><div class="l">platinados</div></div><div><div class="n" id="n2">0</div><div class="l">zerados</div></div><div><div class="n" id="n3">0</div><div class="l">em live</div></div>'+(horas?'<div><div class="n">'+horas+'h</div><div class="l">de jogo</div></div>':"")+'</div></div></div>';
+  contaAte(qs("#n1"),tot);contaAte(qs("#n2"),zer);contaAte(qs("#n3"),live);
+  if(D.placar.atualizado)qs(".intro").insertAdjacentHTML("beforeend"," Atualizado em "+esc(String(D.placar.atualizado).slice(0,10).split("-").reverse().join("/"))+".");
+  qsa("#ordem .chip").forEach(b=>b.onclick=()=>{ord=b.dataset.o;qsa("#ordem .chip").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));desenha()});
+  desenha();desenhaVotos();
+})();
+</script>
+</body>
+</html>

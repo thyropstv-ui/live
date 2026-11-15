@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início | Thyrops Live</title>
+<meta name="description" content="Lives de jogos retrô, guia de conquistas, vozes e memes do chat.">
+<meta name="theme-color" content="#050718">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="tema.js"></script>
+<link rel="stylesheet" href="tema.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-pagina="index.html">
+<div class="pagina">
+  <header id="topo"></header>
+  <main>
+    <section class="heroi">
+      <div class="hud"><div class="hud-in pad">
+        <div class="rotulo">Thyrops Live</div>
+        <h1>Jogos retrô, conquistas e caos no chat</h1>
+        <p>Platinando clássicos ao vivo. Aqui você acompanha o placar, vê o guia de conquistas e testa as vozes e os memes do chat.</p>
+        <div class="canais" id="canais" style="justify-content:flex-start;margin:14px 0 0"></div>
+      </div></div>
+      <div class="hud prox"><div class="hud-in">
+        <div class="rotulo">Próxima live</div>
+        <div class="cont" id="cont">--</div>
+        <p id="quando" style="margin:6px 0 0;color:var(--mudo)"></p>
+        <p id="local" style="margin:4px 0 0;font-size:14px;color:var(--mudo)"></p>
+        <div class="formatos" id="formatos"></div>
+      </div></div>
+    </section>
+    <div class="titulo"><h2>Platinas</h2></div>
+    <div class="placar-topo hud"><div class="hud-in pad" style="display:contents"></div></div>
+    <div class="titulo"><h2>Em destaque</h2></div>
+    <div class="destaques" id="destaques"></div>
+    <div class="atalhos" id="atalhos"></div>
+  </main>
+  <footer id="rodape"></footer>
+</div>
+<script src="site.js"></script>
+<script>
+(async function(){
+  qs("#canais").innerHTML=botoesCanais(["twitch","kick","youtube","instagram"]);
+  const at=[["placar.html","Placar","Platinas e zeradas por console"],["guia.html","Guia","Shorts e playlists de conquistas"],["agenda.html","Agenda","Dias e horários das lives"],["vozes.html","Vozes","Teste os comandos de voz"],["memes.html","Memes","Ouça os memes do chat"]];
+  qs("#atalhos").innerHTML=at.map(a=>'<a class="atalho hud" href="'+a[0]+'"><div class="hud-in pad"><b>'+a[1]+'</b><span>'+a[2]+'</span></div></a>').join("");
+  let d;
+  try{d=await carregaDados()}catch(e){qs(".placar-topo").remove();return}
+  avisoExemplo(d);
+  iniciaContagem(d,qs("#cont"),qs("#quando"),qs("#local"));
+  montaFormatos(d,qs("#formatos"));setInterval(()=>montaFormatos(d,qs("#formatos")),30000);
+  montaDestaques(d,qs("#destaques"));if(qs("#destaques").hidden)qs("#destaques").previousElementSibling.hidden=true;
+  const cs=d.placar.consoles,tot=cs.reduce((s,c)=>s+c.platinados,0),zer=cs.reduce((s,c)=>s+c.zerados,0),live=cs.reduce((s,c)=>s+c.emLive,0);
+  const pct=tot?Math.round(live/tot*100):0;
+  qs(".placar-topo").className="placar-topo";
+  qs(".placar-topo").innerHTML='<div class="hud"><div class="hud-in pad" style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center"><div class="anel" style="--p:'+pct+'"><div>'+pct+'%<small>em live</small></div></div><div class="totais"><div><div class="n" id="n1">0</div><div class="l">platinados</div></div><div><div class="n" id="n2">0</div><div class="l">zerados</div></div><div><div class="n" id="n3">0</div><div class="l">platinados em live</div></div></div></div></div>';
+  contaAte(qs("#n1"),tot);contaAte(qs("#n2"),zer);contaAte(qs("#n3"),live);
+})();
+</script>
+</body>
+</html>

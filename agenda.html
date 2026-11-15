@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda | Thyrops Live</title>
+<meta name="description" content="Dias e horários das lives.">
+<meta name="theme-color" content="#050718">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="tema.js"></script>
+<link rel="stylesheet" href="tema.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-pagina="agenda.html">
+<div class="pagina">
+  <header id="topo"></header>
+  <main>
+    <div class="hud prox" style="margin-top:20px"><div class="hud-in">
+      <div class="rotulo">Próxima live</div>
+      <div class="cont" id="cont">--</div>
+      <p id="quando" style="margin:6px 0 0;color:var(--mudo)"></p>
+      <p id="local" style="margin:4px 0 0;font-size:14px;color:var(--mudo)"></p>
+      <div class="formatos" id="formatos"></div>
+    </div></div>
+    <div class="titulo"><h2>Semana</h2></div>
+    <div class="semana" id="semana"></div>
+    <p class="intro" id="obs"></p>
+    <div class="titulo"><h2>Onde assistir</h2></div>
+    <div class="canais" id="onde" style="justify-content:flex-start;margin-top:14px"></div>
+  </main>
+  <footer id="rodape"></footer>
+</div>
+<script src="site.js"></script>
+<script>
+(async function(){
+  let d;try{d=await carregaDados()}catch(e){return erroCarga(qs("main"),"Não foi possível carregar o dados.json.")}
+  avisoExemplo(d);const ag=d.agenda;
+  const hoje=new Date(Date.now()-3*3600e3).getUTCDay();
+  qs("#semana").innerHTML=[1,2,3,4,5,6,0].map(di=>{
+    const ls=ag.lives.filter(l=>l.dia===di);
+    const corpo=ls.length?ls.map(l=>'<div class="hora">'+esc(l.hora)+'</div><div class="tit">'+esc(l.titulo)+'</div>').join('<div style="height:8px"></div>'):'<div class="folga">Sem live</div>';
+    return '<div class="dia'+(di===hoje?" hoje":"")+'"><div class="hud"><div class="hud-in"><div style="padding:12px 10px"><h3>'+NOMES_DIA[di].slice(0,3)+(di===hoje?" · hoje":"")+'</h3>'+corpo+'</div></div></div></div>';}).join("");
+  qs("#obs").textContent=ag.obs||"";
+  qs("#onde").innerHTML=botoesCanais(["twitch","kick","youtube"]);
+  iniciaContagem(d,qs("#cont"),qs("#quando"),qs("#local"));
+  montaFormatos(d,qs("#formatos"));setInterval(()=>montaFormatos(d,qs("#formatos")),30000);
+})();
+</script>
+</body>
+</html>

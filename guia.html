@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guia | Thyrops Live</title>
+<meta name="description" content="Shorts do guia de conquistas e playlists de cada console.">
+<meta name="theme-color" content="#050718">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="tema.js"></script>
+<link rel="stylesheet" href="tema.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-pagina="guia.html">
+<div class="pagina">
+  <header id="topo"></header>
+  <main>
+    <p class="intro">Guia de conquistas em vídeos curtos, um jogo por dia sempre que dá. Toque num short para assistir aqui mesmo.</p>
+    <div class="destaques" id="destaques"></div>
+    <div class="titulo"><h2>Últimos shorts</h2></div>
+    <div class="chips" id="filtro" role="group" aria-label="Filtrar por console"></div>
+    <div class="shorts" id="shorts"></div>
+    <div class="titulo"><h2>Playlists</h2></div>
+    <div class="lista-pl" id="pls"></div>
+    <div class="titulo"><h2>Gameplays</h2></div>
+    <div class="lista-pl" id="gps"></div>
+  </main>
+  <footer id="rodape"></footer>
+</div>
+<script src="site.js"></script>
+<script>
+let D,cons="Todos";
+function shorts(){
+  const l=D.guia.shorts.filter(s=>cons==="Todos"||s.console===cons);
+  const box=qs("#shorts");
+  if(!l.length){box.innerHTML='<div class="vazio" style="grid-column:1/-1"><p>Os shorts aparecem aqui assim que a atualização automática estiver ligada.</p></div>';return}
+  box.innerHTML=l.map((s,i)=>'<button type="button" class="short" data-i="'+i+'" aria-label="Assistir '+esc(s.titulo)+'">'+
+    (s.id?'<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+encodeURIComponent(s.id)+'/hqdefault.jpg">':'')+
+    '<div class="pl"><svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M8 5v14l11-7z"/></svg></div>'+
+    '<div class="leg"><b>'+esc(s.titulo)+'</b><span>'+esc([s.jogo,s.console].filter(Boolean).join(" · "))+'</span></div></button>').join("");
+  qsa(".short",box).forEach(b=>b.onclick=()=>{
+    const s=l[+b.dataset.i];
+    if(!s.id)return toast("Short sem ID");
+    if(b.classList.contains("on"))return;
+    b.classList.add("on");
+    b.insertAdjacentHTML("beforeend",'<iframe title="'+esc(s.titulo)+'" src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(s.id)+'?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>');
+  });
+}
+function cartoes(l,vazio){
+  return l&&l.length?l.map(p=>{const id=p.pid||listaDe(p.url);
+    return '<div class="pl-wrap"><div class="hud"><div class="hud-in" style="padding:14px 16px"><b style="display:block;font:600 22px/1.1 var(--titulos);letter-spacing:.03em">'+esc(p.nome)+'</b><span style="display:block;margin-top:4px;font-size:14px;color:var(--mudo)">'+esc(p.descricao||"")+'</span>'+
+      (id?'<button type="button" class="botao botao--sec btn-ver-pl" data-lista="'+esc(id)+'">Assistir aqui</button> ':"")+'<a class="botao botao--sec btn-ver-pl" style="text-decoration:none;display:inline-block" href="'+esc(p.url)+'" target="_blank" rel="noopener">Abrir no YouTube ↗</a><div class="slot"></div></div></div></div>';}).join(""):'<div class="vazio"><p>'+vazio+'</p></div>';
+}
+function ligaPlayers(box){
+  qsa("button[data-lista]",box).forEach(b=>b.onclick=()=>{
+    const slot=qs(".slot",b.parentNode);
+    if(slot.firstChild){slot.innerHTML="";b.textContent="Assistir aqui";return}
+    slot.innerHTML=videoLazy({lista:b.dataset.lista,titulo:"playlist"});ativaVideos(slot);qs(".vid",slot).click();b.textContent="Fechar player";
+  });
+}
+(async function(){
+  try{D=await carregaDados()}catch(e){return erroCarga(qs("main"),"Não foi possível carregar o dados.json.")}
+  avisoExemplo(D);
+  const cs=["Todos",...new Set(D.guia.shorts.map(s=>s.console).filter(Boolean))];
+  const f=qs("#filtro");
+  if(cs.length<3)f.hidden=true;
+  cs.forEach(c=>{const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=c;b.setAttribute("aria-pressed",String(c===cons));
+    b.onclick=()=>{cons=c;qsa(".chip",f).forEach(x=>x.setAttribute("aria-pressed",String(x===b)));shorts()};f.appendChild(b)});
+  shorts();
+  qs("#pls").innerHTML=cartoes(D.guia.playlists,"Nenhuma playlist cadastrada.");
+  qs("#gps").innerHTML=cartoes(D.guia.gameplay,"Nenhuma playlist de gameplay cadastrada.");
+  ligaPlayers(qs("#pls"));ligaPlayers(qs("#gps"));
+  montaDestaques(D,qs("#destaques"));
+})();
+</script>
+</body>
+</html>
