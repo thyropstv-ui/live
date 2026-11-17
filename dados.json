@@ -43,6 +43,8 @@
   "votacao": {
     "ativa": true,
     "comando": "!votar",
+    "postUrl": "",
+    "postTitulo": "Votar no post do YouTube",
     "texto": "Vote no chat da live no jogo que você quer ver refeito ao vivo. O mais votado entra na próxima live.",
     "opcoes": [
       {

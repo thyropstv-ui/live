@@ -32,12 +32,13 @@
 <script src="site.js"></script>
 <script>
 const OLHO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
-const ehVideo=a=>/\.(mp4|webm|mov)$/i.test(String(a||""));
+const ehVideo=(a,m)=>(m&&m.video===true)||/\.(mp4|webm|mov)$/i.test(String(a||""));
 const PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 const PAUSE='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
 let audio=null,atual=null,memes=[];
 /* "arquivo" pode ser só o nome (bonk.mp4), um caminho (assets/memes/bonk.mp4) ou uma URL completa */
-function urlMeme(a){a=String(a||"").trim();if(/^https?:\/\//i.test(a))return a;if(a.indexOf("/")<0)a="assets/memes/"+a;return a.split("/").map(encodeURIComponent).join("/")}
+function idDrive(a){a=String(a||"").trim();let m=a.match(/^drive:([\w-]{10,})$/i)||a.match(/drive\.google\.com\/file\/d\/([\w-]+)/)||a.match(/drive\.google\.com\/(?:open|uc)\?(?:[^#]*&)?id=([\w-]+)/);return m?m[1]:""}
+function urlMeme(a){a=String(a||"").trim();const g=idDrive(a);if(g)return "https://drive.google.com/uc?export=download&id="+g;if(/^https?:\/\//i.test(a))return a;if(a.indexOf("/")<0)a="assets/memes/"+a;return a.split("/").map(encodeURIComponent).join("/")}
 function solta(){if(!atual)return;atual.btn.innerHTML=PLAY;atual.el.classList.remove("tocando")}
 function tocar(m,el,btn,ds){
   if(atual&&atual.m===m&&audio){audio.paused?audio.play():audio.pause();return}
@@ -60,7 +61,7 @@ function monta(){
   memes.forEach(m=>{
     const el=document.createElement("div");el.className="meme";
     el._hay=(m.comando+" "+(m.descricao||"")).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-    el.innerHTML='<div class="hud"><div class="hud-in"><div class="info"><button type="button" class="cmd"></button><div class="ds"></div></div><button type="button" class="btn-play" aria-label="Ouvir meme">'+PLAY+'</button>'+(ehVideo(m.arquivo)?'<button type="button" class="btn-ver" aria-label="Ver vídeo" title="Ver vídeo">'+OLHO+'</button>':"")+'</div></div>';
+    el.innerHTML='<div class="hud"><div class="hud-in"><div class="info"><button type="button" class="cmd"></button><div class="ds"></div></div><button type="button" class="btn-play" aria-label="Ouvir meme">'+PLAY+'</button>'+(ehVideo(m.arquivo,m)?'<button type="button" class="btn-ver" aria-label="Ver vídeo" title="Ver vídeo">'+OLHO+'</button>':"")+'</div></div>';
     const cmd=qs(".cmd",el),ds=qs(".ds",el),btn=qs(".btn-play",el);
     cmd.textContent=m.comando;cmd.title="Copiar "+m.comando;ds.textContent=m.descricao||"";
     cmd.onclick=async()=>toast((await copiar(m.comando+" "))?"Copiado "+m.comando:"Não foi possível copiar");

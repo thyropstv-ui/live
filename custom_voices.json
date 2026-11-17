@@ -5,7 +5,26 @@
     "descricao": "De Spy x Family",
     "volume": 25,
     "categoria": "Animes",
-    "subcategoria": "Spy x Family"
+    "subcategoria": "Spy x Family",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!bender",
+    "id": "4cf4637f109b487cb36a860218b8d35e",
+    "descricao": "Bender",
+    "volume": 10,
+    "categoria": "Séries de TV",
+    "subcategoria": "Futurama",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!dino",
+    "id": "c17ca80a36134687b95484e25f3f27d6",
+    "descricao": "Dino",
+    "volume": 10,
+    "categoria": "Séries de TV",
+    "subcategoria": "Família Dinossauro",
+    "thumbnail": ""
   },
   {
     "nome": "!chaves",
@@ -13,7 +32,8 @@
     "descricao": "De Chaves",
     "volume": 10,
     "categoria": "Séries de TV",
-    "subcategoria": "Chaves"
+    "subcategoria": "Chaves",
+    "thumbnail": ""
   },
   {
     "nome": "!chaves_2",
@@ -21,7 +41,8 @@
     "descricao": "De Chaves",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Chaves"
+    "subcategoria": "Chaves",
+    "thumbnail": ""
   },
   {
     "nome": "!seu_madruga",
@@ -29,7 +50,8 @@
     "descricao": "De Chaves",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Chaves"
+    "subcategoria": "Chaves",
+    "thumbnail": ""
   },
   {
     "nome": "!kiko",
@@ -37,7 +59,8 @@
     "descricao": "De Chaves",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Chaves"
+    "subcategoria": "Chaves",
+    "thumbnail": ""
   },
   {
     "nome": "!dona_florinda",
@@ -45,7 +68,8 @@
     "descricao": "De Chaves",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Chaves"
+    "subcategoria": "Chaves",
+    "thumbnail": ""
   },
   {
     "nome": "!sr_omar",
@@ -53,7 +77,8 @@
     "descricao": "Senhor Omar",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Todo Mundo Odeia o Chris"
+    "subcategoria": "Todo Mundo Odeia o Chris",
+    "thumbnail": ""
   },
   {
     "nome": "!chris",
@@ -61,7 +86,8 @@
     "descricao": "De Todo Mundo Odeia o Chris",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Todo Mundo Odeia o Chris"
+    "subcategoria": "Todo Mundo Odeia o Chris",
+    "thumbnail": ""
   },
   {
     "nome": "!chris_2",
@@ -69,7 +95,8 @@
     "descricao": "De Todo Mundo Odeia o Chris",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Todo Mundo Odeia o Chris"
+    "subcategoria": "Todo Mundo Odeia o Chris",
+    "thumbnail": ""
   },
   {
     "nome": "!rochele",
@@ -77,7 +104,8 @@
     "descricao": "De Todo Mundo Odeia o Chris",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Todo Mundo Odeia o Chris"
+    "subcategoria": "Todo Mundo Odeia o Chris",
+    "thumbnail": ""
   },
   {
     "nome": "!greg",
@@ -85,7 +113,8 @@
     "descricao": "De Todo Mundo Odeia o Chris",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Todo Mundo Odeia o Chris"
+    "subcategoria": "Todo Mundo Odeia o Chris",
+    "thumbnail": ""
   },
   {
     "nome": "!julius",
@@ -93,7 +122,8 @@
     "descricao": "De Todo Mundo Odeia o Chris",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Todo Mundo Odeia o Chris"
+    "subcategoria": "Todo Mundo Odeia o Chris",
+    "thumbnail": ""
   },
   {
     "nome": "!picapau",
@@ -101,7 +131,8 @@
     "descricao": "De Pica-Pau",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Pica-Pau"
+    "subcategoria": "Pica-Pau",
+    "thumbnail": ""
   },
   {
     "nome": "!narrador_picapau",
@@ -109,7 +140,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!bob_sponja",
@@ -117,7 +149,8 @@
     "descricao": "De Bob Esponja",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Bob Esponja"
+    "subcategoria": "Bob Esponja",
+    "thumbnail": ""
   },
   {
     "nome": "!bob_sponja_2",
@@ -125,7 +158,8 @@
     "descricao": "De Bob Esponja",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Bob Esponja"
+    "subcategoria": "Bob Esponja",
+    "thumbnail": ""
   },
   {
     "nome": "!srsirigueijo",
@@ -133,7 +167,8 @@
     "descricao": "De Bob Esponja",
     "volume": 15,
     "categoria": "Desenhos",
-    "subcategoria": "Bob Esponja"
+    "subcategoria": "Bob Esponja",
+    "thumbnail": ""
   },
   {
     "nome": "!plankton",
@@ -141,7 +176,26 @@
     "descricao": "De Bob Esponja",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Bob Esponja"
+    "subcategoria": "Bob Esponja",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!patrick",
+    "id": "e9588b84b08d486daebd4476c76afc2f",
+    "descricao": "Patrick Estrela",
+    "volume": 0,
+    "categoria": "Desenhos",
+    "subcategoria": "Bob Esponja",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!lula_molusco",
+    "id": "1319b65de7424d96987f6776bedd0349",
+    "descricao": "Lula Molusco",
+    "volume": 0,
+    "categoria": "Desenhos",
+    "subcategoria": "Bob Esponja",
+    "thumbnail": ""
   },
   {
     "nome": "!goku",
@@ -149,7 +203,8 @@
     "descricao": "De Dragon Ball",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Dragon Ball"
+    "subcategoria": "Dragon Ball",
+    "thumbnail": ""
   },
   {
     "nome": "!vegeta",
@@ -157,7 +212,8 @@
     "descricao": "De Dragon Ball",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Dragon Ball"
+    "subcategoria": "Dragon Ball",
+    "thumbnail": ""
   },
   {
     "nome": "!gohan",
@@ -165,7 +221,8 @@
     "descricao": "De Dragon Ball",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Dragon Ball"
+    "subcategoria": "Dragon Ball",
+    "thumbnail": ""
   },
   {
     "nome": "!cell",
@@ -173,7 +230,8 @@
     "descricao": "De Dragon Ball",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Dragon Ball"
+    "subcategoria": "Dragon Ball",
+    "thumbnail": ""
   },
   {
     "nome": "!freezaptpt",
@@ -181,7 +239,8 @@
     "descricao": "De Dragon Ball",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Dragon Ball"
+    "subcategoria": "Dragon Ball",
+    "thumbnail": ""
   },
   {
     "nome": "!naruto",
@@ -189,7 +248,8 @@
     "descricao": "De Naruto",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!naruto_2",
@@ -197,7 +257,8 @@
     "descricao": "De Naruto",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!naruto_3",
@@ -205,7 +266,8 @@
     "descricao": "De Naruto",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!sasuke",
@@ -213,7 +275,8 @@
     "descricao": "De Naruto",
     "volume": 20,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!hinata",
@@ -221,7 +284,8 @@
     "descricao": "De Naruto",
     "volume": 25,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!tsunade",
@@ -229,7 +293,8 @@
     "descricao": "De Naruto",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!rock_lee",
@@ -237,7 +302,8 @@
     "descricao": "De Naruto",
     "volume": 15,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!maito_gai",
@@ -245,7 +311,8 @@
     "descricao": "De Naruto",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!maito_gai_triste",
@@ -253,7 +320,8 @@
     "descricao": "De Naruto",
     "volume": 5,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!kakashi",
@@ -261,7 +329,8 @@
     "descricao": "De Naruto",
     "volume": 5,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!zabuza",
@@ -269,7 +338,8 @@
     "descricao": "De Naruto",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Naruto"
+    "subcategoria": "Naruto",
+    "thumbnail": ""
   },
   {
     "nome": "!gojo",
@@ -277,7 +347,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!gojo_2",
@@ -285,7 +356,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!gojo_3",
@@ -293,7 +365,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!satoru_gojo",
@@ -301,7 +374,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!sukuna",
@@ -309,7 +383,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!sukuna_2",
@@ -317,7 +392,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!sukuna_3",
@@ -325,7 +401,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!megumi",
@@ -333,7 +410,8 @@
     "descricao": "De Jujutsu Kaisen",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jujutsu Kaisen"
+    "subcategoria": "Jujutsu Kaisen",
+    "thumbnail": ""
   },
   {
     "nome": "!shinobu",
@@ -341,7 +419,8 @@
     "descricao": "De Demon Slayer",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Demon Slayer"
+    "subcategoria": "Demon Slayer",
+    "thumbnail": ""
   },
   {
     "nome": "!mitsuri",
@@ -349,7 +428,8 @@
     "descricao": "De Demon Slayer",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Demon Slayer"
+    "subcategoria": "Demon Slayer",
+    "thumbnail": ""
   },
   {
     "nome": "!lawliet",
@@ -357,7 +437,8 @@
     "descricao": "De Death Note",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Death Note"
+    "subcategoria": "Death Note",
+    "thumbnail": ""
   },
   {
     "nome": "!lawliet_2",
@@ -365,7 +446,8 @@
     "descricao": "De Death Note",
     "volume": 15,
     "categoria": "Animes",
-    "subcategoria": "Death Note"
+    "subcategoria": "Death Note",
+    "thumbnail": ""
   },
   {
     "nome": "!misa_amane",
@@ -373,7 +455,8 @@
     "descricao": "De Death Note",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Death Note"
+    "subcategoria": "Death Note",
+    "thumbnail": ""
   },
   {
     "nome": "!itoshi_sae",
@@ -381,7 +464,8 @@
     "descricao": "De Blue Lock",
     "volume": 5,
     "categoria": "Animes",
-    "subcategoria": "Blue Lock"
+    "subcategoria": "Blue Lock",
+    "thumbnail": ""
   },
   {
     "nome": "!bachira",
@@ -389,7 +473,8 @@
     "descricao": "De Blue Lock",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Blue Lock"
+    "subcategoria": "Blue Lock",
+    "thumbnail": ""
   },
   {
     "nome": "!ash",
@@ -397,7 +482,8 @@
     "descricao": "De Pokémon",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Pokémon"
+    "subcategoria": "Pokémon",
+    "thumbnail": ""
   },
   {
     "nome": "!kaiba",
@@ -405,7 +491,8 @@
     "descricao": "De Yu-Gi-Oh!",
     "volume": 10,
     "categoria": "Animes",
-    "subcategoria": "Yu-Gi-Oh!"
+    "subcategoria": "Yu-Gi-Oh!",
+    "thumbnail": ""
   },
   {
     "nome": "!hika_inoue",
@@ -413,7 +500,8 @@
     "descricao": "De Seraph of the End",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Seraph of the End"
+    "subcategoria": "Seraph of the End",
+    "thumbnail": ""
   },
   {
     "nome": "!jotaro",
@@ -421,7 +509,8 @@
     "descricao": "De Jojo's",
     "volume": 0,
     "categoria": "Animes",
-    "subcategoria": "Jojo's"
+    "subcategoria": "Jojo's",
+    "thumbnail": ""
   },
   {
     "nome": "!dio",
@@ -429,7 +518,8 @@
     "descricao": "De Jojo's",
     "volume": 5,
     "categoria": "Animes",
-    "subcategoria": "Jojo's"
+    "subcategoria": "Jojo's",
+    "thumbnail": ""
   },
   {
     "nome": "!zerotwo",
@@ -437,7 +527,8 @@
     "descricao": "De Darling in the Franxx",
     "volume": 10,
     "categoria": "Animes",
-    "subcategoria": "Darling in the Franxx"
+    "subcategoria": "Darling in the Franxx",
+    "thumbnail": ""
   },
   {
     "nome": "!miku",
@@ -445,7 +536,8 @@
     "descricao": "Vocaloid",
     "volume": 0,
     "categoria": "Música",
-    "subcategoria": "Vocaloid"
+    "subcategoria": "Vocaloid",
+    "thumbnail": ""
   },
   {
     "nome": "!miku_2",
@@ -453,7 +545,8 @@
     "descricao": "Vocaloid",
     "volume": 0,
     "categoria": "Música",
-    "subcategoria": "Vocaloid"
+    "subcategoria": "Vocaloid",
+    "thumbnail": ""
   },
   {
     "nome": "!miku_3",
@@ -461,7 +554,8 @@
     "descricao": "Vocaloid",
     "volume": 0,
     "categoria": "Música",
-    "subcategoria": "Vocaloid"
+    "subcategoria": "Vocaloid",
+    "thumbnail": ""
   },
   {
     "nome": "!teto",
@@ -469,7 +563,17 @@
     "descricao": "UTAU / Vocaloid",
     "volume": -5,
     "categoria": "Música",
-    "subcategoria": "Vocaloid"
+    "subcategoria": "Vocaloid",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!mario",
+    "id": "4ad6d04ec39d4971b0153e876263fa45",
+    "descricao": "Mario Bross",
+    "volume": 0,
+    "categoria": "Desenhos",
+    "subcategoria": "Mario Bross",
+    "thumbnail": ""
   },
   {
     "nome": "!rick",
@@ -477,7 +581,8 @@
     "descricao": "De Rick and Morty",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!rick_2",
@@ -485,7 +590,8 @@
     "descricao": "De Rick and Morty",
     "volume": 5,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!evil_morty",
@@ -493,7 +599,8 @@
     "descricao": "De Rick and Morty",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!scooby_doo",
@@ -501,7 +608,8 @@
     "descricao": "De Scooby-Doo",
     "volume": 15,
     "categoria": "Desenhos",
-    "subcategoria": "Scooby-Doo"
+    "subcategoria": "Scooby-Doo",
+    "thumbnail": ""
   },
   {
     "nome": "!scooby_doo_2",
@@ -509,7 +617,8 @@
     "descricao": "De Scooby-Doo",
     "volume": 25,
     "categoria": "Desenhos",
-    "subcategoria": "Scooby-Doo"
+    "subcategoria": "Scooby-Doo",
+    "thumbnail": ""
   },
   {
     "nome": "!salsicha",
@@ -517,7 +626,8 @@
     "descricao": "De Scooby-Doo",
     "volume": 15,
     "categoria": "Desenhos",
-    "subcategoria": "Scooby-Doo"
+    "subcategoria": "Scooby-Doo",
+    "thumbnail": ""
   },
   {
     "nome": "!pernalonga",
@@ -525,7 +635,8 @@
     "descricao": "De Looney Tunes",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Looney Tunes"
+    "subcategoria": "Looney Tunes",
+    "thumbnail": ""
   },
   {
     "nome": "!pernalonga_2",
@@ -533,7 +644,8 @@
     "descricao": "De Looney Tunes",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Looney Tunes"
+    "subcategoria": "Looney Tunes",
+    "thumbnail": ""
   },
   {
     "nome": "!pernalonga_3",
@@ -541,7 +653,8 @@
     "descricao": "De Looney Tunes",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Looney Tunes"
+    "subcategoria": "Looney Tunes",
+    "thumbnail": ""
   },
   {
     "nome": "!patolino",
@@ -549,7 +662,8 @@
     "descricao": "De Looney Tunes",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Looney Tunes"
+    "subcategoria": "Looney Tunes",
+    "thumbnail": ""
   },
   {
     "nome": "!homer_simpson",
@@ -557,7 +671,8 @@
     "descricao": "De Os Simpsons",
     "volume": 15,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!homer_simpson_2",
@@ -565,7 +680,8 @@
     "descricao": "De Os Simpsons",
     "volume": 20,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!peter_griffin",
@@ -573,7 +689,8 @@
     "descricao": "De Family Guy",
     "volume": 20,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!cartman",
@@ -581,7 +698,8 @@
     "descricao": "De South Park",
     "volume": 35,
     "categoria": "Desenhos",
-    "subcategoria": "Desenhos adultos"
+    "subcategoria": "Desenhos adultos",
+    "thumbnail": ""
   },
   {
     "nome": "!fluttershy",
@@ -589,7 +707,8 @@
     "descricao": "De My Little Pony",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "My Little Pony"
+    "subcategoria": "My Little Pony",
+    "thumbnail": ""
   },
   {
     "nome": "!fluttershy_2",
@@ -597,7 +716,8 @@
     "descricao": "De My Little Pony",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "My Little Pony"
+    "subcategoria": "My Little Pony",
+    "thumbnail": ""
   },
   {
     "nome": "!twilight",
@@ -605,7 +725,8 @@
     "descricao": "De My Little Pony",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "My Little Pony"
+    "subcategoria": "My Little Pony",
+    "thumbnail": ""
   },
   {
     "nome": "!rarity",
@@ -613,7 +734,17 @@
     "descricao": "De My Little Pony",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "My Little Pony"
+    "subcategoria": "My Little Pony",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!mamaco_louco",
+    "id": "a77b33bac03e4fe986d9a503c56a6295",
+    "descricao": "Macaco Louco (mamaco louco)",
+    "volume": 0,
+    "categoria": "Desenhos",
+    "subcategoria": "Meninas Super Poderosas",
+    "thumbnail": ""
   },
   {
     "nome": "!sunny",
@@ -621,7 +752,17 @@
     "descricao": "De My Little Pony",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "My Little Pony"
+    "subcategoria": "My Little Pony",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!stitch",
+    "id": "3d45b573a3d5479eb6b83cb1d9744009",
+    "descricao": "Stitch",
+    "volume": 35,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": ""
   },
   {
     "nome": "!pato_donald",
@@ -629,7 +770,8 @@
     "descricao": "Da Disney",
     "volume": 35,
     "categoria": "Desenhos",
-    "subcategoria": "Disney"
+    "subcategoria": "Disney",
+    "thumbnail": ""
   },
   {
     "nome": "!coragem",
@@ -637,7 +779,8 @@
     "descricao": "De Coragem, o Cão Covarde",
     "volume": 25,
     "categoria": "Desenhos",
-    "subcategoria": "Outros desenhos"
+    "subcategoria": "Outros desenhos",
+    "thumbnail": ""
   },
   {
     "nome": "!gumball",
@@ -645,7 +788,8 @@
     "descricao": "De O Incrível Mundo Gumball",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Outros desenhos"
+    "subcategoria": "Outros desenhos",
+    "thumbnail": ""
   },
   {
     "nome": "!mcqueen",
@@ -653,7 +797,8 @@
     "descricao": "De Carros",
     "volume": 20,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Animações de cinema"
+    "subcategoria": "Animações de cinema",
+    "thumbnail": ""
   },
   {
     "nome": "!mate",
@@ -661,7 +806,8 @@
     "descricao": "De Carros",
     "volume": 20,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Animações de cinema"
+    "subcategoria": "Animações de cinema",
+    "thumbnail": ""
   },
   {
     "nome": "!madagascar",
@@ -669,7 +815,8 @@
     "descricao": "De Madagascar",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Animações de cinema"
+    "subcategoria": "Animações de cinema",
+    "thumbnail": ""
   },
   {
     "nome": "!alvin",
@@ -677,7 +824,8 @@
     "descricao": "De Alvin e os Esquilos",
     "volume": 100,
     "categoria": "Desenhos",
-    "subcategoria": "Outros desenhos"
+    "subcategoria": "Outros desenhos",
+    "thumbnail": ""
   },
   {
     "nome": "!theodore",
@@ -685,7 +833,8 @@
     "descricao": "De Alvin e os Esquilos",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Outros desenhos"
+    "subcategoria": "Outros desenhos",
+    "thumbnail": ""
   },
   {
     "nome": "!dora",
@@ -693,7 +842,8 @@
     "descricao": "De Dora a Aventureira",
     "volume": 0,
     "categoria": "Desenhos",
-    "subcategoria": "Outros desenhos"
+    "subcategoria": "Outros desenhos",
+    "thumbnail": ""
   },
   {
     "nome": "!luigi",
@@ -701,7 +851,8 @@
     "descricao": "Melhor em inglês",
     "volume": -20,
     "categoria": "Games",
-    "subcategoria": "Nintendo"
+    "subcategoria": "Nintendo",
+    "thumbnail": ""
   },
   {
     "nome": "!cj",
@@ -709,7 +860,8 @@
     "descricao": "Melhor em inglês",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "GTA San Andreas"
+    "subcategoria": "GTA San Andreas",
+    "thumbnail": ""
   },
   {
     "nome": "!big_smoke",
@@ -717,7 +869,8 @@
     "descricao": "Melhor em inglês",
     "volume": 10,
     "categoria": "Games",
-    "subcategoria": "GTA San Andreas"
+    "subcategoria": "GTA San Andreas",
+    "thumbnail": ""
   },
   {
     "nome": "!leon",
@@ -725,7 +878,8 @@
     "descricao": "De Resident Evil",
     "volume": 10,
     "categoria": "Games",
-    "subcategoria": "Resident Evil"
+    "subcategoria": "Resident Evil",
+    "thumbnail": ""
   },
   {
     "nome": "!ashley",
@@ -733,7 +887,8 @@
     "descricao": "De Resident Evil",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "Resident Evil"
+    "subcategoria": "Resident Evil",
+    "thumbnail": ""
   },
   {
     "nome": "!alice",
@@ -741,7 +896,8 @@
     "descricao": "De Resident Evil",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "Resident Evil"
+    "subcategoria": "Resident Evil",
+    "thumbnail": ""
   },
   {
     "nome": "!kratos",
@@ -749,7 +905,8 @@
     "descricao": "De God of War",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "God of War"
+    "subcategoria": "God of War",
+    "thumbnail": ""
   },
   {
     "nome": "!kratosstr",
@@ -757,7 +914,8 @@
     "descricao": "De God of War",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "God of War"
+    "subcategoria": "God of War",
+    "thumbnail": ""
   },
   {
     "nome": "!lux",
@@ -765,7 +923,8 @@
     "descricao": "De League of Legends",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "League of Legends"
+    "subcategoria": "League of Legends",
+    "thumbnail": ""
   },
   {
     "nome": "!braum",
@@ -773,7 +932,8 @@
     "descricao": "De League of Legends",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "League of Legends"
+    "subcategoria": "League of Legends",
+    "thumbnail": ""
   },
   {
     "nome": "!ziggs",
@@ -781,7 +941,8 @@
     "descricao": "De League of Legends",
     "volume": 0,
     "categoria": "Games",
-    "subcategoria": "League of Legends"
+    "subcategoria": "League of Legends",
+    "thumbnail": ""
   },
   {
     "nome": "!sonic",
@@ -789,7 +950,8 @@
     "descricao": "De Sonic",
     "volume": 20,
     "categoria": "Games",
-    "subcategoria": "Outros games"
+    "subcategoria": "Outros games",
+    "thumbnail": ""
   },
   {
     "nome": "!geralt",
@@ -797,7 +959,8 @@
     "descricao": "De The Witcher",
     "volume": 25,
     "categoria": "Games",
-    "subcategoria": "Outros games"
+    "subcategoria": "Outros games",
+    "thumbnail": ""
   },
   {
     "nome": "!mortal_kombat",
@@ -805,7 +968,8 @@
     "descricao": "Melhor com palavras únicas",
     "volume": -5,
     "categoria": "Games",
-    "subcategoria": "Outros games"
+    "subcategoria": "Outros games",
+    "thumbnail": ""
   },
   {
     "nome": "!mita",
@@ -813,7 +977,8 @@
     "descricao": "De MiSide",
     "volume": 10,
     "categoria": "Games",
-    "subcategoria": "Outros games"
+    "subcategoria": "Outros games",
+    "thumbnail": ""
   },
   {
     "nome": "!aranha",
@@ -821,7 +986,8 @@
     "descricao": "De Homem-Aranha",
     "volume": 40,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Marvel e DC"
+    "subcategoria": "Marvel e DC",
+    "thumbnail": ""
   },
   {
     "nome": "!aranha_2",
@@ -829,7 +995,8 @@
     "descricao": "De Homem-Aranha",
     "volume": 10,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Marvel e DC"
+    "subcategoria": "Marvel e DC",
+    "thumbnail": ""
   },
   {
     "nome": "!deadpool",
@@ -837,7 +1004,8 @@
     "descricao": "De Deadpool",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Marvel e DC"
+    "subcategoria": "Marvel e DC",
+    "thumbnail": ""
   },
   {
     "nome": "!coringa",
@@ -845,7 +1013,8 @@
     "descricao": "Da DC Comics",
     "volume": 15,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Marvel e DC"
+    "subcategoria": "Marvel e DC",
+    "thumbnail": ""
   },
   {
     "nome": "!jarvis",
@@ -853,7 +1022,8 @@
     "descricao": "De Homem de Ferro",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Marvel e DC"
+    "subcategoria": "Marvel e DC",
+    "thumbnail": ""
   },
   {
     "nome": "!patria",
@@ -861,7 +1031,8 @@
     "descricao": "De The Boys",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "The Boys"
+    "subcategoria": "The Boys",
+    "thumbnail": ""
   },
   {
     "nome": "!walterwhite",
@@ -869,7 +1040,8 @@
     "descricao": "De Breaking Bad",
     "volume": 5,
     "categoria": "Séries de TV",
-    "subcategoria": "Breaking Bad"
+    "subcategoria": "Breaking Bad",
+    "thumbnail": ""
   },
   {
     "nome": "!sam",
@@ -877,7 +1049,8 @@
     "descricao": "De Sobrenatural",
     "volume": 20,
     "categoria": "Séries de TV",
-    "subcategoria": "Sobrenatural"
+    "subcategoria": "Sobrenatural",
+    "thumbnail": ""
   },
   {
     "nome": "!dean",
@@ -885,7 +1058,8 @@
     "descricao": "De Sobrenatural",
     "volume": 0,
     "categoria": "Séries de TV",
-    "subcategoria": "Sobrenatural"
+    "subcategoria": "Sobrenatural",
+    "thumbnail": ""
   },
   {
     "nome": "!capitao",
@@ -893,7 +1067,8 @@
     "descricao": "De Tropa de Elite",
     "volume": 10,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Outros filmes"
+    "subcategoria": "Outros filmes",
+    "thumbnail": ""
   },
   {
     "nome": "!bibo",
@@ -901,7 +1076,8 @@
     "descricao": "De O Senhor dos Anéis",
     "volume": 15,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Outros filmes"
+    "subcategoria": "Outros filmes",
+    "thumbnail": ""
   },
   {
     "nome": "!pinoquio",
@@ -909,7 +1085,8 @@
     "descricao": "De Shrek",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Animações de cinema"
+    "subcategoria": "Animações de cinema",
+    "thumbnail": ""
   },
   {
     "nome": "!harry",
@@ -917,7 +1094,8 @@
     "descricao": "De Harry Potter",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Harry Potter"
+    "subcategoria": "Harry Potter",
+    "thumbnail": ""
   },
   {
     "nome": "!dumbledore",
@@ -925,7 +1103,8 @@
     "descricao": "De Harry Potter",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Harry Potter"
+    "subcategoria": "Harry Potter",
+    "thumbnail": ""
   },
   {
     "nome": "!hermione",
@@ -933,7 +1112,8 @@
     "descricao": "De Harry Potter",
     "volume": 0,
     "categoria": "Filmes e Heróis",
-    "subcategoria": "Harry Potter"
+    "subcategoria": "Harry Potter",
+    "thumbnail": ""
   },
   {
     "nome": "!navi",
@@ -941,7 +1121,8 @@
     "descricao": "De Zelda (inglês)",
     "volume": 15,
     "categoria": "Games",
-    "subcategoria": "Nintendo"
+    "subcategoria": "Nintendo",
+    "thumbnail": ""
   },
   {
     "nome": "!saocipriano",
@@ -949,7 +1130,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!cid_moreira",
@@ -957,7 +1139,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!jorge_igor",
@@ -965,7 +1148,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!craque_neto",
@@ -973,7 +1157,8 @@
     "descricao": "Craque Neto",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Esportes"
+    "subcategoria": "Esportes",
+    "thumbnail": ""
   },
   {
     "nome": "!narrador_historias",
@@ -981,7 +1166,8 @@
     "descricao": "Narrador",
     "volume": 10,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!contos_terror",
@@ -989,7 +1175,8 @@
     "descricao": "Narrador",
     "volume": 5,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!impacto",
@@ -997,7 +1184,8 @@
     "descricao": "Narrador",
     "volume": -5,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!alberto",
@@ -1005,7 +1193,8 @@
     "descricao": "Narrador",
     "volume": -5,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!voz_grossa",
@@ -1013,7 +1202,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!waldo",
@@ -1021,7 +1211,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!waldo_2",
@@ -1029,7 +1220,8 @@
     "descricao": "Narrador",
     "volume": 0,
     "categoria": "Narradores",
-    "subcategoria": "Narração"
+    "subcategoria": "Narração",
+    "thumbnail": ""
   },
   {
     "nome": "!silvio_santos",
@@ -1037,7 +1229,8 @@
     "descricao": "Apresentador de TV",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "TV e jornalismo"
+    "subcategoria": "TV e jornalismo",
+    "thumbnail": ""
   },
   {
     "nome": "!faustão",
@@ -1045,7 +1238,8 @@
     "descricao": "Apresentador de TV",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "TV e jornalismo"
+    "subcategoria": "TV e jornalismo",
+    "thumbnail": ""
   },
   {
     "nome": "!sbt",
@@ -1053,7 +1247,8 @@
     "descricao": "Emissora de TV",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "TV e jornalismo"
+    "subcategoria": "TV e jornalismo",
+    "thumbnail": ""
   },
   {
     "nome": "!galvao_bueno",
@@ -1061,7 +1256,8 @@
     "descricao": "Narrador esportivo",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Esportes"
+    "subcategoria": "Esportes",
+    "thumbnail": ""
   },
   {
     "nome": "!bonner",
@@ -1069,7 +1265,8 @@
     "descricao": "Jornalista",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "TV e jornalismo"
+    "subcategoria": "TV e jornalismo",
+    "thumbnail": ""
   },
   {
     "nome": "!globinho",
@@ -1077,7 +1274,8 @@
     "descricao": "Vinheta de TV",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "TV e jornalismo"
+    "subcategoria": "TV e jornalismo",
+    "thumbnail": ""
   },
   {
     "nome": "!lula",
@@ -1085,7 +1283,8 @@
     "descricao": "Político",
     "volume": 10,
     "categoria": "Personalidades",
-    "subcategoria": "Política"
+    "subcategoria": "Política",
+    "thumbnail": ""
   },
   {
     "nome": "!lula_2",
@@ -1093,7 +1292,8 @@
     "descricao": "Político",
     "volume": 50,
     "categoria": "Personalidades",
-    "subcategoria": "Política"
+    "subcategoria": "Política",
+    "thumbnail": ""
   },
   {
     "nome": "!bolsonaro",
@@ -1101,7 +1301,8 @@
     "descricao": "Político",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Política"
+    "subcategoria": "Política",
+    "thumbnail": ""
   },
   {
     "nome": "!eneas",
@@ -1109,7 +1310,8 @@
     "descricao": "Político",
     "volume": -5,
     "categoria": "Personalidades",
-    "subcategoria": "Política"
+    "subcategoria": "Política",
+    "thumbnail": ""
   },
   {
     "nome": "!dilma",
@@ -1117,7 +1319,8 @@
     "descricao": "Político",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Política"
+    "subcategoria": "Política",
+    "thumbnail": ""
   },
   {
     "nome": "!michael_jackson",
@@ -1125,7 +1328,8 @@
     "descricao": "Cantor",
     "volume": 20,
     "categoria": "Música",
-    "subcategoria": "Cantores e rappers"
+    "subcategoria": "Cantores e rappers",
+    "thumbnail": ""
   },
   {
     "nome": "!michael_jackson_2",
@@ -1133,7 +1337,8 @@
     "descricao": "Cantor",
     "volume": 25,
     "categoria": "Música",
-    "subcategoria": "Cantores e rappers"
+    "subcategoria": "Cantores e rappers",
+    "thumbnail": ""
   },
   {
     "nome": "!michael_jackson_3",
@@ -1141,7 +1346,8 @@
     "descricao": "Cantor",
     "volume": 5,
     "categoria": "Música",
-    "subcategoria": "Cantores e rappers"
+    "subcategoria": "Cantores e rappers",
+    "thumbnail": ""
   },
   {
     "nome": "!mano_brown",
@@ -1149,7 +1355,8 @@
     "descricao": "Rapper",
     "volume": 10,
     "categoria": "Música",
-    "subcategoria": "Cantores e rappers"
+    "subcategoria": "Cantores e rappers",
+    "thumbnail": ""
   },
   {
     "nome": "!neymar",
@@ -1157,7 +1364,8 @@
     "descricao": "Jogador de futebol",
     "volume": 20,
     "categoria": "Personalidades",
-    "subcategoria": "Esportes"
+    "subcategoria": "Esportes",
+    "thumbnail": ""
   },
   {
     "nome": "!cristiano_ronaldo",
@@ -1165,15 +1373,17 @@
     "descricao": "Jogador de futebol",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Esportes"
+    "subcategoria": "Esportes",
+    "thumbnail": ""
   },
   {
     "nome": "!cortella",
     "id": "07686262fde04028a3a5c3a0c6e7c611",
     "descricao": "Filósofo",
-    "volume": 20,
+    "volume": 150,
     "categoria": "Personalidades",
-    "subcategoria": "Educação e ciência"
+    "subcategoria": "Educação e ciência",
+    "thumbnail": ""
   },
   {
     "nome": "!cortella_2",
@@ -1181,7 +1391,8 @@
     "descricao": "Filósofo",
     "volume": 5,
     "categoria": "Personalidades",
-    "subcategoria": "Educação e ciência"
+    "subcategoria": "Educação e ciência",
+    "thumbnail": ""
   },
   {
     "nome": "!serjão_foguetes",
@@ -1189,7 +1400,8 @@
     "descricao": "Divulgador científico",
     "volume": 5,
     "categoria": "Personalidades",
-    "subcategoria": "Educação e ciência"
+    "subcategoria": "Educação e ciência",
+    "thumbnail": ""
   },
   {
     "nome": "!ibere",
@@ -1197,7 +1409,8 @@
     "descricao": "Manual do Mundo",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Educação e ciência"
+    "subcategoria": "Educação e ciência",
+    "thumbnail": ""
   },
   {
     "nome": "!casimiro",
@@ -1205,7 +1418,8 @@
     "descricao": "Streamer",
     "volume": -5,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!super_xandão",
@@ -1213,7 +1427,8 @@
     "descricao": "Streamer",
     "volume": -15,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!mrbeast",
@@ -1221,7 +1436,8 @@
     "descricao": "Youtuber",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!vinheteiro",
@@ -1229,7 +1445,8 @@
     "descricao": "Youtuber",
     "volume": 10,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!jj",
@@ -1237,7 +1454,8 @@
     "descricao": "Youtuber",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!eslen",
@@ -1245,7 +1463,8 @@
     "descricao": "Youtuber",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!nando_moura",
@@ -1253,7 +1472,8 @@
     "descricao": "Youtuber",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!monark",
@@ -1261,7 +1481,8 @@
     "descricao": "Youtuber",
     "volume": -20,
     "categoria": "Personalidades",
-    "subcategoria": "Youtubers e streamers"
+    "subcategoria": "Youtubers e streamers",
+    "thumbnail": ""
   },
   {
     "nome": "!serjão_berranteiro",
@@ -1269,7 +1490,8 @@
     "descricao": "Meme da internet",
     "volume": -5,
     "categoria": "Personalidades",
-    "subcategoria": "Humor e memes"
+    "subcategoria": "Humor e memes",
+    "thumbnail": ""
   },
   {
     "nome": "!away",
@@ -1277,7 +1499,8 @@
     "descricao": "Humorista",
     "volume": 0,
     "categoria": "Personalidades",
-    "subcategoria": "Humor e memes"
+    "subcategoria": "Humor e memes",
+    "thumbnail": ""
   },
   {
     "nome": "!michael_caio",
@@ -1285,7 +1508,8 @@
     "descricao": "De Eu, a Patroa e as Crianças",
     "volume": 10,
     "categoria": "Séries de TV",
-    "subcategoria": "Eu, a Patroa e as Crianças"
+    "subcategoria": "Eu, a Patroa e as Crianças",
+    "thumbnail": ""
   },
   {
     "nome": "!isabela",
@@ -1293,7 +1517,8 @@
     "descricao": "Voz feminina",
     "volume": 100,
     "categoria": "Outras vozes",
-    "subcategoria": "Outras vozes"
+    "subcategoria": "Outras vozes",
+    "thumbnail": ""
   },
   {
     "nome": "!tiktok",
@@ -1301,7 +1526,8 @@
     "descricao": "Voz do TikTok",
     "volume": 10,
     "categoria": "Outras vozes",
-    "subcategoria": "Outras vozes"
+    "subcategoria": "Outras vozes",
+    "thumbnail": ""
   },
   {
     "nome": "!vovojuju",
@@ -1309,7 +1535,8 @@
     "descricao": "Voz da Vovó Juju",
     "volume": 10,
     "categoria": "Desenhos",
-    "subcategoria": "Irmão do Jorel"
+    "subcategoria": "Irmão do Jorel",
+    "thumbnail": ""
   },
   {
     "nome": "!majinboo",
@@ -1317,7 +1544,8 @@
     "descricao": "Voz do Majin Boo",
     "volume": 10,
     "categoria": "Animes",
-    "subcategoria": "Dragon Ball"
+    "subcategoria": "Dragon Ball",
+    "thumbnail": ""
   },
   {
     "nome": "!saga",
@@ -1325,7 +1553,8 @@
     "descricao": "Voz do Saga de gemeos",
     "volume": 10,
     "categoria": "Animes",
-    "subcategoria": "Os Cavaleiros do Zodíaco"
+    "subcategoria": "Os Cavaleiros do Zodíaco",
+    "thumbnail": ""
   },
   {
     "nome": "!seiya",
@@ -1333,7 +1562,8 @@
     "descricao": "Voz do Seiya de Pegasus",
     "volume": 10,
     "categoria": "Animes",
-    "subcategoria": "Os Cavaleiros do Zodíaco"
+    "subcategoria": "Os Cavaleiros do Zodíaco",
+    "thumbnail": ""
   },
   {
     "nome": "!ikki",
@@ -1341,7 +1571,8 @@
     "descricao": "Voz do Ikki de Fênix",
     "volume": 10,
     "categoria": "Animes",
-    "subcategoria": "Os Cavaleiros do Zodíaco"
+    "subcategoria": "Os Cavaleiros do Zodíaco",
+    "thumbnail": ""
   },
   {
     "nome": "!mickey",
@@ -1349,7 +1580,8 @@
     "descricao": "Voz do Mickey Mouse",
     "volume": 10,
     "categoria": "Desenhos",
-    "subcategoria": "Disney"
+    "subcategoria": "Disney",
+    "thumbnail": ""
   },
   {
     "nome": "!irmaodojorel",
@@ -1357,7 +1589,8 @@
     "descricao": "Voz do Irmão do Jorel",
     "volume": 10,
     "categoria": "Desenhos",
-    "subcategoria": "Irmão do Jorel"
+    "subcategoria": "Irmão do Jorel",
+    "thumbnail": ""
   },
   {
     "nome": "!peppapig",
@@ -1365,7 +1598,8 @@
     "descricao": "Voz da Peppa Pig",
     "volume": 10,
     "categoria": "Desenhos",
-    "subcategoria": "Outros"
+    "subcategoria": "Outros",
+    "thumbnail": ""
   },
   {
     "nome": "!joaofrango",
@@ -1373,6 +1607,7 @@
     "descricao": "Voz do João Frango",
     "volume": 10,
     "categoria": "Desenhos",
-    "subcategoria": "Rio"
+    "subcategoria": "Rio",
+    "thumbnail": ""
   }
 ]
