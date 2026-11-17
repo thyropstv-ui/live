@@ -13,6 +13,11 @@
 <script src="tema.js"></script>
 <link rel="stylesheet" href="tema.css">
 <link rel="stylesheet" href="site.css">
+<style>
+  /* janela do vídeo maior; fica aqui para funcionar mesmo sem atualizar o site.css */
+  dialog.vdlg{max-width:min(96vw,980px);width:96vw}
+  dialog.vdlg video,dialog.vdlg iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:80vh;border:0;background:#000}
+</style>
 </head>
 <body data-pagina="memes.html">
 <div class="pagina">
@@ -56,10 +61,17 @@ function abreVideo(m){
   const d=qs("#vdlg"),v=qs("#vv");
   const g=idDrive(m.arquivo),f=qs("#vif");
   qs("#vt").textContent=m.comando;
-  if(g){v.hidden=true;f.hidden=false;f.src="https://drive.google.com/file/d/"+g+"/preview";d.showModal()}  /* o player do próprio Drive é o que funciona com link público */
+  if(g){
+    /* Drive: tenta tocar direto (abre já rodando); se não carregar em 4s, cai no player do próprio Drive */
+    f.hidden=true;v.hidden=false;d.showModal();
+    let ok=false;const usaPlayer=()=>{if(ok)return;ok=true;v.pause();v.removeAttribute("src");v.hidden=true;f.hidden=false;f.src="https://drive.google.com/file/d/"+g+"/preview"};
+    v.onloadeddata=()=>{ok=true;clearTimeout(tm)};v.onerror=()=>{clearTimeout(tm);usaPlayer()};
+    const tm=setTimeout(()=>{if(!ok)usaPlayer()},4000);
+    v.src="https://drive.usercontent.google.com/download?id="+g+"&export=download&confirm=t";v.play().catch(()=>{});
+  }
   else{f.hidden=true;v.hidden=false;v.src=urlMeme(m.arquivo);d.showModal();v.play().catch(()=>{})}
 }
-function fechaVideo(){const d=qs("#vdlg"),v=qs("#vv");qs("#vif").removeAttribute("src");v.pause();v.removeAttribute("src");v.load();if(d.open)d.close()}
+function fechaVideo(){const d=qs("#vdlg"),v=qs("#vv");qs("#vif").removeAttribute("src");v.onerror=null;v.onloadeddata=null;v.pause();v.removeAttribute("src");v.load();if(d.open)d.close()}
 function monta(){
   const raiz=qs("#lista");
   memes.forEach(m=>{
