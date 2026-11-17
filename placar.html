@@ -29,6 +29,8 @@
     <div class="grade-s" id="consoles"></div>
     <div class="titulo"><h2>Refazer em live</h2></div>
     <p class="intro" id="vtxt"></p>
+    <p><a class="botao" id="vpost" href="#" target="_blank" rel="noopener" hidden style="display:inline-block;text-decoration:none">Votar no YouTube</a></p>
+    <div id="vconta" hidden style="margin-top:12px"><div id="vlogin"></div><p class="intro" id="vstatus" style="margin:8px 0 0"></p><p class="intro" id="vchat" style="margin:4px 0 0"></p></div>
     <div class="chips" id="vcons" role="group" aria-label="Filtrar por console"></div>
     <div id="votos" style="display:grid;gap:10px;margin-top:14px"></div>
     <button type="button" class="botao botao--sec mais" id="mais" hidden>Mostrar todos</button>
@@ -37,7 +39,30 @@
 </div>
 <script src="site.js"></script>
 <script>
-let D,ord="platinados",vc="Todos",todos=false;
+let D,ord="platinados",vc="Todos",todos=false,tok=null,meu=null,totais={};
+/* votação com login do Google: ativa quando dados.json tem votacao.api (Apps Script) e votacao.clientId */
+const comLogin=()=>!!(D.votacao&&D.votacao.ativa&&D.votacao.api&&D.votacao.clientId);
+const rodada=()=>String(D.votacao.rodada||"1");
+async function chama(c){const r=await fetch(D.votacao.api,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(Object.assign({token:tok,rodada:rodada()},c))});return r.json()}
+async function carregaTotais(){try{const r=await fetch(D.votacao.api+"?rodada="+encodeURIComponent(rodada()));const j=await r.json();if(j.ok)totais=j.totais||{}}catch(e){}}
+function aplica(j){if(j.totais)totais=j.totais;if("meuVoto" in j)meu=j.meuVoto}
+function msgStatus(){const s=qs("#vstatus");if(!tok){s.textContent="Entre com sua conta Google para votar. Cada pessoa vota uma vez por rodada.";return}s.textContent=meu?"Seu voto: "+meu+". Obrigado! Só é possível votar uma vez.":"Você está logado. Escolha um jogo abaixo (só dá para votar uma vez)."}
+async function aoLogar(r){tok=r.credential;qs("#vstatus").textContent="Verificando…";try{const j=await chama({acao:"status"});if(!j.ok)throw 0;aplica(j);qs("#vlogin").hidden=true}catch(e){tok=null;toast("Não consegui validar o login. Tente de novo.")}msgStatus();desenhaVotos()}
+function iniciaLogin(){
+  qs("#vconta").hidden=false;qs("#vchat").textContent="Também dá para votar no chat da live: "+(D.votacao.comando||"!votar")+" nome do jogo";msgStatus();carregaTotais().then(desenhaVotos);
+  const s=document.createElement("script");s.src="https://accounts.google.com/gsi/client";s.async=true;
+  s.onload=()=>{google.accounts.id.initialize({client_id:D.votacao.clientId,callback:aoLogar});google.accounts.id.renderButton(qs("#vlogin"),{theme:"filled_blue",size:"large",text:"signin_with",locale:"pt-BR"})};
+  s.onerror=()=>{qs("#vstatus").textContent="Não foi possível carregar o login do Google."};
+  document.head.appendChild(s);
+}
+async function votar(jogo){
+  if(!tok)return toast("Entre com o Google primeiro");
+  if(!confirm("Votar em \""+jogo+"\"? Só é possível votar uma vez.")) return;
+  try{const j=await chama({acao:"votar",jogo});aplica(j);
+    if(j.ok)toast("Voto registrado!");else if(j.erro==="ja_votou")toast("Você já votou nesta rodada");else{tok=null;qs("#vlogin").hidden=false;toast("Sessão expirou. Entre de novo.")}
+  }catch(e){toast("Falha ao enviar o voto")}
+  msgStatus();desenhaVotos();
+}
 function desenha(){
   const cs=[...D.placar.consoles].sort((a,b)=>ord==="nome"?a.nome.localeCompare(b.nome):b[ord]-a[ord]);
   qs("#consoles").innerHTML=cs.map(c=>{const p=c.platinados?Math.round(c.emLive/c.platinados*100):0;
@@ -56,13 +81,18 @@ function desenhaVotos(){
   const v=D.votacao,todosC=candidatos();
   if(!v||!v.ativa||!todosC.length){qs("#vtxt").textContent="Nenhuma votação aberta no momento.";qs("#votos").innerHTML="";qs("#mais").hidden=true;qs("#vcons").hidden=true;return}
   qs("#vtxt").textContent=(v.texto||"")+" "+todosC.length+" jogos ainda não foram platinados em live.";
+  const pu=qs("#vpost");if(pu){if(/^https?:\/\//i.test(v.postUrl||"")){pu.hidden=false;pu.href=v.postUrl;pu.textContent=v.postTitulo||"Votar no YouTube"}else pu.hidden=true}
   const cons=["Todos",...new Set(todosC.map(o=>o.console).filter(Boolean))];
   const f=qs("#vcons");f.hidden=cons.length<3;
   f.innerHTML=cons.map(c=>'<button type="button" class="chip" data-c="'+esc(c)+'" aria-pressed="'+(c===vc)+'">'+esc(c)+'</button>').join("");
   qsa(".chip",f).forEach(b=>b.onclick=()=>{vc=b.dataset.c;todos=false;desenhaVotos()});
-  const l=todosC.filter(o=>vc==="Todos"||o.console===vc),vis=todos?l:l.slice(0,10);
+  const l=todosC.filter(o=>vc==="Todos"||o.console===vc);if(comLogin())l.sort((a,b)=>(totais[b.jogo]||0)-(totais[a.jogo]||0));const vis=todos?l:l.slice(0,10);
+  if(comLogin()){
+    qs("#votos").innerHTML=vis.map(o=>{const n=totais[o.jogo]||0,eu=meu===o.jogo;return '<div class="hud"><div class="hud-in vota"><div><b>'+esc(o.jogo)+(eu?' ✓':'')+'</b><small>'+esc(o.console||"")+' · '+n+' voto'+(n===1?"":"s")+'</small></div><button type="button" class="botao botao--sec cmd" data-j="'+esc(o.jogo)+'"'+(meu||!tok?' disabled':'')+'>'+(eu?"Seu voto":"Votar")+'</button></div></div>'}).join("");
+    qsa("#votos .cmd").forEach(b=>b.onclick=()=>votar(b.dataset.j));
+  } else
   qs("#votos").innerHTML=vis.map(o=>'<div class="hud"><div class="hud-in vota"><div><b>'+esc(o.jogo)+'</b><small>'+esc(o.console||"")+'</small></div><button type="button" class="botao botao--sec cmd" data-c="'+esc(v.comando+" "+o.jogo)+'">Copiar voto</button></div></div>').join("");
-  qsa("#votos .cmd").forEach(b=>b.onclick=async()=>toast((await copiar(b.dataset.c))?"Copiado: "+b.dataset.c:"Não foi possível copiar"));
+  if(!comLogin())qsa("#votos .cmd").forEach(b=>b.onclick=async()=>toast((await copiar(b.dataset.c))?"Copiado: "+b.dataset.c:"Não foi possível copiar"));
   const m=qs("#mais");m.hidden=todos||l.length<=10;m.textContent="Mostrar todos ("+l.length+")";m.onclick=()=>{todos=true;desenhaVotos()};
 }
 (async function(){
@@ -74,7 +104,7 @@ function desenhaVotos(){
   contaAte(qs("#n1"),tot);contaAte(qs("#n2"),zer);contaAte(qs("#n3"),live);
   if(D.placar.atualizado)qs(".intro").insertAdjacentHTML("beforeend"," Atualizado em "+esc(String(D.placar.atualizado).slice(0,10).split("-").reverse().join("/"))+".");
   qsa("#ordem .chip").forEach(b=>b.onclick=()=>{ord=b.dataset.o;qsa("#ordem .chip").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));desenha()});
-  desenha();desenhaVotos();
+  desenha();desenhaVotos();if(comLogin())iniciaLogin();
 })();
 </script>
 </body>

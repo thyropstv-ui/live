@@ -72,17 +72,21 @@ Edite `custom_voices.json`. Cada voz tem:
   "descricao": "De Dragon Ball",
   "volume": 0,
   "categoria": "Animes",
-  "subcategoria": "Dragon Ball"
+  "subcategoria": "Dragon Ball",
+  "thumbnail": ""
 }
 ```
 
 - `id`: o código na URL da voz (`fish.audio/m/<id>`).
+- `thumbnail` (opcional): capa da voz. Vazio = capa padrão do Fish Audio. Aceita um link (`https://...`) ou o nome de um arquivo enviado para `assets/vozes/` (ex.: `"goku.png"`). Se a imagem não carregar, cai na capa do Fish e depois na letra inicial.
 - `volume`: ajuste em % (só é usado no gerador).
 - `categoria`: vira uma aba. As atuais são Séries de TV, Animes, Desenhos, Filmes e Heróis, Games, Música, Narradores, Personalidades e Outras vozes.
 - `subcategoria`: a série ou grupo dentro da aba (Chaves, Naruto, One Piece...). Aparece como título e como botão de filtro.
 - Categoria nova no JSON ganha uma aba sozinha, depois das atuais. Voz sem categoria cai em "Outras vozes".
 - Dentro de cada categoria, as séries com mais vozes aparecem primeiro e as chamadas "Outros ..." vão para o fim.
 - A ordem das abas está no começo de `voices.js` (`ORDEM_CATEGORIAS`).
+
+> Depois de editar o `custom_voices.json`, a lista de reserva dentro do `vozes.html` (bloco `VOZES:INICIO`) só importa para quem abre o arquivo direto do computador; o site publicado lê o JSON.
 
 ## Como o catálogo toca as vozes (sem chave)
 
@@ -91,3 +95,42 @@ Ao clicar no play, a página consulta `https://api.fish.audio/model/<id>` (endpo
 ## Aviso
 
 Projeto não oficial. As vozes pertencem aos seus criadores no Fish Audio. Não use para enganar ou se passar por pessoas reais.
+
+## Memes no Google Drive (opcional)
+
+Em `memes.json`, o campo `arquivo` aceita, além de `assets/memes/...`, um link do Drive (`https://drive.google.com/file/d/ID/view`) ou `drive:ID`. O arquivo precisa estar compartilhado como "qualquer pessoa com o link". Vídeos do Drive sem extensão visível: adicione `"video": true` na entrada para aparecer o botão de ver.
+
+Para listar uma pasta inteira automaticamente, crie no repositório (Settings → Secrets and variables → Actions) `DRIVE_FOLDER_ID` e `DRIVE_API_KEY` (chave do Google Cloud com a Drive API ativada) (o `atualiza.yml` já lê os dois como secrets). Arquivos novos viram comandos sozinhos.
+
+Limites: o Drive pode bloquear downloads diretos de arquivos grandes ou com muito tráfego (cota), e é mais lento que o GitHub Pages. Para meme curto, `assets/memes` continua sendo o mais confiável.
+
+## Votação ligada ao YouTube
+
+A API do YouTube não permite ler nem incorporar enquetes de posts da comunidade. Então, em `dados.json` → `votacao`, preencha `postUrl` (link do post) e, se quiser, `postTitulo`: a página Placar mostra um botão "Votar no YouTube" que abre o post. A lista com "Copiar voto" continua para votar no chat.
+
+## Memes: vídeo só com o olho, áudio só com o play
+
+`.mp4`, `.webm`, `.mov` e links do Google Drive mostram só o botão do olho (abre o vídeo). `.mp3`, `.wav`, `.ogg`, `.m4a`, `.aac` mostram só o play. Para forçar um caso, use `"tipo": "video"` ou `"tipo": "audio"` na entrada. Vídeos do Drive abrem no player do próprio Drive (é o que funciona com link público).
+
+## Votação no site com login do Google (um voto por pessoa)
+
+O site é estático, então o voto precisa de um pequeno servidor gratuito: um Google Apps Script ligado a uma planilha sua. O login do Google é conferido no servidor, e a planilha guarda só um código embaralhado da conta (sem e-mail ou nome). O site também mostra os votos de cada jogo.
+
+1. **Planilha:** crie uma planilha no Google Drive (ex.: "Votos Thyrops"). Extensões → Apps Script.
+2. **Código:** cole o conteúdo de `apps-script/votacao.gs`. Troque `SEGREDO` por um texto longo qualquer.
+3. **Client ID:** em console.cloud.google.com crie um projeto → APIs e serviços → Credenciais → Criar credenciais → ID do cliente OAuth → *Aplicativo da Web*. Em "Origens JavaScript autorizadas" coloque `https://thyropstv-ui.github.io`. Configure a tela de consentimento (externa, só nome do app e e-mail). Copie o Client ID e cole em `CLIENT_ID` no script.
+4. **Publicar:** no Apps Script, Implantar → Nova implantação → App da Web → *Executar como: eu*, *Quem pode acessar: qualquer pessoa*. Copie a URL `/exec`.
+5. **Site:** em `dados.json` → `votacao` preencha `api` (URL `/exec`), `clientId` e `rodada` (um nome, ex.: `"2026-12"`). Para abrir uma votação nova, mude a `rodada`: todo mundo pode votar de novo.
+
+Com `api` e `clientId` vazios, o site continua com o botão "Copiar voto". Os votos ficam na aba `Votos` da planilha. Limite honesto: uma pessoa com várias contas Google pode votar várias vezes; o sistema garante um voto por conta, não por pessoa. A lista de jogos vem do RetroAchievements; o servidor aceita qualquer nome de jogo até 100 caracteres, mas o site só exibe os da lista.
+
+## Votação pelo chat (Streamer.bot)
+
+O mesmo Apps Script recebe votos do chat. Quem vota no chat usa `!votar nome do jogo`; o script acha o jogo na lista (aceita nome parcial, tipo `!votar crash 3`; se houver mais de um, responde quais são). Um voto por usuário por rodada (a identidade é a plataforma + o ID do usuário no chat). Quem vota no site e no chat conta duas vezes, porque são identidades diferentes.
+
+1. No `votacao.gs`, defina `CHAVE_BOT` (uma senha só sua) e confira `SITE_URL`. Publique **nova versão** da implantação (Implantar → Gerenciar implantações → editar → Nova versão); a URL `/exec` não muda.
+2. No Streamer.bot: Commands → novo comando `!votar` (Twitch, YouTube e Kick, com cooldown por usuário de uns 10 s). Ação com sub-ação **Execute C# Code** com o conteúdo de `streamerbot/votar.cs` (troque URL, CHAVE e RODADA).
+3. Depois da sub-ação, adicione "Send Message" de cada plataforma com o texto `%msgVoto%`.
+4. Opcional: um comando `!votos` que faz GET em `SUA_URL/exec?texto=1` e responde com o top 3.
+
+Só entram na votação os jogos platinados que ainda não foram feitos em live (os mesmos que o Placar lista). O script lê essa lista do `auto.json` do site (cache de 10 min). O arquivo `apps-script/votacao.gs` do repositório é só cópia de referência: o código que vale é o colado no Apps Script. Nunca suba para o GitHub o `SEGREDO`/`CHAVE_BOT` verdadeiros.
