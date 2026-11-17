@@ -24,7 +24,7 @@
       <input id="busca" class="entrada" type="search" placeholder="Buscar meme" autocomplete="off" aria-label="Buscar meme">
     </div>
     <div class="grade-s" id="lista"></div>
-    <dialog class="vdlg" id="vdlg"><div class="hud"><div class="hud-in"><div class="topo-d"><b id="vt"></b><button type="button" class="botao botao--sec" id="vx">Fechar</button></div><video id="vv" controls playsinline></video></div></div></dialog>
+    <dialog class="vdlg" id="vdlg"><div class="hud"><div class="hud-in"><div class="topo-d"><b id="vt"></b><button type="button" class="botao botao--sec" id="vx">Fechar</button></div><video id="vv" controls playsinline></video><iframe id="vif" allow="autoplay; fullscreen" allowfullscreen hidden></iframe></div></div></dialog>
     <div class="vazio" id="vazio" hidden><p>Nenhum meme encontrado.</p></div>
   </main>
   <footer id="rodape"></footer>
@@ -32,7 +32,8 @@
 <script src="site.js"></script>
 <script>
 const OLHO='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
-const ehVideo=(a,m)=>(m&&m.video===true)||/\.(mp4|webm|mov)$/i.test(String(a||""));
+/* mp4/webm/mov (ou link do Drive) = só o olho; mp3/wav/ogg... = só o play. Para forçar: "tipo": "video" ou "audio" */
+function ehVideo(a,m){m=m||{};if(m.tipo==="audio")return false;if(m.tipo==="video"||m.video===true)return true;a=String(a||"");if(/\.(mp3|wav|ogg|m4a|aac)$/i.test(a))return false;return /\.(mp4|webm|mov)$/i.test(a)||!!idDrive(a)}
 const PLAY='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
 const PAUSE='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
 let audio=null,atual=null,memes=[];
@@ -53,27 +54,30 @@ function tocar(m,el,btn,ds){
 function abreVideo(m){
   if(audio){audio.pause();audio.src="";solta();audio=null;atual=null}
   const d=qs("#vdlg"),v=qs("#vv");
-  qs("#vt").textContent=m.comando;v.src=urlMeme(m.arquivo);d.showModal();v.play().catch(()=>{});
+  const g=idDrive(m.arquivo),f=qs("#vif");
+  qs("#vt").textContent=m.comando;
+  if(g){v.hidden=true;f.hidden=false;f.src="https://drive.google.com/file/d/"+g+"/preview";d.showModal()}  /* o player do próprio Drive é o que funciona com link público */
+  else{f.hidden=true;v.hidden=false;v.src=urlMeme(m.arquivo);d.showModal();v.play().catch(()=>{})}
 }
-function fechaVideo(){const d=qs("#vdlg"),v=qs("#vv");v.pause();v.removeAttribute("src");v.load();if(d.open)d.close()}
+function fechaVideo(){const d=qs("#vdlg"),v=qs("#vv");qs("#vif").removeAttribute("src");v.pause();v.removeAttribute("src");v.load();if(d.open)d.close()}
 function monta(){
   const raiz=qs("#lista");
   memes.forEach(m=>{
     const el=document.createElement("div");el.className="meme";
     el._hay=(m.comando+" "+(m.descricao||"")).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-    el.innerHTML='<div class="hud"><div class="hud-in"><div class="info"><button type="button" class="cmd"></button><div class="ds"></div></div><button type="button" class="btn-play" aria-label="Ouvir meme">'+PLAY+'</button>'+(ehVideo(m.arquivo,m)?'<button type="button" class="btn-ver" aria-label="Ver vídeo" title="Ver vídeo">'+OLHO+'</button>':"")+'</div></div>';
+    el.innerHTML='<div class="hud"><div class="hud-in"><div class="info"><button type="button" class="cmd"></button><div class="ds"></div></div><button type="button" class="btn-play" aria-label="Ouvir meme">'+PLAY+'</button>'+'<button type="button" class="btn-ver" aria-label="Ver vídeo" title="Ver vídeo">'+OLHO+'</button>'+'</div></div>';
     const cmd=qs(".cmd",el),ds=qs(".ds",el),btn=qs(".btn-play",el);
     cmd.textContent=m.comando;cmd.title="Copiar "+m.comando;ds.textContent=m.descricao||"";
     cmd.onclick=async()=>toast((await copiar(m.comando+" "))?"Copiado "+m.comando:"Não foi possível copiar");
-    if(!m.arquivo){btn.disabled=true;btn.title="Áudio não configurado"}else btn.onclick=()=>tocar(m,el,btn,ds);
-    const ver=qs(".btn-ver",el);
-    if(ver)ver.onclick=()=>abreVideo(m);
+    const ver=qs(".btn-ver",el),video=ehVideo(m.arquivo,m);
+    if(video){btn.remove();ver.onclick=()=>abreVideo(m);if(!m.arquivo){ver.disabled=true;ver.title="Vídeo não configurado"}}
+    else{ver.remove();if(!m.arquivo){btn.disabled=true;btn.title="Áudio não configurado"}else btn.onclick=()=>tocar(m,el,btn,ds)}
     raiz.appendChild(el);
   });
 }
 qs("#vx").onclick=fechaVideo;
 qs("#vdlg").addEventListener("click",e=>{if(e.target===qs("#vdlg"))fechaVideo()});
-qs("#vdlg").addEventListener("close",()=>{const v=qs("#vv");v.pause();v.removeAttribute("src")});
+qs("#vdlg").addEventListener("close",()=>{const v=qs("#vv");qs("#vif").removeAttribute("src");v.pause();v.removeAttribute("src")});
 (async function(){
   try{memes=await carregaJson("memes.json")}catch(e){return erroCarga(qs("main"),"Não foi possível carregar o memes.json.")}
   monta();
