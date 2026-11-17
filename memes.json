@@ -7,7 +7,7 @@
   {
     "comando": "!aiai",
     "descricao": "Reportér Tomando Choque",
-    "arquivo": "https://drive.google.com/file/d/15bJHaLU7sNdB0yfp9m6iNfJuZDSEs6_v/view?usp=sharing"
+    "arquivo": "assets/memes/view?usp=sharing"
   },
   {
     "comando": "!bamg",
@@ -83,5 +83,10 @@
     "comando": "!tetra",
     "descricao": "É tetra",
     "arquivo": "assets/memes/YTDown.com_YouTube_ACABOU-ACABOU-E-TETRA-E-TEEETRAAA_Media_iEM1qEMyyP8_001_360p.mp4"
+  },
+  {
+    "comando": "!aiai_2",
+    "descricao": "",
+    "arquivo": "assets/memes/aiai.mp4"
   }
 ]
