@@ -15,7 +15,7 @@
     "volume": 10,
     "categoria": "Séries de TV",
     "subcategoria": "Futurama",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDHKM6ZeftqgSyW3VNNGf2XVythy_xX0WIBW3k_fUGiB6I9E2SiIxRg_TTItodUNwdmkqc-ImfrE31ChQ_0sVi6Ay5rnl28nEM-I1I4MGomA&s=10"
   },
   {
     "nome": "!dino",
@@ -24,7 +24,7 @@
     "volume": 10,
     "categoria": "Séries de TV",
     "subcategoria": "Família Dinossauro",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqHLqU8dwbpfTI5VejzafPeD_Ff8Fw4YCSqgVRCQk6mg&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!chaves",
@@ -96,7 +96,7 @@
     "volume": 0,
     "categoria": "Séries de TV",
     "subcategoria": "Todo Mundo Odeia o Chris",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa1NJe3aSveA09LXF3QsBtNUxx5tb0MqOt9YqzYXSciw&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!rochele",
@@ -105,7 +105,7 @@
     "volume": 0,
     "categoria": "Séries de TV",
     "subcategoria": "Todo Mundo Odeia o Chris",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn7-lKMSuGnbB7zTLGCmQQeugGd1-EzQzqQgP1im87mQ&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!greg",
@@ -312,7 +312,7 @@
     "volume": 0,
     "categoria": "Animes",
     "subcategoria": "Naruto",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbXCZhme-0CpKSd9hJptHtkb08atVy4mcgpodS7rv4bA&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!maito_gai_triste",
@@ -339,7 +339,7 @@
     "volume": 0,
     "categoria": "Animes",
     "subcategoria": "Naruto",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWgDR1Mp6nEC164El2qh-3C1vwvVDSQVkec1gELxCj1g&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!gojo",
@@ -636,7 +636,7 @@
     "volume": 0,
     "categoria": "Desenhos",
     "subcategoria": "Looney Tunes",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_cPDSaeqqPiL94uhD5F9ITSEf18Vjj6_zWISKld0RIDBnPfgPLqxug0siTpVrB2oCSThWfi4lhxZY_3-IUqawOfqonEH4Z0Kdc46qUZNBUQ&s=10"
   },
   {
     "nome": "!pernalonga_2",
@@ -645,7 +645,7 @@
     "volume": 0,
     "categoria": "Desenhos",
     "subcategoria": "Looney Tunes",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZgL8ZcETA3S_4sD-pkFmb29bdttFLPA-bMkNVb-FM_riSSnWc6Y5jnZruQkAUKSZeh0RKu0vdNVc9TcKqt6FT8_Tfo6TgSQpcHS6tJk8uCQ&s=10"
   },
   {
     "nome": "!pernalonga_3",
@@ -654,7 +654,7 @@
     "volume": 0,
     "categoria": "Desenhos",
     "subcategoria": "Looney Tunes",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-5w5MAmlrAJmAvqdpaXf4ug-Ae8-n1WZZX6Jd7lYyQV5WVOJwUqW0S6S-_BrMm4mfYk0pA5qd0oB07jvAV2g0g3Ui27swii4uRyqm6T4g&s=10"
   },
   {
     "nome": "!patolino",
@@ -663,7 +663,7 @@
     "volume": 0,
     "categoria": "Desenhos",
     "subcategoria": "Looney Tunes",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWVJLtXxo3WL_OS6cHY9AWy64KcSR3jcwnSD9kiAGaYmx9g0ravAvqxIWys-dJAMvDXE8uAJ1YzID1y_LechsLGhJGozmgCzxDDr6A_lVw&s=10"
   },
   {
     "nome": "!homer_simpson",
@@ -771,7 +771,7 @@
     "volume": 35,
     "categoria": "Desenhos",
     "subcategoria": "Disney",
-    "thumbnail": "https://upload.wikimedia.org/wikipedia/pt/6/6f/Donald.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
+    "thumbnail": ""
   },
   {
     "nome": "!coragem",
@@ -1041,7 +1041,7 @@
     "volume": 5,
     "categoria": "Séries de TV",
     "subcategoria": "Breaking Bad",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuV0logmohg0NNGXNgOwCswOmaIzEt0hl6R8K0RysLdQ&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!sam",
@@ -1239,7 +1239,7 @@
     "volume": 0,
     "categoria": "Personalidades",
     "subcategoria": "TV e jornalismo",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ9Fc4psmxr6-A9pMU7ilq-RUMcgbgeEeCKA9OGFs4BA&s=10"
   },
   {
     "nome": "!sbt",
@@ -1311,7 +1311,7 @@
     "volume": -5,
     "categoria": "Personalidades",
     "subcategoria": "Política",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStZiUjCfiFK4UM_r6oKlzoDUb0f3dXwcV9xVH8baWlPA&s=10"
   },
   {
     "nome": "!dilma",
@@ -1338,7 +1338,7 @@
     "volume": 25,
     "categoria": "Música",
     "subcategoria": "Cantores e rappers",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKl0TJrWwapia-3dOqMeCvrLb0NAZU9eTbKn7cHxZ_h2UCQzYfsYNvnqH2ac1fhPsm02yOKxXfJ6kn-TI6zYwgxXYIvjADwDwZTm_S_Fpk&s=10"
   },
   {
     "nome": "!michael_jackson_3",
@@ -1347,7 +1347,7 @@
     "volume": 5,
     "categoria": "Música",
     "subcategoria": "Cantores e rappers",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIsLbu4180XJQ_4LOQXezFTUkNjcn3LjM0U4q7q9koc0xXaSeeuJk6Mb6n_FfXw_OQ07Ck9dv-SHm6kB7FtjGutaRR59T7cNg1DT6nYHPZDw&s=10"
   },
   {
     "nome": "!mano_brown",
@@ -1419,7 +1419,7 @@
     "volume": -5,
     "categoria": "Personalidades",
     "subcategoria": "Youtubers e streamers",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc4nU_KNM1Q-VLZSJFNIECAsX8-K2i_gKTv7RUheQJfw&s=10"
   },
   {
     "nome": "!super_xandão",
@@ -1446,7 +1446,7 @@
     "volume": 10,
     "categoria": "Personalidades",
     "subcategoria": "Youtubers e streamers",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoeZieCPjHZvjUnOeLLmDXdezM6b8VgdAuc3v-wdj6xJskFOCe49XQLs1SW5mxvTQ-Bu0YtUxnm0_fN6I8oSWpxBC_0fa8UDsMhXSiCZaG&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!jj",
@@ -1554,7 +1554,7 @@
     "volume": 10,
     "categoria": "Animes",
     "subcategoria": "Os Cavaleiros do Zodíaco",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT91DRRSmFi_eBtcT-FqQM977-gSWnk49gF7TsUcRhy-w&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!seiya",
@@ -1563,7 +1563,7 @@
     "volume": 10,
     "categoria": "Animes",
     "subcategoria": "Os Cavaleiros do Zodíaco",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu8d_h4ed6FSea6GaKuUviojwHNjSrxtUgl7hTmYqfGg&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!ikki",
@@ -1572,7 +1572,7 @@
     "volume": 10,
     "categoria": "Animes",
     "subcategoria": "Os Cavaleiros do Zodíaco",
-    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNoN9ZLEea4q-0YlZa6-ILz22mFOSneDpa164SiKq9dA&s=10"
+    "thumbnail": ""
   },
   {
     "nome": "!mickey",
