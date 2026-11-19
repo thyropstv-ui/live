@@ -13,6 +13,11 @@ on:
 permissions:
   contents: write
 
+# Uma atualização por vez: se outra começar enquanto esta roda, ela espera na fila.
+concurrency:
+  group: atualiza-site
+  cancel-in-progress: false
+
 jobs:
   atualiza:
     runs-on: ubuntu-latest
@@ -33,4 +38,21 @@ jobs:
           git config user.name "atualizacao-automatica"
           git config user.email "actions@users.noreply.github.com"
           git add auto.json memes.json
-          git diff --cached --quiet || (git commit -m "Atualiza dados do site" && git push)
+          if git diff --cached --quiet; then
+            echo "Nada mudou, nada a salvar."
+            exit 0
+          fi
+          git commit -m "Atualiza dados do site"
+          # Se o main andou enquanto o script rodava, traz as mudanças novas e tenta de novo.
+          # "-X theirs" faz o arquivo gerado agora vencer em caso de conflito.
+          for tentativa in 1 2 3 4; do
+            if git pull --rebase -X theirs origin main && git push origin HEAD:main; then
+              echo "Salvo na tentativa $tentativa."
+              exit 0
+            fi
+            echo "Tentativa $tentativa falhou. Esperando para tentar de novo..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((tentativa * 5))
+          done
+          echo "Não consegui salvar depois de 4 tentativas."
+          exit 1
