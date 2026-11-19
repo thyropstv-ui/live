@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-17T15:58:44.463Z",
+  "atualizado": "2026-11-19T13:52:35.266Z",
   "guia": {
     "playlists": [
       {
@@ -8,6 +8,13 @@
         "url": "https://www.youtube.com/playlist?list=PLBFlGjjqy-s0",
         "console": "",
         "descricao": "50 vídeos"
+      },
+      {
+        "pid": "PLSSy3oK-pcNU",
+        "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
+        "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
+        "console": "",
+        "descricao": "24 vídeos"
       },
       {
         "pid": "PLCebeJpWeQPA",
@@ -22,13 +29,6 @@
         "url": "https://www.youtube.com/playlist?list=PLI2zaLhL3_bo",
         "console": "Mega Drive",
         "descricao": "23 vídeos"
-      },
-      {
-        "pid": "PLSSy3oK-pcNU",
-        "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
-        "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
-        "console": "",
-        "descricao": "17 vídeos"
       },
       {
         "pid": "PLW0Lcwudh7NA",
@@ -56,7 +56,7 @@
         "nome": "Guia de Conquista - Raiden Densetsu: Raiden Trad",
         "url": "https://www.youtube.com/playlist?list=PLILbuG2QKXMs",
         "console": "",
-        "descricao": "3 vídeos"
+        "descricao": "4 vídeos"
       }
     ],
     "gameplay": [
@@ -161,6 +161,13 @@
     ],
     "shorts": [
       {
+        "id": "_zxC9WqDK88",
+        "titulo": "Raiden Densetsu: Como Conseguir Be Merciful VI",
+        "data": "2026-11-18T16:42:33Z",
+        "jogo": "",
+        "console": ""
+      },
+      {
         "id": "yv-Q276VFRk",
         "titulo": "Raiden Densetsu: Como Conseguir Be Merciful IV",
         "data": "2026-11-15T13:51:54Z",
@@ -236,20 +243,13 @@
         "data": "2026-10-26T16:28:32Z",
         "jogo": "",
         "console": ""
-      },
-      {
-        "id": "9UNYfqigpKY",
-        "titulo": "Parasite Eve: Como Conseguir Evolution 2/2",
-        "data": "2026-10-25T14:55:26Z",
-        "jogo": "",
-        "console": ""
       }
     ]
   },
   "ultimoShort": {
-    "id": "yv-Q276VFRk",
-    "titulo": "Raiden Densetsu: Como Conseguir Be Merciful IV",
-    "data": "2026-11-15T13:51:54Z",
+    "id": "_zxC9WqDK88",
+    "titulo": "Raiden Densetsu: Como Conseguir Be Merciful VI",
+    "data": "2026-11-18T16:42:33Z",
     "jogo": "",
     "console": ""
   },
@@ -269,10 +269,18 @@
   },
   "aoVivo": null,
   "aoVivoVertical": null,
-  "proxima": null,
-  "proximaVertical": null,
+  "proxima": {
+    "id": "oG0bM5f6OdE",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #21 #halldosconquistadores #lixao",
+    "inicio": "2026-11-20T00:30:00Z"
+  },
+  "proximaVertical": {
+    "id": "PeYuM6jduh0",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 59/85 #21 | #HallDosConquistadores #Lixao",
+    "inicio": "2026-11-20T00:30:00Z"
+  },
   "placar": {
-    "atualizado": "2026-11-17T15:58:44.462Z",
+    "atualizado": "2026-11-19T13:52:35.265Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -317,7 +325,7 @@
         "zerados": 6,
         "emLive": 4,
         "emAndamento": 1,
-        "tempoSeg": 443564
+        "tempoSeg": 461089
       },
       {
         "nome": "NES/Famicom",
@@ -399,13 +407,13 @@
         "console": "Genesis/Mega Drive",
         "imagem": "https://media.retroachievements.org/Images/064550.png",
         "conquistas": 85,
-        "ganhas": 57,
-        "pct": 67,
+        "ganhas": 59,
+        "pct": 69,
         "platinado": false,
         "zerado": false,
-        "data": "2026-11-15T19:02:33+00:00",
+        "data": "2026-11-19T11:54:12+00:00",
         "emLive": true,
-        "tempoSeg": 150052
+        "tempoSeg": 167577
       },
       {
         "id": 3492,
