@@ -41,11 +41,21 @@ function montaCabecalho() {
 function montaRodape() {
   const r = qs("#rodape");
   if (!r) return;
+
+  const ehVozes =
+    /(?:^|\/)vozes(?:\.html)?(?:$|[?#])/i.test(window.location.pathname) ||
+    document.body.dataset.pagina === "vozes";
+
+  const avisoVozes = ehVozes
+    ? '<p class="aviso">Projeto não oficial. As vozes e amostras pertencem aos seus criadores no Fish Audio. Não use para enganar ou se passar por pessoas reais.</p>'
+    : "";
+
   r.className = "rodape";
   r.innerHTML =
     '<div class="temas" role="group" aria-label="Cor do site"><span>Cor do site</span></div>' +
     '<div class="canais">' + botoesCanais(["twitch", "kick", "youtube", "instagram"]) + "</div>" +
-    '<p class="aviso">Projeto não oficial. As vozes e amostras pertencem aos seus criadores no Fish Audio. Não use para enganar ou se passar por pessoas reais.</p>';
+    avisoVozes;
+
   const box = qs(".temas", r);
   Tema.lista.forEach(t => {
     const b = document.createElement("button");
