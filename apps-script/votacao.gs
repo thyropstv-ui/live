@@ -14,6 +14,7 @@
 // ====== CONFIGURAÇÃO ======
 // Endereço público do dados.json do seu site (o mesmo que a página placar.html lê).
 const DADOS_URL = 'https://thyropstv-ui.github.io/live/dados.json';
+const AUTO_URL  = 'https://thyropstv-ui.github.io/live/auto.json';
 const ABA_VOTOS = 'Votos';
 const LIMIAR_SUGESTAO = 0.55;   // abaixo disso, o jogo é considerado "não encontrado"
 const MAX_OPCOES = 3;           // quantas sugestões mostrar no chat
@@ -171,7 +172,9 @@ function verificarToken_(token, clientId) {
 function candidatos_(dados) {
   const j = dados.placar && dados.placar.jogos;
   if (j && j.length) {
-    return j.filter(x => x.platinado && !x.emLive).map(x => ({ jogo: String(x.titulo), console: String(x.console || '') }));
+    return j
+      .filter(x => x.platinado && !x.emLive)
+      .map(x => ({ jogo: String(x.titulo), console: String(x.console || '') }));
   }
   const op = (dados.votacao && dados.votacao.opcoes) || [];
   return op.map(x => ({ jogo: String(x.jogo), console: String(x.console || '') }));
@@ -179,15 +182,45 @@ function candidatos_(dados) {
 
 function carregarDados_() {
   const cache = CacheService.getScriptCache();
-  let txt = cache.get('dados');
-  if (!txt) {
+
+  let txtDados = cache.get('dados');
+  if (!txtDados) {
     const r = UrlFetchApp.fetch(DADOS_URL, { muteHttpExceptions: true });
     if (r.getResponseCode() !== 200) throw new Error('dados.json respondeu ' + r.getResponseCode());
-    txt = r.getContentText();
-    JSON.parse(txt);
-    try { cache.put('dados', txt, 300); } catch (_) { /* arquivo grande demais para o cache: segue sem */ }
+    txtDados = r.getContentText();
+    JSON.parse(txtDados);
+    try { cache.put('dados', txtDados, 300); } catch (_) {}
   }
-  return JSON.parse(txt);
+  const dados = JSON.parse(txtDados);
+
+  let auto = null;
+  try {
+    let txtAuto = cache.get('auto');
+    if (!txtAuto) {
+      const ra = UrlFetchApp.fetch(AUTO_URL, { muteHttpExceptions: true });
+      if (ra.getResponseCode() === 200) {
+        txtAuto = ra.getContentText();
+        JSON.parse(txtAuto);
+        try { cache.put('auto', txtAuto, 300); } catch (_) {}
+      }
+    }
+    if (txtAuto) auto = JSON.parse(txtAuto);
+  } catch (e) {
+    console.warn('Aviso ao carregar auto.json:', e);
+  }
+
+  // Mescla os jogos (e consoles, se existirem) do auto.json no objeto dados
+  const jogosAuto = auto && auto.placar && auto.placar.jogos;
+  const jogosDados = dados.placar && dados.placar.jogos;
+  const consolesAuto = auto && auto.placar && auto.placar.consoles;
+  const consolesDados = dados.placar && dados.placar.consoles;
+
+  dados.placar = Object.assign({}, dados.placar || {}, {
+    consoles: (consolesAuto && consolesAuto.length) ? consolesAuto : (consolesDados || []),
+    jogos: (jogosAuto && jogosAuto.length) ? jogosAuto : (jogosDados || [])
+  });
+
+  return dados;
 }
 
 // ====== PLANILHA ======
