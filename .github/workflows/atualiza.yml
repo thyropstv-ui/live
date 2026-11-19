@@ -1,0 +1,57 @@
+name: Atualizar dados do site
+
+on:
+  schedule:
+    - cron: "0 * * * *" # a cada hora (minuto 0); use "7 * * * *" se preferir no minuto 7
+  workflow_dispatch: # botão "Run workflow" na aba Actions
+  push:
+    paths:
+      - "em-live.json"
+      - "nao-em-live.json"
+
+permissions:
+  contents: write
+
+# Uma atualização por vez: se outra começar enquanto esta roda, ela espera na fila.
+concurrency:
+  group: atualiza-site
+  cancel-in-progress: false
+
+jobs:
+  atualiza:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Gerar auto.json
+        env:
+          RA_API_KEY: ${{ secrets.RA_API_KEY }}
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          DRIVE_API_KEY: ${{ secrets.DRIVE_API_KEY }}
+          DRIVE_FOLDER_ID: ${{ secrets.DRIVE_FOLDER_ID }}
+        run: node scripts/atualiza.mjs
+      - name: Salvar se mudou
+        run: |
+          git config user.name "atualizacao-automatica"
+          git config user.email "actions@users.noreply.github.com"
+          git add auto.json
+          if git diff --cached --quiet; then
+            echo "Nada mudou, nada a salvar."
+            exit 0
+          fi
+          git commit -m "Atualiza dados do site"
+          # Se o main andou enquanto o script rodava, traz as mudanças novas e tenta de novo.
+          # "-X theirs" no rebase faz o commit local/gerado vencer em conflitos de arquivo.
+          for tentativa in 1 2 3 4; do
+            if git pull --rebase -X theirs origin main && git push origin HEAD:main; then
+              echo "Salvo na tentativa $tentativa."
+              exit 0
+            fi
+            echo "Tentativa $tentativa falhou. Esperando para tentar de novo..."
+            git rebase --abort 2>/dev/null || true
+            sleep $((tentativa * 5))
+          done
+          echo "Não consegui salvar depois de 4 tentativas."
+          exit 1
