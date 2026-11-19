@@ -183,9 +183,13 @@ async function parteLive() {
   auto.proxima = futuras.find(x => !ehVertical(x.titulo)) || null;
   auto.proximaVertical = futuras.find(x => ehVertical(x.titulo)) || null;
 
-  // se houver live horizontal ao vivo agora, já define ela como gameplay da vez
   if (auto.aoVivo) {
-    auto.gameplayAtual = { id: auto.aoVivo.id, titulo: auto.aoVivo.titulo, data: new Date().toISOString(), playlist: "ao vivo" };
+    auto.gameplayAtual = {
+      id: auto.aoVivo.id,
+      titulo: auto.aoVivo.titulo,
+      data: new Date().toISOString(),
+      playlist: "ao vivo",
+    };
   }
 }
 
@@ -246,8 +250,9 @@ async function parteUploads() {
       base.ehLive ||
       liveInfo.actualStartTime ||
       liveInfo.actualEndTime ||
-      liveInfo.scheduledStartTime ||
-      v.snippet.liveBroadcastContent !== "none"
+      v.snippet.liveBroadcastContent === "live" ||
+      v.snippet.liveBroadcastContent === "completed" ||
+      /\blive\b|ao vivo/i.test(v.snippet.title)
     );
     const dataRef = liveInfo.actualEndTime || liveInfo.actualStartTime || v.snippet.publishedAt;
     return {
@@ -260,22 +265,26 @@ async function parteUploads() {
     };
   });
 
-  vids.filter(v => v.ehLive || /live|ao vivo/i.test(v.titulo))
+  vids.filter(v => v.ehLive)
     .forEach(v => videosGameplay.push({ id: v.id, titulo: v.titulo, data: v.data, playlist: "lives" }));
 
-  if (!auto.aoVivo) {
-    const ultimaLiveHorizontal = vids
-      .filter(v => v.ehLive && v.ao === "none" && v.seg > 180 && !ehVertical(v.titulo) && !ehGuia(v.titulo))
-      .sort((a, b) => Date.parse(b.data || 0) - Date.parse(a.data || 0))[0];
+  // Última live horizontal que já começou/encerrou (ignora agendadas "upcoming" e verticais)
+  const ultimaLiveHorizontal = vids
+    .filter(v =>
+      v.ehLive &&
+      v.ao !== "upcoming" &&
+      !ehVertical(v.titulo) &&
+      (v.seg === 0 || v.seg > 180)
+    )
+    .sort((a, b) => Date.parse(b.data || 0) - Date.parse(a.data || 0))[0];
 
-    if (ultimaLiveHorizontal) {
-      auto.gameplayAtual = {
-        id: ultimaLiveHorizontal.id,
-        titulo: ultimaLiveHorizontal.titulo,
-        data: ultimaLiveHorizontal.data,
-        playlist: "lives do canal",
-      };
-    }
+  if (ultimaLiveHorizontal) {
+    auto.gameplayAtual = {
+      id: ultimaLiveHorizontal.id,
+      titulo: ultimaLiveHorizontal.titulo,
+      data: ultimaLiveHorizontal.data,
+      playlist: "lives do canal",
+    };
   }
 }
 
