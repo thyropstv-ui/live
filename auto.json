@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-19T14:35:24.076Z",
+  "atualizado": "2026-11-19T14:42:37.603Z",
   "guia": {
     "playlists": [
       {
@@ -254,17 +254,17 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "1hSrApLj0oU",
-    "titulo": "Mario Kart DS Online @primo_wit @Zerei0game",
-    "data": "2026-11-15T22:28:57Z",
+    "id": "Tp6IaOp0guU",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆57/85 #20 #halldosconquistadores #lixao",
+    "data": "2026-11-19T11:58:36Z",
     "playlist": "lives do canal",
     "jogo": {
-      "id": 12711,
-      "titulo": "Mario Kart DS",
-      "console": "Nintendo DS",
-      "imagem": "https://media.retroachievements.org/Images/072928.png",
-      "ganhas": 132,
-      "conquistas": 132
+      "id": 114,
+      "titulo": "Raiden Densetsu: Raiden Trad",
+      "console": "Genesis/Mega Drive",
+      "imagem": "https://media.retroachievements.org/Images/064550.png",
+      "ganhas": 59,
+      "conquistas": 85
     }
   },
   "aoVivo": null,
@@ -280,7 +280,7 @@
     "inicio": "2026-11-20T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-19T14:35:24.075Z",
+    "atualizado": "2026-11-19T14:42:37.603Z",
     "consoles": [
       {
         "nome": "PlayStation",
