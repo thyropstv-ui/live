@@ -2,8 +2,8 @@ name: Atualizar dados do site
 
 on:
   schedule:
-    - cron: "7 * * * *"      # a cada hora
-  workflow_dispatch:          # botão "Run workflow" na aba Actions
+    - cron: "0 * * * *" # a cada hora (minuto 0); use "7 * * * *" se preferir no minuto 7
+  workflow_dispatch: # botão "Run workflow" na aba Actions
   push:
     paths:
       - "assets/memes/**"
@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Gerar auto.json e memes.json
+      - name: Gerar auto.json
         env:
           RA_API_KEY: ${{ secrets.RA_API_KEY }}
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
@@ -44,7 +44,7 @@ jobs:
           fi
           git commit -m "Atualiza dados do site"
           # Se o main andou enquanto o script rodava, traz as mudanças novas e tenta de novo.
-          # "-X theirs" faz o arquivo gerado agora vencer em caso de conflito.
+          # "-X theirs" no rebase faz o commit local/gerado vencer em conflitos de arquivo.
           for tentativa in 1 2 3 4; do
             if git pull --rebase -X theirs origin main && git push origin HEAD:main; then
               echo "Salvo na tentativa $tentativa."
