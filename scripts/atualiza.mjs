@@ -182,27 +182,61 @@ async function parteLive() {
   auto.aoVivoVertical = noAr.find(x => ehVertical(x.titulo)) || null;
   auto.proxima = futuras.find(x => !ehVertical(x.titulo)) || null;
   auto.proximaVertical = futuras.find(x => ehVertical(x.titulo)) || null;
+
+  // se houver live horizontal ao vivo agora, já define ela como gameplay da vez
+  if (auto.aoVivo) {
+    auto.gameplayAtual = { id: auto.aoVivo.id, titulo: auto.aoVivo.titulo, data: new Date().toISOString(), playlist: "ao vivo" };
+  }
 }
 
-/* gameplay da vez: a última live HORIZONTAL que já aconteceu, lida direto dos envios do canal
-   (não depende de estar numa playlist e usa a data real da live, não a data em que entrou na playlist) */
+/* gameplay da vez: a última live HORIZONTAL que já aconteceu (aba de lives do canal),
+   ignorando vídeos verticais e guias */
 async function parteUploads() {
   if (!YT_KEY) return;
-  const envios = await paginas("playlistItems", `part=snippet&maxResults=50&playlistId=UU${CANAL.slice(2)}`, 1);
-  const ids = envios.map(i => i.snippet.resourceId && i.snippet.resourceId.videoId).filter(Boolean);
+  const envios = await paginas("playlistItems", `part=snippet&maxResults=50&playlistId=UU${CANAL.slice(2)}`, 2);
+  const ids = [...new Set(envios.map(i => i.snippet.resourceId && i.snippet.resourceId.videoId).filter(Boolean))];
   if (!ids.length) return;
-  const j = await yt("videos", `part=snippet,contentDetails,liveStreamingDetails&id=${ids.join(",")}`);
-  const vids = (j.items || []).map(v => ({
-    id: v.id, titulo: v.snippet.title, ao: v.snippet.liveBroadcastContent, seg: dur(v.contentDetails.duration),
-    live: !!(v.liveStreamingDetails && v.liveStreamingDetails.actualStartTime),
-    data: (v.liveStreamingDetails && v.liveStreamingDetails.actualStartTime) || v.snippet.publishedAt,
-  })).filter(v => v.ao === "none" && v.seg > 180)
-    .sort((a, b) => (b.data || "").localeCompare(a.data || ""));
-  // para marcar "em live" valem as lives dos dois formatos
-  vids.filter(v => v.live || /live|ao vivo/i.test(v.titulo)).forEach(v => videosGameplay.push({ id: v.id, titulo: v.titulo, data: v.data, playlist: "envios" }));
-  const horizontais = vids.filter(v => !ehVertical(v.titulo) && !ehGuia(v.titulo));
-  const v = horizontais.find(x => x.live) || horizontais[0];
-  if (v) auto.gameplayAtual = { id: v.id, titulo: v.titulo, data: v.data, playlist: "envios do canal" };
+
+  const itensDetalhe = [];
+  for (let i = 0; i < ids.length; i += 50) {
+    const lote = ids.slice(i, i + 50);
+    const j = await yt("videos", `part=snippet,contentDetails,liveStreamingDetails&id=${lote.join(",")}`);
+    itensDetalhe.push(...(j.items || []));
+  }
+
+  const vids = itensDetalhe.map(v => {
+    const liveInfo = v.liveStreamingDetails || {};
+    const ehLive = Boolean(liveInfo.actualStartTime || liveInfo.actualEndTime || liveInfo.scheduledStartTime || v.snippet.liveBroadcastContent !== "none");
+    const dataRef = liveInfo.actualEndTime || liveInfo.actualStartTime || v.snippet.publishedAt;
+    return {
+      id: v.id,
+      titulo: v.snippet.title,
+      ao: v.snippet.liveBroadcastContent,
+      seg: dur(v.contentDetails.duration),
+      ehLive,
+      data: dataRef,
+    };
+  });
+
+  // mantém marcação de "em live" para lives de qualquer formato
+  vids.filter(v => v.ehLive || /live|ao vivo/i.test(v.titulo))
+    .forEach(v => videosGameplay.push({ id: v.id, titulo: v.titulo, data: v.data, playlist: "lives" }));
+
+  // se não há live horizontal no ar agora, pega a última live horizontal encerrada (> 3 min)
+  if (!auto.aoVivo) {
+    const ultimaLiveHorizontal = vids
+      .filter(v => v.ehLive && v.ao === "none" && v.seg > 180 && !ehVertical(v.titulo) && !ehGuia(v.titulo))
+      .sort((a, b) => Date.parse(b.data || 0) - Date.parse(a.data || 0))[0];
+
+    if (ultimaLiveHorizontal) {
+      auto.gameplayAtual = {
+        id: ultimaLiveHorizontal.id,
+        titulo: ultimaLiveHorizontal.titulo,
+        data: ultimaLiveHorizontal.data,
+        playlist: "lives do canal",
+      };
+    }
+  }
 }
 
 /* ---------------- junta: placar + "em live" ---------------- */
