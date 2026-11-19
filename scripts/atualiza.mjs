@@ -189,12 +189,47 @@ async function parteLive() {
   }
 }
 
-/* gameplay da vez: a última live HORIZONTAL que já aconteceu (aba de lives do canal),
-   ignorando vídeos verticais e guias */
 async function parteUploads() {
   if (!YT_KEY) return;
+
+  const candidatos = new Map();
+
+  // 1) Busca lives encerradas recentes diretamente via search (eventType=completed)
+  try {
+    const comp = await yt(
+      "search",
+      `part=snippet&type=video&eventType=completed&order=date&maxResults=10&channelId=${CANAL}`
+    );
+    for (const item of comp.items || []) {
+      const id = item.id && item.id.videoId;
+      if (id) {
+        candidatos.set(id, {
+          id,
+          titulo: item.snippet.title,
+          data: item.snippet.publishedAt,
+          ehLive: true,
+        });
+      }
+    }
+  } catch (e) {
+    avisos.push("search completed falhou: " + e.message);
+  }
+
+  // 2) Complementa com os envios do canal (UU...)
   const envios = await paginas("playlistItems", `part=snippet&maxResults=50&playlistId=UU${CANAL.slice(2)}`, 2);
-  const ids = [...new Set(envios.map(i => i.snippet.resourceId && i.snippet.resourceId.videoId).filter(Boolean))];
+  for (const i of envios) {
+    const id = i.snippet && i.snippet.resourceId && i.snippet.resourceId.videoId;
+    if (id && !candidatos.has(id)) {
+      candidatos.set(id, {
+        id,
+        titulo: i.snippet.title,
+        data: i.snippet.publishedAt,
+        ehLive: false,
+      });
+    }
+  }
+
+  const ids = [...candidatos.keys()];
   if (!ids.length) return;
 
   const itensDetalhe = [];
@@ -206,7 +241,14 @@ async function parteUploads() {
 
   const vids = itensDetalhe.map(v => {
     const liveInfo = v.liveStreamingDetails || {};
-    const ehLive = Boolean(liveInfo.actualStartTime || liveInfo.actualEndTime || liveInfo.scheduledStartTime || v.snippet.liveBroadcastContent !== "none");
+    const base = candidatos.get(v.id) || {};
+    const ehLive = Boolean(
+      base.ehLive ||
+      liveInfo.actualStartTime ||
+      liveInfo.actualEndTime ||
+      liveInfo.scheduledStartTime ||
+      v.snippet.liveBroadcastContent !== "none"
+    );
     const dataRef = liveInfo.actualEndTime || liveInfo.actualStartTime || v.snippet.publishedAt;
     return {
       id: v.id,
@@ -218,11 +260,9 @@ async function parteUploads() {
     };
   });
 
-  // mantém marcação de "em live" para lives de qualquer formato
   vids.filter(v => v.ehLive || /live|ao vivo/i.test(v.titulo))
     .forEach(v => videosGameplay.push({ id: v.id, titulo: v.titulo, data: v.data, playlist: "lives" }));
 
-  // se não há live horizontal no ar agora, pega a última live horizontal encerrada (> 3 min)
   if (!auto.aoVivo) {
     const ultimaLiveHorizontal = vids
       .filter(v => v.ehLive && v.ao === "none" && v.seg > 180 && !ehVertical(v.titulo) && !ehGuia(v.titulo))
