@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troca de voz | Thyrops Live</title>
+<meta name="description" content="Comandos do chat para mudar a voz do streamer na live. Cada troca vale por 2 minutos.">
+<meta name="theme-color" content="#050718">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="tema.js"></script>
+<link rel="stylesheet" href="tema.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* Aviso dos 2 minutos: o destaque da página */
+  .tempo .hud-in{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:center;padding:18px 22px}
+  .relogio{
+    width:104px;height:104px;border-radius:50%;
+    display:grid;place-items:center;text-align:center;
+    background:
+      radial-gradient(closest-side,var(--painel) 76%,transparent 78%),
+      conic-gradient(from 0deg,var(--ciano),var(--roxo) 70%,var(--linha) 70%);
+    box-shadow:0 0 18px rgba(37,212,255,.25);
+  }
+  .relogio b{font:700 30px/1 var(--titulos);letter-spacing:.02em;display:block}
+  .relogio small{display:block;font:500 12px/1.2 var(--titulos);letter-spacing:.08em;color:var(--mudo);margin-top:2px}
+  .tempo h2{margin:0;font:700 clamp(26px,4.4vw,40px)/1.05 var(--titulos);letter-spacing:.01em}
+  .tempo p{margin:8px 0 0;color:var(--mudo);max-width:58ch}
+  .tempo p b{color:var(--texto);font-weight:500}
+
+  /* Cartões das vozes */
+  .vozes-troca{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+  .vt .hud-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;padding:20px 16px 18px;height:100%}
+  .carinha{
+    width:116px;height:116px;border-radius:50%;overflow:hidden;
+    background:var(--painel);
+    box-shadow:0 0 0 2px var(--linha),0 0 20px var(--glow-a);
+  }
+  .carinha svg{display:block;width:100%;height:100%}
+  .vt h3{margin:4px 0 0;font:700 30px/1 var(--titulos);letter-spacing:.02em}
+  .vt .quem{margin:0;color:var(--mudo);font-size:14px;min-height:2.8em}
+  .vt .cmd{
+    appearance:none;cursor:pointer;
+    font:600 19px/1.1 var(--titulos);letter-spacing:.03em;color:var(--texto);
+    background:rgba(90,100,220,.22);border:1px solid var(--linha);border-radius:2px;
+    padding:10px 14px;max-width:100%;overflow-wrap:anywhere;
+  }
+  .vt .cmd:hover{color:var(--ciano);border-color:var(--ciano)}
+  .vt .cmd:focus-visible{outline:2px solid var(--ciano);outline-offset:2px}
+  .vt .dica{font-size:12px;color:var(--mudo)}
+  .vt .dura{font:600 14px var(--titulos);letter-spacing:.05em;color:var(--ciano)}
+
+  .passos{margin:12px 0 0;padding-left:22px;color:var(--mudo);max-width:64ch}
+  .passos li{margin:4px 0}
+  .passos li b{color:var(--texto);font-weight:500}
+  @media (max-width:560px){
+    .tempo .hud-in{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center}
+  }
+</style>
+</head>
+<body data-pagina="trocavoz.html">
+<div class="pagina">
+  <header id="topo"></header>
+  <main>
+    <p class="intro">Quer ouvir o streamer com outra voz? Copie um comando, cole no chat da live e pronto. A troca é feita pelo VoiceMod.</p>
+
+    <section class="hud tempo" style="margin-top:20px"><div class="hud-in">
+      <div class="relogio" role="img" aria-label="2 minutos"><div><b>2:00</b><small>minutos</small></div></div>
+      <div>
+        <h2>A voz muda por 2 fucking minutes</h2>
+        <p>O comando vale <b>somente por 2 minutos</b>. Quando o tempo acabar, a voz volta ao normal.</p>
+      </div>
+    </div></section>
+
+    <div class="titulo"><h2>Comandos</h2></div>
+    <div class="vozes-troca" id="vozes"></div>
+
+    <div class="titulo"><h2>Como usar</h2></div>
+    <ol class="passos">
+      <li>Clique no comando da voz para <b>copiar</b>.</li>
+      <li>Cole no chat da live e envie, do jeito que está escrito.</li>
+      <li>A voz troca na hora e <b>volta ao normal depois de 2 minutos</b>.</li>
+    </ol>
+  </main>
+  <footer id="rodape"></footer>
+</div>
+<script src="site.js"></script>
+<script>
+/* Para trocar texto, comando ou carinha, edite só esta lista.
+   O comando precisa bater com o regex do Streamer.bot: ^!chvoz_(banana|the narrator|mel)$ */
+const TROCA_VOZES = [
+  { nome: "Banana", comando: "!chvoz_banana", desc: "Voz Banana do VoiceMod.", carinha: "banana" },
+  { nome: "The Narrator", comando: "!chvoz_the narrator", desc: "Voz The Narrator do VoiceMod.", carinha: "narrator" },
+  { nome: "Mel", comando: "!chvoz_mel", desc: "Voz Mel do VoiceMod.", carinha: "mel" }
+];
+
+/* Carinhas desenhadas em SVG (sem imagem externa, funcionam offline) */
+const CARINHAS = {
+  banana:
+    '<svg viewBox="0 0 120 120" aria-hidden="true">' +
+    '<rect width="120" height="120" fill="#2a1f5c"/>' +
+    '<path d="M52 14c-6 2-9 6-8 11 0 3 1 4 2 5-9 20-10 42-3 62 3 8 9 14 17 15 14 1 26-8 30-24 4-17-1-37-14-55-6-8-13-13-24-14z" fill="#ffd93b" stroke="#c98f00" stroke-width="3" stroke-linejoin="round"/>' +
+    '<path d="M46 30c-7 18-7 38-1 58" fill="none" stroke="#f1b800" stroke-width="3" stroke-linecap="round"/>' +
+    '<rect x="44" y="9" width="12" height="13" rx="3" transform="rotate(-18 50 15)" fill="#7a5a20"/>' +
+    '<path d="M60 100c3 5 9 7 13 5" fill="none" stroke="#7a5a20" stroke-width="5" stroke-linecap="round"/>' +
+    '<ellipse cx="58" cy="56" rx="5" ry="7" fill="#fff"/><ellipse cx="78" cy="58" rx="5" ry="7" fill="#fff"/>' +
+    '<circle cx="59" cy="58" r="3" fill="#2b1b00"/><circle cx="79" cy="60" r="3" fill="#2b1b00"/>' +
+    '<path d="M58 77c5 9 17 9 22 0" fill="none" stroke="#2b1b00" stroke-width="3.5" stroke-linecap="round"/>' +
+    '<ellipse cx="52" cy="71" rx="5" ry="3" fill="#ff9d7a" opacity=".7"/><ellipse cx="85" cy="73" rx="5" ry="3" fill="#ff9d7a" opacity=".7"/>' +
+    '</svg>',
+  narrator:
+    '<svg viewBox="0 0 120 120" aria-hidden="true">' +
+    '<rect width="120" height="120" fill="#1b2147"/>' +
+    '<path d="M14 120c2-20 16-30 46-30s44 10 46 30z" fill="#12141f"/>' +
+    '<path d="M46 92l14 18 14-18z" fill="#f4f4f7"/>' +
+    '<path d="M52 96l8-5 8 5-8 5z" fill="#c4263d"/><circle cx="60" cy="96" r="3" fill="#a31d31"/>' +
+    '<rect x="52" y="76" width="16" height="18" fill="#e8c4a3"/>' +
+    '<ellipse cx="60" cy="52" rx="25" ry="29" fill="#f0cfae"/>' +
+    '<path d="M34 46c-3-22 12-33 29-31 17 1 27 12 24 31-4-8-9-12-14-13-9 4-23 5-34 2-2 3-4 7-5 11z" fill="#3a2a22"/>' +
+    '<path d="M44 46q5-4 11-1" fill="none" stroke="#3a2a22" stroke-width="3" stroke-linecap="round"/>' +
+    '<path d="M66 45q6-3 11 1" fill="none" stroke="#3a2a22" stroke-width="3" stroke-linecap="round"/>' +
+    '<circle cx="50" cy="53" r="2.8" fill="#1d1d2b"/><circle cx="71" cy="53" r="2.8" fill="#1d1d2b"/>' +
+    '<path d="M60 56v8" stroke="#d4a984" stroke-width="2.5" stroke-linecap="round"/>' +
+    '<path d="M51 72q9 5 19 0" fill="none" stroke="#8a4b3f" stroke-width="3" stroke-linecap="round"/>' +
+    '</svg>',
+  mel:
+    '<svg viewBox="0 0 120 120" aria-hidden="true">' +
+    '<rect width="120" height="120" fill="#3a1f5c"/>' +
+    '<path d="M24 118c-8-30-6-64 6-80 8-12 22-18 32-18 14 0 26 8 32 22 8 16 6 52-2 76z" fill="#6b3b24"/>' +
+    '<ellipse cx="60" cy="62" rx="26" ry="31" fill="#f7d5c0"/>' +
+    '<path d="M32 58c-2-22 10-38 30-38s30 14 26 38c-3-10-8-18-16-21-8 6-24 8-40 21z" fill="#6b3b24"/>' +
+    '<path d="M76 24l14-9 2 18z" fill="#ff5fa8"/><path d="M76 24l-9-11 18-2z" fill="#ff5fa8"/><circle cx="77" cy="24" r="4.5" fill="#e03b8c"/>' +
+    '<ellipse cx="49" cy="66" rx="5" ry="6.5" fill="#fff"/><ellipse cx="71" cy="66" rx="5" ry="6.5" fill="#fff"/>' +
+    '<circle cx="50" cy="67" r="3.6" fill="#3b2a6e"/><circle cx="72" cy="67" r="3.6" fill="#3b2a6e"/>' +
+    '<circle cx="51" cy="65.5" r="1.2" fill="#fff"/><circle cx="73" cy="65.5" r="1.2" fill="#fff"/>' +
+    '<path d="M42 58q7-5 13-1" fill="none" stroke="#6b3b24" stroke-width="2.5" stroke-linecap="round"/>' +
+    '<path d="M65 57q6-4 13 1" fill="none" stroke="#6b3b24" stroke-width="2.5" stroke-linecap="round"/>' +
+    '<ellipse cx="42" cy="78" rx="5.5" ry="3.2" fill="#ff8fa3" opacity=".65"/><ellipse cx="78" cy="78" rx="5.5" ry="3.2" fill="#ff8fa3" opacity=".65"/>' +
+    '<path d="M52 82q8 7 16 0" fill="none" stroke="#c2415f" stroke-width="3" stroke-linecap="round"/>' +
+    '</svg>'
+};
+
+(function () {
+  qs("#vozes").innerHTML = TROCA_VOZES.map((v, i) =>
+    '<article class="vt hud"><div class="hud-in">' +
+      '<div class="carinha">' + CARINHAS[v.carinha] + '</div>' +
+      '<h3>' + esc(v.nome) + '</h3>' +
+      '<p class="quem">' + esc(v.desc) + '</p>' +
+      '<button type="button" class="cmd" data-i="' + i + '" title="Copiar ' + esc(v.comando) + '">' + esc(v.comando) + '</button>' +
+      '<span class="dica">Clique para copiar</span>' +
+      '<span class="dura">Vale por 2 minutos</span>' +
+    '</div></article>'
+  ).join("");
+
+  qsa(".cmd", qs("#vozes")).forEach(b => b.onclick = async () => {
+    const c = TROCA_VOZES[+b.dataset.i].comando;
+    toast((await copiar(c)) ? "Copiado " + c : "Não foi possível copiar");
+  });
+})();
+</script>
+</body>
+</html>

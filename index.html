@@ -70,7 +70,7 @@
 <script>
 (async function(){
   qs("#canais").innerHTML=botoesCanais(["twitch","kick","youtube","instagram"]);
-  const at=[["placar.html","Placar","Platinas e zeradas por console"],["guia.html","Guia","Shorts e playlists de conquistas"],["agenda.html","Agenda","Dias e horários das lives"],["vozes.html","Vozes","Teste os comandos de voz"],["memes.html","Memes","Ouça os memes do chat"]];
+  const at=[["placar.html","Placar","Platinas e zeradas por console"],["guia.html","Guia","Shorts e playlists de conquistas"],["agenda.html","Agenda","Dias e horários das lives"],["vozes.html","Vozes","Teste os comandos de voz"],["trocavoz.html","Troca de voz","Mude a voz do streamer por 2 minutos"],["memes.html","Memes","Ouça os memes do chat"]];
   qs("#atalhos").innerHTML=at.map(a=>'<a class="atalho hud" href="'+a[0]+'"><div class="hud-in pad"><b>'+a[1]+'</b><span>'+a[2]+'</span></div></a>').join("");
   let d;
   try{d=await carregaDados()}catch(e){qs(".linha-placar").remove();return}
