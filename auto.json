@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-20T12:58:49.938Z",
+  "atualizado": "2026-11-20T13:38:12.416Z",
   "guia": {
     "playlists": [
       {
@@ -14,7 +14,7 @@
         "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
         "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
         "console": "",
-        "descricao": "24 vídeos"
+        "descricao": "25 vídeos"
       },
       {
         "pid": "PLCebeJpWeQPA",
@@ -269,10 +269,18 @@
   },
   "aoVivo": null,
   "aoVivoVertical": null,
-  "proxima": null,
-  "proximaVertical": null,
+  "proxima": {
+    "id": "9VOvCiGOwHY",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #22 #halldosconquistadores #lixao",
+    "inicio": "2026-11-20T17:30:00Z"
+  },
+  "proximaVertical": {
+    "id": "rznrmiI_fWc",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 59/85 #22 | #HallDosConquistadores #Lixao",
+    "inicio": "2026-11-20T17:30:00Z"
+  },
   "placar": {
-    "atualizado": "2026-11-20T12:58:49.938Z",
+    "atualizado": "2026-11-20T13:38:12.415Z",
     "consoles": [
       {
         "nome": "PlayStation",
