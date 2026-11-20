@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-20T03:48:52.322Z",
+  "atualizado": "2026-11-20T04:54:09.188Z",
   "guia": {
     "playlists": [
       {
@@ -269,18 +269,10 @@
   },
   "aoVivo": null,
   "aoVivoVertical": null,
-  "proxima": {
-    "id": "oG0bM5f6OdE",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #21 #halldosconquistadores #lixao",
-    "inicio": "2026-11-20T00:30:00Z"
-  },
-  "proximaVertical": {
-    "id": "PeYuM6jduh0",
-    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 59/85 #21 | #HallDosConquistadores #Lixao",
-    "inicio": "2026-11-20T00:30:00Z"
-  },
+  "proxima": null,
+  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-20T03:48:52.321Z",
+    "atualizado": "2026-11-20T04:54:09.187Z",
     "consoles": [
       {
         "nome": "PlayStation",
