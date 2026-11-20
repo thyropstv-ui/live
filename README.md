@@ -10,6 +10,7 @@ Site estático (sem servidor) para o GitHub Pages, no visual das lives.
 - `guia.html`: último short do guia e gameplay da vez (tocam no próprio site), shorts, playlists do guia e de gameplay (com player).
 - `agenda.html`: semana de lives, contagem e horário convertido para quem visita.
 - `vozes.html`: catálogo de vozes (era o antigo `index.html`).
+- `trocavoz.html`: comandos do chat para trocar a voz do streamer no VoiceMod (Banana, The Narrator e Mel). Cada troca vale por 2 minutos. O comando, o texto e a carinha de cada voz ficam na lista `TROCA_VOZES` dentro do próprio arquivo.
 - `memes.html`: memes do chat, com play, cópia do comando e, nos arquivos de vídeo, botão para ver o vídeo.
 
 ## Como o site se atualiza sozinho

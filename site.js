@@ -6,6 +6,7 @@ const PAGINAS = [
   ["guia.html", "Guia"],
   ["agenda.html", "Agenda"],
   ["vozes.html", "Vozes"],
+  ["trocavoz.html", "Troca de voz"],
   ["memes.html", "Memes"],
 ];
 
