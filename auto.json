@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-19T23:38:33.289Z",
+  "atualizado": "2026-11-20T00:27:30.257Z",
   "guia": {
     "playlists": [
       {
@@ -280,7 +280,7 @@
     "inicio": "2026-11-20T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-19T23:38:33.288Z",
+    "atualizado": "2026-11-20T00:27:30.256Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -1593,5 +1593,111 @@
       }
     ],
     "comVideoAoVivo": true
-  }
+  },
+  "conquistas": [
+    {
+      "id": 312089,
+      "titulo": "Homing Master",
+      "descricao": "Complete entire game using only Homing Missiles [Can be combined with one of the main weapons]",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345294.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-19T11:54:12Z",
+      "hardcore": true
+    },
+    {
+      "id": 312058,
+      "titulo": "Medal Collector VI",
+      "descricao": "Collect 16 medals on Stage 6 without dying",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345263.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-19T11:39:19Z",
+      "hardcore": true
+    },
+    {
+      "id": 312067,
+      "titulo": "Medal Collector VII",
+      "descricao": "Collect 18 medals on Stage 7 without dying",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345272.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-15T19:02:33Z",
+      "hardcore": true
+    },
+    {
+      "id": 312086,
+      "titulo": "Vulcan Master",
+      "descricao": "Complete entire game using only Vulcan weapon [Can be combined with one of the sub-weapons]",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345291.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-15T17:58:01Z",
+      "hardcore": true
+    },
+    {
+      "id": 312075,
+      "titulo": "Medal Collector VIII",
+      "descricao": "Collect 23 medals on Stage 8 without dying",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345280.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-15T16:54:07Z",
+      "hardcore": true
+    },
+    {
+      "id": 312077,
+      "titulo": "Order: 'Do not bomb!' VIII",
+      "descricao": "Defeat Boss on Stage 8 without using bombs or dying",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345282.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-13T03:05:14Z",
+      "hardcore": true
+    },
+    {
+      "id": 312071,
+      "titulo": "Enemy Fortress",
+      "descricao": "Complete Stage 8",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345276.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-13T03:05:13Z",
+      "hardcore": true
+    },
+    {
+      "id": 312037,
+      "titulo": "Ancient Ruins [Normal]",
+      "descricao": "Complete Stage 4 on Normal difficulty or above",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345242.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-11T02:29:39Z",
+      "hardcore": true
+    }
+  ]
 }
