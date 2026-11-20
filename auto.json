@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-20T00:27:30.257Z",
+  "atualizado": "2026-11-20T00:52:28.353Z",
   "guia": {
     "playlists": [
       {
@@ -254,10 +254,10 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "Tp6IaOp0guU",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆57/85 #20 #halldosconquistadores #lixao",
-    "data": "2026-11-19T11:58:36Z",
-    "playlist": "lives do canal",
+    "id": "oG0bM5f6OdE",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #21 #halldosconquistadores #lixao",
+    "data": "2026-11-20T00:52:28.348Z",
+    "playlist": "ao vivo",
     "jogo": {
       "id": 114,
       "titulo": "Raiden Densetsu: Raiden Trad",
@@ -267,8 +267,14 @@
       "conquistas": 85
     }
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
+  "aoVivo": {
+    "id": "oG0bM5f6OdE",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #21 #halldosconquistadores #lixao"
+  },
+  "aoVivoVertical": {
+    "id": "PeYuM6jduh0",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 59/85 #21 | #HallDosConquistadores #Lixao"
+  },
   "proxima": {
     "id": "oG0bM5f6OdE",
     "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #21 #halldosconquistadores #lixao",
@@ -280,7 +286,7 @@
     "inicio": "2026-11-20T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-20T00:27:30.256Z",
+    "atualizado": "2026-11-20T00:52:28.353Z",
     "consoles": [
       {
         "nome": "PlayStation",
