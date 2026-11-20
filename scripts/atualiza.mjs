@@ -106,6 +106,35 @@ async function parteRA() {
   await raDetalhes(jogosRA);
 }
 
+/* ---------------- Últimas conquistas (RetroAchievements) ---------------- */
+const MAX_CONQUISTAS = 8;
+async function parteConquistas() {
+  if (!RA_KEY) return;
+  let lista = [];
+  // a API pede uma janela em minutos; tenta 30 dias, depois 7 dias e 1 dia
+  for (const minutos of [43200, 10080, 1440]) {
+    try {
+      const j = await raGet("API_GetUserRecentAchievements.php", `u=${RA_USER}&m=${minutos}`);
+      if (Array.isArray(j) && j.length) { lista = j; break; }
+    } catch (e) { avisos.push(`últimas conquistas (${minutos} min): ${e.message}`); }
+  }
+  if (!lista.length) return;   // sem dados novos: mantém as conquistas que já estavam no auto.json
+  // a API usa nomes como BadgeURL ou badgeUrl conforme a versão: procura sem diferenciar maiúsculas
+  const pega = (x, a) => { const k = Object.keys(x).find(n => n.toLowerCase() === a.toLowerCase()); return k === undefined ? undefined : x[k]; };
+  const iso = d => { d = String(d || ""); return d && !d.includes("T") ? d.replace(" ", "T") + "Z" : d; };   // a API devolve em UTC
+  const itens = lista.map(x => {
+    const badge = pega(x, "BadgeURL") || (pega(x, "BadgeName") ? `/Badge/${pega(x, "BadgeName")}.png` : "");
+    const icone = pega(x, "GameIcon");
+    return {
+      id: pega(x, "AchievementID"), titulo: pega(x, "Title"), descricao: pega(x, "Description"), pontos: pega(x, "Points") ?? 0,
+      imagem: badge ? IMG_RA + badge : "", jogo: pega(x, "GameTitle"), jogoId: pega(x, "GameID"), console: pega(x, "ConsoleName"),
+      jogoImagem: icone ? IMG_RA + icone : "", data: iso(pega(x, "Date")), hardcore: !!(pega(x, "HardcoreMode")),
+    };
+  }).filter(c => c.id && c.titulo).sort((a, b) => (b.data || "").localeCompare(a.data || ""));
+  const vistos = new Set();   // a mesma conquista pode vir em hardcore e softcore
+  auto.conquistas = itens.filter(c => !vistos.has(c.id) && vistos.add(c.id)).slice(0, MAX_CONQUISTAS);
+}
+
 /* ---------------- YouTube ---------------- */
 const yt = (rota, q) => get(`${API || "https://www.googleapis.com"}/youtube/v3/${rota}?key=${YT_KEY}&${q}`);
 const dur = iso => { const m = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.exec(iso || ""); return m ? (+m[1] || 0) * 3600 + (+m[2] || 0) * 60 + (+m[3] || 0) : 0; };
@@ -376,7 +405,7 @@ async function parteMemes() {
   if (lista.length) writeFileSync(`${BASE}/memes.json`, JSON.stringify(lista, null, 2) + "\n");
 }
 
-for (const [nome, fn] of [["RetroAchievements", parteRA], ["playlists", partePlaylists], ["envios", parteUploads], ["live", parteLive]]) {
+for (const [nome, fn] of [["RetroAchievements", parteRA], ["conquistas", parteConquistas], ["playlists", partePlaylists], ["envios", parteUploads], ["live", parteLive]]) {
   try { await fn(); } catch (e) { avisos.push(`${nome}: ${e.message}`); }
 }
 try { montaPlacar(); } catch (e) { avisos.push("placar: " + e.message); }
