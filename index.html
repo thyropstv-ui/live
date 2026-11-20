@@ -13,6 +13,23 @@
 <script src="tema.js"></script>
 <link rel="stylesheet" href="tema.css">
 <link rel="stylesheet" href="site.css">
+<style>
+/* Platinas à esquerda, últimas conquistas ao lado. Em tela estreita, uma embaixo da outra. */
+.linha-placar{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:24px;align-items:start}
+.linha-placar>section{min-width:0}
+.linha-placar [hidden]{display:none}
+.conq{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:12px 18px}
+.conq li{min-width:0}
+.conq a{display:grid;grid-template-columns:52px minmax(0,1fr);gap:11px;align-items:center;color:inherit;text-decoration:none}
+.conq img{width:52px;height:52px;border-radius:6px;display:block;background:var(--painel);box-shadow:0 0 0 1px var(--linha)}
+.conq a:hover img,.conq a:focus-visible img{box-shadow:0 0 0 1px var(--ciano),0 0 12px rgba(37,212,255,.35)}
+.conq a:focus-visible{outline:none}
+.conq b,.conq span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.conq b{font-family:var(--titulos);font-weight:600;font-size:16px;letter-spacing:.2px;color:var(--texto)}
+.conq .jg{font-size:13px;color:var(--texto);opacity:.85}
+.conq .qd{font-size:12px;color:var(--mudo)}
+@media (max-width:860px){.linha-placar{grid-template-columns:minmax(0,1fr)}}
+</style>
 </head>
 <body data-pagina="index.html">
 <div class="pagina">
@@ -33,8 +50,16 @@
         <div class="formatos" id="formatos"></div>
       </div></div>
     </section>
-    <div class="titulo"><h2>Platinas</h2></div>
-    <div class="placar-topo hud"><div class="hud-in pad" style="display:contents"></div></div>
+    <div class="linha-placar">
+      <section>
+        <div class="titulo"><h2>Platinas</h2></div>
+        <div class="placar-topo hud"><div class="hud-in pad" style="display:contents"></div></div>
+      </section>
+      <section id="col-conq" hidden>
+        <div class="titulo"><h2>Últimas conquistas</h2></div>
+        <div class="hud"><div class="hud-in pad"><ul class="conq" id="conq"></ul></div></div>
+      </section>
+    </div>
     <div class="titulo"><h2>Em destaque</h2></div>
     <div class="destaques" id="destaques"></div>
     <div class="atalhos" id="atalhos"></div>
@@ -48,7 +73,7 @@
   const at=[["placar.html","Placar","Platinas e zeradas por console"],["guia.html","Guia","Shorts e playlists de conquistas"],["agenda.html","Agenda","Dias e horários das lives"],["vozes.html","Vozes","Teste os comandos de voz"],["memes.html","Memes","Ouça os memes do chat"]];
   qs("#atalhos").innerHTML=at.map(a=>'<a class="atalho hud" href="'+a[0]+'"><div class="hud-in pad"><b>'+a[1]+'</b><span>'+a[2]+'</span></div></a>').join("");
   let d;
-  try{d=await carregaDados()}catch(e){qs(".placar-topo").remove();return}
+  try{d=await carregaDados()}catch(e){qs(".linha-placar").remove();return}
   avisoExemplo(d);
   iniciaContagem(d,qs("#cont"),qs("#quando"),qs("#local"));
   montaFormatos(d,qs("#formatos"));setInterval(()=>montaFormatos(d,qs("#formatos")),30000);
@@ -58,7 +83,33 @@
   qs(".placar-topo").className="placar-topo";
   qs(".placar-topo").innerHTML='<div class="hud"><div class="hud-in pad" style="display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center"><div class="anel" style="--p:'+pct+'"><div>'+pct+'%<small>em live</small></div></div><div class="totais"><div><div class="n" id="n1">0</div><div class="l">platinados</div></div><div><div class="n" id="n2">0</div><div class="l">zerados</div></div><div><div class="n" id="n3">0</div><div class="l">platinados em live</div></div></div></div></div>';
   contaAte(qs("#n1"),tot);contaAte(qs("#n2"),zer);contaAte(qs("#n3"),live);
+  montaConquistas(d);
 })();
+
+/* Últimas conquistas: vêm de auto.json (campo "conquistas", gerado pelo scripts/atualiza.mjs) */
+function quandoFoi(iso){
+  const t=Date.parse(iso);if(isNaN(t))return"";
+  const m=Math.max(0,Math.round((Date.now()-t)/60000));
+  if(m<2)return"agora há pouco";if(m<60)return"há "+m+" min";
+  const h=Math.round(m/60);if(h<24)return"há "+h+" h";
+  const dd=Math.round(h/24);return"há "+dd+(dd===1?" dia":" dias");
+}
+const QTD_CONQUISTAS=4; /* quantas aparecem ao lado das Platinas (2x2) */
+async function montaConquistas(d){
+  let lista=d&&d.conquistas;
+  if(!Array.isArray(lista)){
+    try{const r=await fetch("auto.json?"+Date.now());if(r.ok)lista=(await r.json()).conquistas}catch(e){}
+  }
+  if(!Array.isArray(lista)||!lista.length)return;
+  const url=u=>/^https:\/\//i.test(u||"")?u:"";
+  qs("#conq").innerHTML=lista.slice(0,QTD_CONQUISTAS).map(c=>{
+    const dica=[c.titulo,c.descricao,c.pontos?c.pontos+" pontos":""].filter(Boolean).join(" — ");
+    return '<li><a href="https://retroachievements.org/achievement/'+encodeURIComponent(c.id)+'" target="_blank" rel="noopener" title="'+esc(dica)+'">'+
+      '<img src="'+esc(url(c.imagem))+'" alt="" width="52" height="52" loading="lazy">'+
+      '<div><b>'+esc(c.titulo)+'</b><span class="jg">'+esc(c.jogo)+(c.console?" · "+esc(c.console):"")+'</span><span class="qd">'+esc(quandoFoi(c.data))+'</span></div></a></li>';
+  }).join("");
+  qs("#col-conq").hidden=false;
+}
 </script>
 </body>
 </html>
