@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-23T21:38:05.477Z",
+  "atualizado": "2026-11-23T22:37:32.398Z",
   "guia": {
     "playlists": [
       {
@@ -161,6 +161,13 @@
     ],
     "shorts": [
       {
+        "id": "zZ9vpJXoFKs",
+        "titulo": "Raiden Trad: Como Conseguir Do Not Bomb! II",
+        "data": "2026-11-23T18:56:51Z",
+        "jogo": "",
+        "console": ""
+      },
+      {
         "id": "GpmVLpfU04o",
         "titulo": "Raiden Trad: Como Conseguir Do Not Bomb! I",
         "data": "2026-11-22T13:58:33Z",
@@ -236,20 +243,13 @@
         "data": "2026-10-31T22:36:13Z",
         "jogo": "",
         "console": ""
-      },
-      {
-        "id": "XY5wbLigk_c",
-        "titulo": "Parasite Eve: Como Conseguir Someone Calls Me, Someone Looks for Me... 1/2",
-        "data": "2026-10-27T13:10:49Z",
-        "jogo": "",
-        "console": ""
       }
     ]
   },
   "ultimoShort": {
-    "id": "GpmVLpfU04o",
-    "titulo": "Raiden Trad: Como Conseguir Do Not Bomb! I",
-    "data": "2026-11-22T13:58:33Z",
+    "id": "zZ9vpJXoFKs",
+    "titulo": "Raiden Trad: Como Conseguir Do Not Bomb! II",
+    "data": "2026-11-23T18:56:51Z",
     "jogo": "",
     "console": ""
   },
@@ -272,7 +272,7 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-23T21:38:05.476Z",
+    "atualizado": "2026-11-23T22:37:32.397Z",
     "consoles": [
       {
         "nome": "PlayStation",
