@@ -1,0 +1,21 @@
+{
+  "_ajuda": "Hall dos Conquistadores. Edite só este arquivo todo mês. membro = false esconde a seção inteira. roleta.ativa / evento.ativa = false esconde só aquele cartão (a roleta fica aqui, é só deixar ativa quando quiser mostrar). imagem é opcional (caminho em assets/ ou link https).",
+  "atualizado": "2026-11-23",
+  "membro": true,
+  "link": "https://halldosconquistadores.wpcomstaging.com/masterizados/",
+  "roleta": {
+    "ativa": true,
+    "rodada": 9,
+    "jogo": "Art of Fighting",
+    "console": "Mega Drive",
+    "imagem": ""
+  },
+  "evento": {
+    "ativa": true,
+    "nome": "Baú dos Desesperados",
+    "tema": "Pré-história: dinossauros e homem das cavernas",
+    "jogo": "GON",
+    "console": "Super Nintendo",
+    "imagem": "https://i0.wp.com/halldosconquistadores.wpcomstaging.com/wp-content/uploads/2026/11/Banner-Bau-dos-Desesperados.jpg?fit=1024%2C691&ssl=1"
+  }
+}

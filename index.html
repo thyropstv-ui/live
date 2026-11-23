@@ -28,6 +28,28 @@
 .conq b{font-family:var(--titulos);font-weight:600;font-size:16px;letter-spacing:.2px;color:var(--texto)}
 .conq .jg{font-size:13px;color:var(--texto);opacity:.85}
 .conq .qd{font-size:12px;color:var(--mudo)}
+
+/* Hall dos Conquistadores: roleta da rodada e evento atual (dados em hall.json) */
+.hall-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px;align-items:start}
+.hall-card .hud-in{display:flex;flex-direction:column;gap:6px;padding:16px 18px;position:relative;overflow:hidden}
+.hall-card .sigla{position:absolute;right:12px;top:-6px;font:700 120px/1 var(--titulos);color:rgba(150,140,255,.12);pointer-events:none}
+.hall-card h3{margin:0;font:700 34px/1.05 var(--titulos);letter-spacing:.02em}
+.hall-card .console-j{display:inline-block;align-self:flex-start;padding:2px 10px;font:600 14px var(--titulos);letter-spacing:.06em;color:#06122b;background:var(--ciano)}
+.hall-card p{margin:0;color:var(--mudo);font-size:14.5px}
+.hall-card .sorteio{margin-top:auto;padding-top:8px;color:var(--texto)}
+.hall-capa{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;margin:2px 0 8px;box-shadow:0 0 0 1px var(--linha)}
+.hall-banner{margin-top:14px}
+.hall-banner .hud-in{
+  display:flex;align-items:center;gap:22px;min-height:170px;padding:16px 22px;
+  background:linear-gradient(90deg,rgba(5,7,24,.94) 0,rgba(5,7,24,.72) 45%,rgba(5,7,24,.2)),url(https://i0.wp.com/halldosconquistadores.wpcomstaging.com/wp-content/uploads/2026/09/3e715069c332dc0c61d95cf645b89f77.gif?fit=1028%2C824&ssl=1) center 78%/cover no-repeat;
+  image-rendering:pixelated;
+}
+.hall-logo{flex:none;display:block;width:128px;height:auto;filter:drop-shadow(0 0 14px rgba(255,170,40,.35))}
+.hall-txt b{display:block;font:700 clamp(24px,4vw,34px)/1.05 var(--titulos);letter-spacing:.02em}
+.hall-txt span{display:block;margin-top:6px;color:#c3c8f0}
+.hall-acoes{margin-top:12px}
+.hall-acoes .botao{display:inline-block;text-decoration:none}
+@media (max-width:560px){.hall-banner .hud-in{flex-direction:column;text-align:center;gap:10px}.hall-logo{width:104px}}
 @media (max-width:860px){.linha-placar{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
@@ -60,6 +82,18 @@
         <div class="hud"><div class="hud-in pad"><ul class="conq" id="conq"></ul></div></div>
       </section>
     </div>
+    <section id="hall" hidden>
+      <div class="titulo"><h2>Hall dos Conquistadores</h2></div>
+      <div class="hall-banner hud"><div class="hud-in">
+        <img class="hall-logo" src="https://i0.wp.com/halldosconquistadores.wpcomstaging.com/wp-content/uploads/2026/03/logo_escudo_hall_dos_conquistadores_-_sem_fundo.png?fit=350%2C350&ssl=1" alt="Escudo do Hall dos Conquistadores" width="128" height="128">
+        <div class="hall-txt">
+          <b>Faço parte do Hall dos Conquistadores</b>
+          <span id="hall-sub"></span>
+          <div class="hall-acoes" id="hall-acoes"></div>
+        </div>
+      </div></div>
+      <div class="hall-grid" id="hall-grid"></div>
+    </section>
     <div class="titulo"><h2>Em destaque</h2></div>
     <div class="destaques" id="destaques"></div>
     <div class="atalhos" id="atalhos"></div>
@@ -72,6 +106,7 @@
   qs("#canais").innerHTML=botoesCanais(["twitch","kick","youtube","instagram"]);
   const at=[["placar.html","Placar","Platinas e zeradas por console"],["guia.html","Guia","Shorts e playlists de conquistas"],["agenda.html","Agenda","Dias e horários das lives"],["vozes.html","Vozes","Teste os comandos de voz"],["trocavoz.html","Troca de voz","Mude a voz do streamer por 2 minutos"],["memes.html","Memes","Ouça os memes do chat"]];
   qs("#atalhos").innerHTML=at.map(a=>'<a class="atalho hud" href="'+a[0]+'"><div class="hud-in pad"><b>'+a[1]+'</b><span>'+a[2]+'</span></div></a>').join("");
+  montaHall();
   let d;
   try{d=await carregaDados()}catch(e){qs(".linha-placar").remove();return}
   avisoExemplo(d);
@@ -109,6 +144,30 @@ async function montaConquistas(d){
       '<div><b>'+esc(c.titulo)+'</b><span class="jg">'+esc(c.jogo)+(c.console?" · "+esc(c.console):"")+'</span><span class="qd">'+esc(quandoFoi(c.data))+'</span></div></a></li>';
   }).join("");
   qs("#col-conq").hidden=false;
+}
+
+/* Hall dos Conquistadores: lê o hall.json (você edita todo mês). Sem o arquivo ou com "membro": false, a seção some. */
+async function montaHall(){
+  let h;
+  try{h=await carregaJson("hall.json")}catch(e){return}
+  if(!h||h.membro===false)return;
+  const img=u=>/^(https:\/\/|assets\/)/i.test(u||"")?u:"";
+  const r=h.roleta,ev=h.evento;
+  let cards="";
+  if(r&&r.ativa!==false&&r.jogo)cards+='<article class="hall-card hud"><div class="hud-in">'+
+    '<div class="sigla" aria-hidden="true">'+esc(r.rodada)+'</div><div class="rotulo">Roleta · Rodada '+esc(r.rodada)+'</div>'+
+    (img(r.imagem)?'<img class="hall-capa" src="'+esc(img(r.imagem))+'" alt="" loading="lazy" onerror="this.remove()">':'')+
+    '<h3>'+esc(r.jogo)+'</h3>'+(r.console?'<span class="console-j">'+esc(r.console)+'</span>':'')+
+    '<p class="sorteio">Jogo sorteado para mim nesta rodada.</p></div></article>';
+  if(ev&&ev.ativa!==false&&ev.nome)cards+='<article class="hall-card hud"><div class="hud-in">'+
+    '<div class="rotulo">Evento atual</div>'+
+    (img(ev.imagem)?'<img class="hall-capa" src="'+esc(img(ev.imagem))+'" alt="'+esc(ev.nome)+'" loading="lazy" onerror="this.remove()">':'')+
+    '<h3>'+esc(ev.nome)+'</h3>'+(ev.tema?'<p>'+esc(ev.tema)+'</p>':'')+
+    (ev.jogo?'<p class="sorteio">Jogo sorteado: <b>'+esc(ev.jogo)+'</b>'+(ev.console?' · '+esc(ev.console):'')+'</p>':'')+'</div></article>';
+  qs("#hall-sub").textContent=cards?"Veja a roleta e o evento do momento.":"";
+  qs("#hall-grid").innerHTML=cards;
+  if(/^https:\/\//i.test(h.link||""))qs("#hall-acoes").innerHTML='<a class="botao botao--sec" href="'+esc(h.link)+'" target="_blank" rel="noopener">Ver o Hall dos Conquistadores</a>';
+  qs("#hall").hidden=false;
 }
 </script>
 </body>
