@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-23T11:00:02.148Z",
+  "atualizado": "2026-11-23T12:09:22.305Z",
   "guia": {
     "playlists": [
       {
@@ -272,14 +272,14 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-23T11:00:02.148Z",
+    "atualizado": "2026-11-23T12:09:22.304Z",
     "consoles": [
       {
         "nome": "PlayStation",
         "sigla": "PS1",
         "platinados": 19,
         "zerados": 21,
-        "emLive": 3,
+        "emLive": 0,
         "emAndamento": 1,
         "tempoSeg": 2726548
       },
@@ -288,7 +288,7 @@
         "sigla": "SF",
         "platinados": 17,
         "zerados": 17,
-        "emLive": 1,
+        "emLive": 0,
         "emAndamento": 4,
         "tempoSeg": 1436157
       },
@@ -315,7 +315,7 @@
         "sigla": "GD",
         "platinados": 6,
         "zerados": 6,
-        "emLive": 4,
+        "emLive": 0,
         "emAndamento": 1,
         "tempoSeg": 461089
       },
@@ -324,7 +324,7 @@
         "sigla": "N",
         "platinados": 2,
         "zerados": 2,
-        "emLive": 1,
+        "emLive": 0,
         "emAndamento": 0,
         "tempoSeg": 116606
       },
@@ -333,7 +333,7 @@
         "sigla": "DC",
         "platinados": 1,
         "zerados": 1,
-        "emLive": 1,
+        "emLive": 0,
         "emAndamento": 0,
         "tempoSeg": 76859
       },
@@ -342,7 +342,7 @@
         "sigla": "SMS",
         "platinados": 1,
         "zerados": 1,
-        "emLive": 1,
+        "emLive": 0,
         "emAndamento": 0,
         "tempoSeg": 14230
       },
@@ -351,7 +351,7 @@
         "sigla": "NDS",
         "platinados": 1,
         "zerados": 1,
-        "emLive": 1,
+        "emLive": 0,
         "emAndamento": 0,
         "tempoSeg": 185530
       },
@@ -404,7 +404,7 @@
         "platinado": false,
         "zerado": false,
         "data": "2026-11-19T11:54:12+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 167577
       },
       {
@@ -418,7 +418,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-11-02T01:43:37+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 76859
       },
       {
@@ -432,7 +432,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-10-22T02:28:20+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 14461
       },
       {
@@ -446,7 +446,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-10-18T17:45:07+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 147332
       },
       {
@@ -460,7 +460,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-09-24T02:33:48+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 18551
       },
       {
@@ -474,7 +474,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-09-19T19:44:09+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 52249
       },
       {
@@ -502,7 +502,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-09-12T20:13:39+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 20605
       },
       {
@@ -516,7 +516,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-09-09T13:10:22+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 45590
       },
       {
@@ -530,7 +530,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-09-05T18:04:34+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 202388
       },
       {
@@ -544,7 +544,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-08-30T03:26:10+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 14230
       },
       {
@@ -572,7 +572,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-08-12T01:06:31+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 217675
       },
       {
@@ -586,7 +586,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-07-24T18:07:33+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 137678
       },
       {
@@ -1104,7 +1104,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2025-11-19T19:47:46+00:00",
-        "emLive": true,
+        "emLive": false,
         "tempoSeg": 185530
       },
       {
@@ -1584,7 +1584,7 @@
         "tempoSeg": 51877
       }
     ],
-    "comVideoAoVivo": true
+    "comVideoAoVivo": false
   },
   "conquistas": [
     {
