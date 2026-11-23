@@ -1,0 +1,107 @@
+{
+  "exemplo": true,
+  "placar": {
+    "atualizado": "2026-11-14",
+    "consoles": [
+      {
+        "nome": "Nintendo 64",
+        "sigla": "N64",
+        "platinados": 12,
+        "zerados": 18,
+        "emLive": 5
+      },
+      {
+        "nome": "PlayStation",
+        "sigla": "PS1",
+        "platinados": 18,
+        "zerados": 25,
+        "emLive": 9
+      },
+      {
+        "nome": "Game Boy Advance",
+        "sigla": "GBA",
+        "platinados": 15,
+        "zerados": 21,
+        "emLive": 7
+      },
+      {
+        "nome": "Game Boy Color",
+        "sigla": "GBC",
+        "platinados": 10,
+        "zerados": 14,
+        "emLive": 4
+      },
+      {
+        "nome": "Mega Drive",
+        "sigla": "MD",
+        "platinados": 15,
+        "zerados": 19,
+        "emLive": 6
+      }
+    ]
+  },
+  "votacao": {
+    "ativa": true,
+    "comando": "!votar",
+    "postUrl": "",
+    "api": "https://script.google.com/macros/s/AKfycbyrzQWOVZZOLXqbAC3bU0lkv0u_z6aj_yxKRfx3I6W-NyqwyrRVe7iMehux35OruZg1/exec",
+    "clientId": "388523303261-8s0a9j1sm0jdi84mtdjepku40m2uvf01.apps.googleusercontent.com",
+    "rodada": "1",
+    "postTitulo": "Votar no post do YouTube",
+    "texto": "Vote no chat da live no jogo que você quer ver refeito ao vivo. O mais votado entra na próxima live.",
+    "opcoes": [
+      {
+        "jogo": "Exemplo de jogo 1",
+        "console": "Nintendo 64"
+      },
+      {
+        "jogo": "Exemplo de jogo 2",
+        "console": "PlayStation"
+      },
+      {
+        "jogo": "Exemplo de jogo 3",
+        "console": "Game Boy Advance"
+      }
+    ]
+  },
+  "agenda": {
+    "duracaoHoras": 4,
+    "lives": [
+      {
+        "dia": 2,
+        "hora": "21:00",
+        "titulo": "Live retrô"
+      },
+      {
+        "dia": 3,
+        "hora": "21:00",
+        "titulo": "Live retrô"
+      },
+      {
+        "dia": 4,
+        "hora": "21:00",
+        "titulo": "Live retrô"
+      }
+    ],
+    "obs": "Horários de Brasília (São Paulo). Quando existe uma live agendada no YouTube, ela tem prioridade sobre este calendário. Em multistream: Twitch, Kick e YouTube."
+  },
+  "guia": {
+    "playlists": [
+      {
+        "nome": "Guia de conquistas (mais recente)",
+        "console": "",
+        "url": "https://www.youtube.com/watch?v=uEftuAZpc3A&list=PLILbuG2QKXMs",
+        "descricao": "Playlist mais atual do guia de conquistas"
+      }
+    ],
+    "gameplay": [
+      {
+        "nome": "Gameplays (mais recente)",
+        "console": "",
+        "url": "https://www.youtube.com/watch?v=df99S_WdJOM&list=PLSSy3oK-pcNU",
+        "descricao": "Playlist mais atual de gameplay"
+      }
+    ],
+    "shorts": []
+  }
+}

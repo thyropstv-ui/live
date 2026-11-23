@@ -1,0 +1,15 @@
+{
+  "_ajuda": "Vozes gratuitas do Voicemod. Edite só este arquivo. nome = como aparece no Voicemod; emoji = ícone do cartão; ate (opcional, AAAA-MM-DD) = depois dessa data a voz some da página sozinha.",
+  "atualizado": "2026-11-22",
+  "vozes": [
+    { "nome": "Clean Mic", "emoji": "🎤", "desc": "Voz Clean Mic do VoiceMod." },
+    { "nome": "Banana", "carinha": "banana", "desc": "Voz Banana do VoiceMod." },
+    { "nome": "Custom Pitch", "emoji": "🎚️", "desc": "Voz Custom Pitch do VoiceMod." },
+    { "nome": "Battlefield Radio 2", "emoji": "📻", "desc": "Voz Battlefield Radio 2 do VoiceMod." },
+    { "nome": "Mel", "carinha": "mel", "desc": "Voz Mel do VoiceMod." },
+    { "nome": "Deep", "emoji": "🗿", "desc": "Voz Deep do VoiceMod." },
+    { "nome": "Genki", "emoji": "✨", "desc": "Voz Genki do VoiceMod." },
+    { "nome": "Helium", "emoji": "🎈", "desc": "Voz Helium do VoiceMod." },
+    { "nome": "Cooked Mic", "emoji": "💀", "desc": "Voz Cooked Mic do VoiceMod." }
+  ]
+}
