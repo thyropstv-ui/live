@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-24T11:43:33.487Z",
+  "atualizado": "2026-11-24T12:50:56.068Z",
   "guia": {
     "playlists": [
       {
@@ -263,7 +263,7 @@
   "gameplayAtual": {
     "id": "NQcAi5f8-Qg",
     "titulo": "Art of Fighting 🏆0/35 #halldosconquistadores #roleta",
-    "data": "2026-11-24T11:43:33.483Z",
+    "data": "2026-11-24T12:50:56.060Z",
     "playlist": "ao vivo",
     "jogo": null
   },
@@ -278,7 +278,7 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-24T11:43:33.487Z",
+    "atualizado": "2026-11-24T12:50:56.066Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -322,8 +322,8 @@
         "platinados": 6,
         "zerados": 6,
         "emLive": 4,
-        "emAndamento": 1,
-        "tempoSeg": 461089
+        "emAndamento": 2,
+        "tempoSeg": 465711
       },
       {
         "nome": "NES/Famicom",
@@ -399,6 +399,20 @@
       }
     ],
     "jogos": [
+      {
+        "id": 184,
+        "titulo": "Art of Fighting",
+        "console": "Genesis/Mega Drive",
+        "imagem": "https://media.retroachievements.org/Images/071350.png",
+        "conquistas": 35,
+        "ganhas": 5,
+        "pct": 14,
+        "platinado": false,
+        "zerado": false,
+        "data": "2026-11-24T12:49:03+00:00",
+        "emLive": false,
+        "tempoSeg": 4622
+      },
       {
         "id": 114,
         "titulo": "Raiden Densetsu: Raiden Trad",
@@ -1594,6 +1608,71 @@
   },
   "conquistas": [
     {
+      "id": 224697,
+      "titulo": "Ice Age",
+      "descricao": "In the Ice Pillar Smash bonus game, obtain 10,000 points",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/248182.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-24T12:49:03Z",
+      "hardcore": true
+    },
+    {
+      "id": 224667,
+      "titulo": "Ballroom Dancing",
+      "descricao": "Defeat Jack as Ryo on Hard difficulty with rounds set to 3 and time set to 60",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/248152.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-24T12:45:42Z",
+      "hardcore": true
+    },
+    {
+      "id": 224666,
+      "titulo": "Dancing With Jack",
+      "descricao": "Defeat Jack as Ryo with rounds set to 3 and time set to 60",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/248151.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-24T12:45:42Z",
+      "hardcore": true
+    },
+    {
+      "id": 224665,
+      "titulo": "Life's Big Question",
+      "descricao": "Defeat Todoh as Ryo on Hard difficulty with rounds set to 3 and time set to 60",
+      "pontos": 3,
+      "imagem": "https://media.retroachievements.org/Badge/248150.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-24T12:25:57Z",
+      "hardcore": true
+    },
+    {
+      "id": 224664,
+      "titulo": "Todoh or Not Todoh",
+      "descricao": "Defeat Todoh as Ryo with rounds set to 3 and time set to 60",
+      "pontos": 3,
+      "imagem": "https://media.retroachievements.org/Badge/248149.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-24T12:25:57Z",
+      "hardcore": true
+    },
+    {
       "id": 312089,
       "titulo": "Homing Master",
       "descricao": "Complete entire game using only Homing Missiles [Can be combined with one of the main weapons]",
@@ -1630,71 +1709,6 @@
       "console": "Genesis/Mega Drive",
       "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
       "data": "2026-11-15T19:02:33Z",
-      "hardcore": true
-    },
-    {
-      "id": 312086,
-      "titulo": "Vulcan Master",
-      "descricao": "Complete entire game using only Vulcan weapon [Can be combined with one of the sub-weapons]",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/345291.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-15T17:58:01Z",
-      "hardcore": true
-    },
-    {
-      "id": 312075,
-      "titulo": "Medal Collector VIII",
-      "descricao": "Collect 23 medals on Stage 8 without dying",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/345280.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-15T16:54:07Z",
-      "hardcore": true
-    },
-    {
-      "id": 312077,
-      "titulo": "Order: 'Do not bomb!' VIII",
-      "descricao": "Defeat Boss on Stage 8 without using bombs or dying",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/345282.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-13T03:05:14Z",
-      "hardcore": true
-    },
-    {
-      "id": 312071,
-      "titulo": "Enemy Fortress",
-      "descricao": "Complete Stage 8",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/345276.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-13T03:05:13Z",
-      "hardcore": true
-    },
-    {
-      "id": 312040,
-      "titulo": "Ancient Ruins [Ace]",
-      "descricao": "Complete Stage 4 on Hard difficulty without dying",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/345245.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-11T02:29:39Z",
       "hardcore": true
     }
   ]
