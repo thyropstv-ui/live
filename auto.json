@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-24T12:50:56.068Z",
+  "atualizado": "2026-11-24T14:06:41.098Z",
   "guia": {
     "playlists": [
       {
@@ -117,6 +117,13 @@
         "descricao": "4 vídeos"
       },
       {
+        "pid": "PLLlE2AQkwO1g",
+        "nome": "Art of Fighting (MD)",
+        "url": "https://www.youtube.com/playlist?list=PLLlE2AQkwO1g",
+        "console": "Mega Drive",
+        "descricao": "2 vídeos"
+      },
+      {
         "pid": "PLKMBZ8_oAEqo",
         "nome": "Back to the Future: Part III (MD)",
         "url": "https://www.youtube.com/playlist?list=PLKMBZ8_oAEqo",
@@ -136,13 +143,6 @@
         "url": "https://www.youtube.com/playlist?list=PLGjzJvMBzF_E",
         "console": "",
         "descricao": "2 vídeos"
-      },
-      {
-        "pid": "PLLlE2AQkwO1g",
-        "nome": "Art of Fighting (MD)",
-        "url": "https://www.youtube.com/playlist?list=PLLlE2AQkwO1g",
-        "console": "Mega Drive",
-        "descricao": "1 vídeo"
       },
       {
         "pid": "PLZOiGEbvdUTs",
@@ -262,23 +262,25 @@
   },
   "gameplayAtual": {
     "id": "NQcAi5f8-Qg",
-    "titulo": "Art of Fighting 🏆0/35 #halldosconquistadores #roleta",
-    "data": "2026-11-24T12:50:56.060Z",
-    "playlist": "ao vivo",
+    "titulo": "Art of Fighting 🏆00/35 #halldosconquistadores #roleta #01",
+    "data": "2026-11-24T12:55:01Z",
+    "playlist": "lives do canal",
     "jogo": null
   },
-  "aoVivo": {
-    "id": "NQcAi5f8-Qg",
-    "titulo": "Art of Fighting 🏆0/35 #halldosconquistadores #roleta"
+  "aoVivo": null,
+  "aoVivoVertical": null,
+  "proxima": {
+    "id": "zt37XBX6KD8",
+    "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
+    "inicio": "2026-11-25T00:30:00Z"
   },
-  "aoVivoVertical": {
-    "id": "AiGpOU7c8Ps",
-    "titulo": "📱 VERTICAL | Art of Fighting 🏆0/35 #halldosconquistadores #roleta"
+  "proximaVertical": {
+    "id": "AP2I6M0Ynrk",
+    "titulo": "📱 VERTICAL | Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
+    "inicio": "2026-11-25T00:30:00Z"
   },
-  "proxima": null,
-  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-24T12:50:56.066Z",
+    "atualizado": "2026-11-24T14:06:41.096Z",
     "consoles": [
       {
         "nome": "PlayStation",
