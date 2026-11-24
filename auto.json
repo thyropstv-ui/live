@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-24T10:42:29.067Z",
+  "atualizado": "2026-11-24T11:43:33.487Z",
   "guia": {
     "playlists": [
       {
@@ -138,6 +138,13 @@
         "descricao": "2 vídeos"
       },
       {
+        "pid": "PLLlE2AQkwO1g",
+        "nome": "Art of Fighting (MD)",
+        "url": "https://www.youtube.com/playlist?list=PLLlE2AQkwO1g",
+        "console": "Mega Drive",
+        "descricao": "1 vídeo"
+      },
+      {
         "pid": "PLZOiGEbvdUTs",
         "nome": "Battle Blaze",
         "url": "https://www.youtube.com/playlist?list=PLZOiGEbvdUTs",
@@ -254,25 +261,24 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "MUkEkn618o4",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #24 #halldosconquistadores #lixao",
-    "data": "2026-11-22T17:59:08Z",
-    "playlist": "lives do canal",
-    "jogo": {
-      "id": 114,
-      "titulo": "Raiden Densetsu: Raiden Trad",
-      "console": "Genesis/Mega Drive",
-      "imagem": "https://media.retroachievements.org/Images/064550.png",
-      "ganhas": 59,
-      "conquistas": 85
-    }
+    "id": "NQcAi5f8-Qg",
+    "titulo": "Art of Fighting 🏆0/35 #halldosconquistadores #roleta",
+    "data": "2026-11-24T11:43:33.483Z",
+    "playlist": "ao vivo",
+    "jogo": null
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
+  "aoVivo": {
+    "id": "NQcAi5f8-Qg",
+    "titulo": "Art of Fighting 🏆0/35 #halldosconquistadores #roleta"
+  },
+  "aoVivoVertical": {
+    "id": "AiGpOU7c8Ps",
+    "titulo": "📱 VERTICAL | Art of Fighting 🏆0/35 #halldosconquistadores #roleta"
+  },
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-24T10:42:29.067Z",
+    "atualizado": "2026-11-24T11:43:33.487Z",
     "consoles": [
       {
         "nome": "PlayStation",
