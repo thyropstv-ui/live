@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-24T00:36:58.702Z",
+  "atualizado": "2026-11-24T02:01:57.878Z",
   "guia": {
     "playlists": [
       {
@@ -272,7 +272,7 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-24T00:36:58.702Z",
+    "atualizado": "2026-11-24T02:01:57.878Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -1679,11 +1679,11 @@
       "hardcore": true
     },
     {
-      "id": 312037,
-      "titulo": "Ancient Ruins [Normal]",
-      "descricao": "Complete Stage 4 on Normal difficulty or above",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/345242.png",
+      "id": 312040,
+      "titulo": "Ancient Ruins [Ace]",
+      "descricao": "Complete Stage 4 on Hard difficulty without dying",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345245.png",
       "jogo": "Raiden Densetsu: Raiden Trad",
       "jogoId": 114,
       "console": "Genesis/Mega Drive",
