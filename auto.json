@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T21:44:22.893Z",
+  "atualizado": "2026-11-25T22:41:21.193Z",
   "guia": {
     "playlists": [
       {
@@ -175,6 +175,13 @@
     ],
     "shorts": [
       {
+        "id": "uOrAzdbl9-U",
+        "titulo": "Raiden Trad: Como Conseguir Do not bomb! IV",
+        "data": "2026-11-25T19:22:44Z",
+        "jogo": "",
+        "console": ""
+      },
+      {
         "id": "MRs3rfiH4Vs",
         "titulo": "Raiden Trad: Como Conseguir Do Not Bomb! III",
         "data": "2026-11-24T18:28:30Z",
@@ -250,20 +257,13 @@
         "data": "2026-11-03T16:53:37Z",
         "jogo": "",
         "console": ""
-      },
-      {
-        "id": "TkDBv8Q7aqs",
-        "titulo": "Back to the Future III: Como Conseguir Doc Gaucho",
-        "data": "2026-11-02T11:45:50Z",
-        "jogo": "",
-        "console": ""
       }
     ]
   },
   "ultimoShort": {
-    "id": "MRs3rfiH4Vs",
-    "titulo": "Raiden Trad: Como Conseguir Do Not Bomb! III",
-    "data": "2026-11-24T18:28:30Z",
+    "id": "uOrAzdbl9-U",
+    "titulo": "Raiden Trad: Como Conseguir Do not bomb! IV",
+    "data": "2026-11-25T19:22:44Z",
     "jogo": "",
     "console": ""
   },
@@ -294,7 +294,7 @@
     "inicio": "2026-11-26T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-25T21:44:22.892Z",
+    "atualizado": "2026-11-25T22:41:21.192Z",
     "consoles": [
       {
         "nome": "PlayStation",
