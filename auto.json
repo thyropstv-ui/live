@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T11:45:22.381Z",
+  "atualizado": "2026-11-25T12:54:24.754Z",
   "guia": {
     "playlists": [
       {
@@ -270,28 +270,22 @@
   "gameplayAtual": {
     "id": "92UfFMY4PeQ",
     "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆60/85 #26 #halldosconquistadores #lixao",
-    "data": "2026-11-25T11:45:22.376Z",
-    "playlist": "ao vivo",
+    "data": "2026-11-25T12:30:35Z",
+    "playlist": "lives do canal",
     "jogo": {
       "id": 114,
       "titulo": "Raiden Densetsu: Raiden Trad",
       "console": "Genesis/Mega Drive",
       "imagem": "https://media.retroachievements.org/Images/064550.png",
-      "ganhas": 60,
+      "ganhas": 61,
       "conquistas": 85
     }
   },
-  "aoVivo": {
-    "id": "92UfFMY4PeQ",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆60/85 #26 #halldosconquistadores #lixao"
-  },
-  "aoVivoVertical": {
-    "id": "_vDaX7rZPO0",
-    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 60/85 #26 | #HallDosConquistadores #Lixao"
-  },
+  "aoVivo": null,
+  "aoVivoVertical": null,
   "proxima": {
     "id": "-ZRlbQMLnIg",
-    "titulo": "GON 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
+    "titulo": "GON | LIVE 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
     "inicio": "2026-11-26T00:30:00Z"
   },
   "proximaVertical": {
@@ -300,7 +294,7 @@
     "inicio": "2026-11-26T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-25T11:45:22.380Z",
+    "atualizado": "2026-11-25T12:54:24.753Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -334,9 +328,9 @@
         "sigla": "GD",
         "platinados": 7,
         "zerados": 7,
-        "emLive": 4,
+        "emLive": 5,
         "emAndamento": 1,
-        "tempoSeg": 505251
+        "tempoSeg": 509167
       },
       {
         "nome": "Nintendo 64",
@@ -427,13 +421,13 @@
         "console": "Genesis/Mega Drive",
         "imagem": "https://media.retroachievements.org/Images/064550.png",
         "conquistas": 85,
-        "ganhas": 60,
-        "pct": 71,
+        "ganhas": 61,
+        "pct": 72,
         "platinado": false,
         "zerado": false,
-        "data": "2026-11-25T03:14:14+00:00",
+        "data": "2026-11-25T12:26:03+00:00",
         "emLive": true,
-        "tempoSeg": 202127
+        "tempoSeg": 206043
       },
       {
         "id": 184,
@@ -446,7 +440,7 @@
         "platinado": true,
         "zerado": true,
         "data": "2026-11-25T01:52:30+00:00",
-        "emLive": false,
+        "emLive": true,
         "tempoSeg": 9612
       },
       {
@@ -1630,6 +1624,19 @@
   },
   "conquistas": [
     {
+      "id": 312087,
+      "titulo": "Laser Master",
+      "descricao": "Complete entire game using only Laser weapon [Can be combined with one of the sub-weapons]",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345292.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-25T12:26:03Z",
+      "hardcore": true
+    },
+    {
       "id": 312088,
       "titulo": "Nuclear Master",
       "descricao": "Complete entire game using only Nuclear Missiles [Can be combined with one of the main weapons]",
@@ -1718,19 +1725,6 @@
       "console": "Genesis/Mega Drive",
       "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
       "data": "2026-11-25T01:48:32Z",
-      "hardcore": true
-    },
-    {
-      "id": 224688,
-      "titulo": "I'm Not a Snitch",
-      "descricao": "Defeat Mickey as Robert with rounds set to 3 and time set to 60",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/248173.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:47:15Z",
       "hardcore": true
     }
   ]
