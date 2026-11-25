@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T00:39:03.720Z",
+  "atualizado": "2026-11-25T02:08:22.014Z",
   "guia": {
     "playlists": [
       {
@@ -14,7 +14,7 @@
         "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
         "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
         "console": "",
-        "descricao": "27 vídeos"
+        "descricao": "28 vídeos"
       },
       {
         "pid": "PLCebeJpWeQPA",
@@ -261,19 +261,26 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "zt37XBX6KD8",
-    "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
-    "data": "2026-11-25T00:39:03.713Z",
+    "id": "YN60E3dE2Rw",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #25 #halldosconquistadores #lixao",
+    "data": "2026-11-25T02:08:22.008Z",
     "playlist": "ao vivo",
-    "jogo": null
+    "jogo": {
+      "id": 114,
+      "titulo": "Raiden Densetsu: Raiden Trad",
+      "console": "Genesis/Mega Drive",
+      "imagem": "https://media.retroachievements.org/Images/064550.png",
+      "ganhas": 59,
+      "conquistas": 85
+    }
   },
   "aoVivo": {
-    "id": "zt37XBX6KD8",
-    "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02"
+    "id": "YN60E3dE2Rw",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #25 #halldosconquistadores #lixao"
   },
   "aoVivoVertical": {
-    "id": "AP2I6M0Ynrk",
-    "titulo": "📱 VERTICAL | Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02"
+    "id": "FGToCfHKUGw",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 59/85 #25 | #HallDosConquistadores #Lixao"
   },
   "proxima": {
     "id": "zt37XBX6KD8",
@@ -286,7 +293,7 @@
     "inicio": "2026-11-25T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-25T00:39:03.719Z",
+    "atualizado": "2026-11-25T02:08:22.013Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -316,6 +323,15 @@
         "tempoSeg": 1037704
       },
       {
+        "nome": "Genesis/Mega Drive",
+        "sigla": "GD",
+        "platinados": 7,
+        "zerados": 7,
+        "emLive": 4,
+        "emAndamento": 1,
+        "tempoSeg": 470701
+      },
+      {
         "nome": "Nintendo 64",
         "sigla": "N64",
         "platinados": 7,
@@ -323,15 +339,6 @@
         "emLive": 0,
         "emAndamento": 2,
         "tempoSeg": 949757
-      },
-      {
-        "nome": "Genesis/Mega Drive",
-        "sigla": "GD",
-        "platinados": 6,
-        "zerados": 6,
-        "emLive": 4,
-        "emAndamento": 2,
-        "tempoSeg": 465711
       },
       {
         "nome": "NES/Famicom",
@@ -413,13 +420,13 @@
         "console": "Genesis/Mega Drive",
         "imagem": "https://media.retroachievements.org/Images/071350.png",
         "conquistas": 35,
-        "ganhas": 5,
-        "pct": 14,
-        "platinado": false,
-        "zerado": false,
-        "data": "2026-11-24T12:49:03+00:00",
+        "ganhas": 35,
+        "pct": 100,
+        "platinado": true,
+        "zerado": true,
+        "data": "2026-11-25T01:52:30+00:00",
         "emLive": false,
-        "tempoSeg": 4622
+        "tempoSeg": 9612
       },
       {
         "id": 114,
@@ -1616,107 +1623,107 @@
   },
   "conquistas": [
     {
-      "id": 224697,
-      "titulo": "Ice Age",
-      "descricao": "In the Ice Pillar Smash bonus game, obtain 10,000 points",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/248182.png",
+      "id": 224695,
+      "titulo": "Journey Has Ended?",
+      "descricao": "Defeat Mr. Karate as Robert on Hard difficulty with rounds set to 3 and time set to 60",
+      "pontos": 25,
+      "imagem": "https://media.retroachievements.org/Badge/248180.png",
       "jogo": "Art of Fighting",
       "jogoId": 184,
       "console": "Genesis/Mega Drive",
       "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-24T12:49:03Z",
+      "data": "2026-11-25T01:52:30Z",
       "hardcore": true
     },
     {
-      "id": 224667,
-      "titulo": "Ballroom Dancing",
-      "descricao": "Defeat Jack as Ryo on Hard difficulty with rounds set to 3 and time set to 60",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/248152.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-24T12:45:42Z",
-      "hardcore": true
-    },
-    {
-      "id": 224666,
-      "titulo": "Dancing With Jack",
-      "descricao": "Defeat Jack as Ryo with rounds set to 3 and time set to 60",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/248151.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-24T12:45:42Z",
-      "hardcore": true
-    },
-    {
-      "id": 224665,
-      "titulo": "Life's Big Question",
-      "descricao": "Defeat Todoh as Ryo on Hard difficulty with rounds set to 3 and time set to 60",
-      "pontos": 3,
-      "imagem": "https://media.retroachievements.org/Badge/248150.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-24T12:25:57Z",
-      "hardcore": true
-    },
-    {
-      "id": 224664,
-      "titulo": "Todoh or Not Todoh",
-      "descricao": "Defeat Todoh as Ryo with rounds set to 3 and time set to 60",
-      "pontos": 3,
-      "imagem": "https://media.retroachievements.org/Badge/248149.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-24T12:25:57Z",
-      "hardcore": true
-    },
-    {
-      "id": 312089,
-      "titulo": "Homing Master",
-      "descricao": "Complete entire game using only Homing Missiles [Can be combined with one of the main weapons]",
+      "id": 224694,
+      "titulo": "Only Jokes Would Don a Mask",
+      "descricao": "Defeat Mr. Karate as Robert with rounds set to 3 and time set to 60",
       "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/345294.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
+      "imagem": "https://media.retroachievements.org/Badge/248179.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
       "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-19T11:54:12Z",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:52:30Z",
       "hardcore": true
     },
     {
-      "id": 312058,
-      "titulo": "Medal Collector VI",
-      "descricao": "Collect 16 medals on Stage 6 without dying",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/345263.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
+      "id": 224693,
+      "titulo": "Mini Mushroom",
+      "descricao": "Defeat Mr. Big as Robert on Hard difficulty with rounds set to 3 and time set to 60",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/248178.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
       "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-19T11:39:19Z",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:51:06Z",
       "hardcore": true
     },
     {
-      "id": 312067,
-      "titulo": "Medal Collector VII",
-      "descricao": "Collect 18 medals on Stage 7 without dying",
+      "id": 224692,
+      "titulo": "Coming Up Small",
+      "descricao": "Defeat Mr. Big as Robert with rounds set to 3 and time set to 60",
       "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/345272.png",
-      "jogo": "Raiden Densetsu: Raiden Trad",
-      "jogoId": 114,
+      "imagem": "https://media.retroachievements.org/Badge/248177.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
       "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
-      "data": "2026-11-15T19:02:33Z",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:51:06Z",
+      "hardcore": true
+    },
+    {
+      "id": 224691,
+      "titulo": "Strong Bones",
+      "descricao": "Defeat John as Robert on Hard difficulty with rounds set to 3 and time set to 60",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/248176.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:48:33Z",
+      "hardcore": true
+    },
+    {
+      "id": 224690,
+      "titulo": "Avoided Crushing",
+      "descricao": "Defeat John as Robert with rounds set to 3 and time set to 60",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/248175.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:48:32Z",
+      "hardcore": true
+    },
+    {
+      "id": 224688,
+      "titulo": "I'm Not a Snitch",
+      "descricao": "Defeat Mickey as Robert with rounds set to 3 and time set to 60",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/248173.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:47:15Z",
+      "hardcore": true
+    },
+    {
+      "id": 224689,
+      "titulo": "Ethical Warrior",
+      "descricao": "Defeat Mickey as Robert on Hard difficulty with rounds set to 3 and time set to 60",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/248174.png",
+      "jogo": "Art of Fighting",
+      "jogoId": 184,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
+      "data": "2026-11-25T01:47:15Z",
       "hardcore": true
     }
   ]
