@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T02:08:22.014Z",
+  "atualizado": "2026-11-25T03:48:03.125Z",
   "guia": {
     "playlists": [
       {
@@ -263,37 +263,27 @@
   "gameplayAtual": {
     "id": "YN60E3dE2Rw",
     "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #25 #halldosconquistadores #lixao",
-    "data": "2026-11-25T02:08:22.008Z",
-    "playlist": "ao vivo",
+    "data": "2026-11-25T03:22:02Z",
+    "playlist": "lives do canal",
     "jogo": {
       "id": 114,
       "titulo": "Raiden Densetsu: Raiden Trad",
       "console": "Genesis/Mega Drive",
       "imagem": "https://media.retroachievements.org/Images/064550.png",
-      "ganhas": 59,
+      "ganhas": 60,
       "conquistas": 85
     }
   },
-  "aoVivo": {
-    "id": "YN60E3dE2Rw",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #25 #halldosconquistadores #lixao"
-  },
-  "aoVivoVertical": {
-    "id": "FGToCfHKUGw",
-    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 59/85 #25 | #HallDosConquistadores #Lixao"
-  },
+  "aoVivo": null,
+  "aoVivoVertical": null,
   "proxima": {
     "id": "zt37XBX6KD8",
     "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
     "inicio": "2026-11-25T00:30:00Z"
   },
-  "proximaVertical": {
-    "id": "AP2I6M0Ynrk",
-    "titulo": "📱 VERTICAL | Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
-    "inicio": "2026-11-25T00:30:00Z"
-  },
+  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-25T02:08:22.013Z",
+    "atualizado": "2026-11-25T03:48:03.124Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -329,7 +319,7 @@
         "zerados": 7,
         "emLive": 4,
         "emAndamento": 1,
-        "tempoSeg": 470701
+        "tempoSeg": 505251
       },
       {
         "nome": "Nintendo 64",
@@ -415,6 +405,20 @@
     ],
     "jogos": [
       {
+        "id": 114,
+        "titulo": "Raiden Densetsu: Raiden Trad",
+        "console": "Genesis/Mega Drive",
+        "imagem": "https://media.retroachievements.org/Images/064550.png",
+        "conquistas": 85,
+        "ganhas": 60,
+        "pct": 71,
+        "platinado": false,
+        "zerado": false,
+        "data": "2026-11-25T03:14:14+00:00",
+        "emLive": true,
+        "tempoSeg": 202127
+      },
+      {
         "id": 184,
         "titulo": "Art of Fighting",
         "console": "Genesis/Mega Drive",
@@ -427,20 +431,6 @@
         "data": "2026-11-25T01:52:30+00:00",
         "emLive": false,
         "tempoSeg": 9612
-      },
-      {
-        "id": 114,
-        "titulo": "Raiden Densetsu: Raiden Trad",
-        "console": "Genesis/Mega Drive",
-        "imagem": "https://media.retroachievements.org/Images/064550.png",
-        "conquistas": 85,
-        "ganhas": 59,
-        "pct": 69,
-        "platinado": false,
-        "zerado": false,
-        "data": "2026-11-19T11:54:12+00:00",
-        "emLive": true,
-        "tempoSeg": 167577
       },
       {
         "id": 3492,
@@ -1623,6 +1613,19 @@
   },
   "conquistas": [
     {
+      "id": 312088,
+      "titulo": "Nuclear Master",
+      "descricao": "Complete entire game using only Nuclear Missiles [Can be combined with one of the main weapons]",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345293.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-25T03:14:14Z",
+      "hardcore": true
+    },
+    {
       "id": 224695,
       "titulo": "Journey Has Ended?",
       "descricao": "Defeat Mr. Karate as Robert on Hard difficulty with rounds set to 3 and time set to 60",
@@ -1706,19 +1709,6 @@
       "descricao": "Defeat Mickey as Robert with rounds set to 3 and time set to 60",
       "pontos": 5,
       "imagem": "https://media.retroachievements.org/Badge/248173.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:47:15Z",
-      "hardcore": true
-    },
-    {
-      "id": 224689,
-      "titulo": "Ethical Warrior",
-      "descricao": "Defeat Mickey as Robert on Hard difficulty with rounds set to 3 and time set to 60",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/248174.png",
       "jogo": "Art of Fighting",
       "jogoId": 184,
       "console": "Genesis/Mega Drive",
