@@ -36,6 +36,11 @@
 .hall-card .console-j{display:inline-block;align-self:flex-start;padding:2px 10px;font:600 14px var(--titulos);letter-spacing:.06em;color:#06122b;background:var(--ciano)}
 .hall-card p{margin:0;color:var(--mudo);font-size:14.5px}
 .hall-card .sorteio{margin-top:auto;padding-top:8px;color:var(--texto)}
+/* tag "Platina" nos cartões do Hall (mesma cor do tag da página Jogos) */
+.hall-tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.hall-tags:empty{display:none}
+.hall-tag{display:inline-block;padding:2px 10px;font:600 14px var(--titulos);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,var(--roxo),var(--azul))}
+.sorteio[data-hall="evento"] .hall-tag{margin-left:8px;vertical-align:middle}
 .hall-capa{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;margin:2px 0 8px;box-shadow:0 0 0 1px var(--linha)}
 .hall-roda{position:relative;display:grid;place-items:center;aspect-ratio:3/2;margin:2px 0 8px;overflow:hidden;
   background:radial-gradient(closest-side,rgba(166,77,255,.3),transparent 85%),linear-gradient(180deg,var(--pano-a),var(--pano-b));box-shadow:0 0 0 1px var(--linha)}
@@ -106,13 +111,38 @@
 </div>
 <script src="site.js"></script>
 <script>
+/* ---------- Hall: descobre se o jogo do cartão já foi platinado (cruza hall.json com placar.jogos do auto.json) ---------- */
+const HALL_ALVOS={};
+const normTxt=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+/* o hall.json diz "Mega Drive" e o RA diz "Genesis/Mega Drive": compara por uma chave comum (a ordem importa: PS2 antes de PS1, GBA/GBC antes de GB, SNES antes de NES) */
+const CONSOLES_HALL=[["ps2",/playstation 2|\bps2\b/],["ps1",/playstation|\bps1\b|\bpsx\b/],["md",/mega drive|genesis/],["snes",/super nintendo|\bsnes\b|super famicom/],["n64",/nintendo 64|\bn64\b/],["gba",/game boy advance|\bgba\b/],["gbc",/game boy color|\bgbc\b/],["gb",/game boy/],["nes",/\bnes\b|famicom|nintendo entertainment/],["sms",/master system/],["dc",/dreamcast/],["nds",/nintendo ds|\bnds\b/],["gc",/gamecube/],["wii",/\bwii\b/]];
+const chaveConsole=c=>{const n=normTxt(c),x=CONSOLES_HALL.find(k=>k[1].test(n));return x?x[0]:n};
+function acharJogo(jogos,alvo){
+  if(!Array.isArray(jogos)||!alvo)return null;
+  /* se o hall.json tiver "ra": 12345 (número da URL retroachievements.org/game/12345), esse número manda */
+  if(alvo.ra){const g=jogos.find(x=>String(x.id)===String(alvo.ra));if(g)return g}
+  if(!alvo.jogo)return null;
+  const n=normTxt(alvo.jogo);
+  let c=jogos.filter(g=>normTxt(g.titulo)===n);
+  if(alvo.console)c=c.filter(g=>chaveConsole(g.console)===chaveConsole(alvo.console));
+  return c.length===1?c[0]:null;   /* na dúvida não marca, para não mostrar platina no jogo errado */
+}
+function marcaPlatinaHall(jogos){
+  qsa("[data-hall]").forEach(p=>{
+    if(p.querySelector(".hall-tag"))return;
+    const g=acharJogo(jogos,HALL_ALVOS[p.dataset.hall]);
+    if(g&&g.platinado)p.insertAdjacentHTML("beforeend",'<span class="hall-tag">Platina</span>');
+  });
+}
+
 (async function(){
   qs("#canais").innerHTML=botoesCanais(["twitch","kick","youtube","instagram"]);
   const at=[["placar.html","Placar","Platinas e zeradas por console"],["guia.html","Guia","Shorts e playlists de conquistas"],["agenda.html","Agenda","Dias e horários das lives"],["vozes.html","Vozes","Teste os comandos de voz"],["trocavoz.html","Troca de voz","Mude a voz do streamer por 2 minutos"],["memes.html","Memes","Ouça os memes do chat"]];
   qs("#atalhos").innerHTML=at.map(a=>'<a class="atalho hud" href="'+a[0]+'"><div class="hud-in pad"><b>'+a[1]+'</b><span>'+a[2]+'</span></div></a>').join("");
-  montaHall();
+  const hallPronto=montaHall();
   let d;
   try{d=await carregaDados()}catch(e){qs(".linha-placar").remove();return}
+  hallPronto.then(()=>marcaPlatinaHall(d.placar&&d.placar.jogos));
   avisoExemplo(d);
   iniciaContagem(d,qs("#cont"),qs("#quando"),qs("#local"));
   montaFormatos(d,qs("#formatos"));setInterval(()=>montaFormatos(d,qs("#formatos")),30000);
@@ -166,17 +196,18 @@ async function montaHall(){
   if(!h||h.membro===false)return;
   const img=u=>/^(https:\/\/|assets\/)/i.test(u||"")?u:"";
   const r=h.roleta,ev=h.evento;
+  HALL_ALVOS.roleta=r;HALL_ALVOS.evento=ev;
   let cards="";
   if(r&&r.ativa!==false&&r.jogo)cards+='<article class="hall-card hud"><div class="hud-in">'+
     '<div class="rotulo">Roleta do Hall · Jogo do mês</div>'+
     '<div class="hall-roda">'+rodaSvg()+(img(r.imagem)?'<img src="'+esc(img(r.imagem))+'" alt="" loading="lazy" onerror="this.remove()">':'')+'<span class="rod">Rodada '+esc(r.rodada)+'</span></div>'+
     '<h3>'+esc(r.jogo)+'</h3><p>Sorteado para mim na roleta desta rodada.</p>'+
-    (r.console?'<p class="sorteio"><span class="console-j">'+esc(r.console)+'</span></p>':'')+'</div></article>';
+    '<p class="sorteio hall-tags" data-hall="roleta">'+(r.console?'<span class="console-j">'+esc(r.console)+'</span>':'')+'</p></div></article>';
   if(ev&&ev.ativa!==false&&ev.nome)cards+='<article class="hall-card hud"><div class="hud-in">'+
     '<div class="rotulo">Evento atual</div>'+
     (img(ev.imagem)?'<img class="hall-capa" src="'+esc(img(ev.imagem))+'" alt="'+esc(ev.nome)+'" loading="lazy" onerror="this.remove()">':'')+
     '<h3>'+esc(ev.nome)+'</h3>'+(ev.tema?'<p>'+esc(ev.tema)+'</p>':'')+
-    (ev.jogo?'<p class="sorteio">Jogo sorteado: <b>'+esc(ev.jogo)+'</b>'+(ev.console?' · '+esc(ev.console):'')+'</p>':'')+'</div></article>';
+    (ev.jogo?'<p class="sorteio" data-hall="evento">Jogo sorteado: <b>'+esc(ev.jogo)+'</b>'+(ev.console?' · '+esc(ev.console):'')+'</p>':'')+'</div></article>';
   qs("#hall-sub").textContent=cards?"Veja a roleta e o evento do momento.":"";
   qs("#hall-grid").innerHTML=cards;
   if(/^https:\/\//i.test(h.link||""))qs("#hall-acoes").innerHTML='<a class="botao botao--sec" href="'+esc(h.link)+'" target="_blank" rel="noopener">Ver o Hall dos Conquistadores</a>';
