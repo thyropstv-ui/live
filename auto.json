@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T03:48:03.125Z",
+  "atualizado": "2026-11-25T04:54:25.230Z",
   "guia": {
     "playlists": [
       {
@@ -276,14 +276,10 @@
   },
   "aoVivo": null,
   "aoVivoVertical": null,
-  "proxima": {
-    "id": "zt37XBX6KD8",
-    "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
-    "inicio": "2026-11-25T00:30:00Z"
-  },
+  "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-25T03:48:03.124Z",
+    "atualizado": "2026-11-25T04:54:25.230Z",
     "consoles": [
       {
         "nome": "PlayStation",
