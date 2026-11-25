@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T10:45:48.703Z",
+  "atualizado": "2026-11-25T11:45:22.381Z",
   "guia": {
     "playlists": [
       {
@@ -14,7 +14,7 @@
         "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
         "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
         "console": "",
-        "descricao": "28 vídeos"
+        "descricao": "29 vídeos"
       },
       {
         "pid": "PLCebeJpWeQPA",
@@ -145,6 +145,13 @@
         "descricao": "2 vídeos"
       },
       {
+        "pid": "PLKFr46Qx98DY",
+        "nome": "GON (SNES)",
+        "url": "https://www.youtube.com/playlist?list=PLKFr46Qx98DY",
+        "console": "Snes/Super Famicom",
+        "descricao": "1 vídeo"
+      },
+      {
         "pid": "PLZOiGEbvdUTs",
         "nome": "Battle Blaze",
         "url": "https://www.youtube.com/playlist?list=PLZOiGEbvdUTs",
@@ -261,10 +268,10 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "YN60E3dE2Rw",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆59/85 #25 #halldosconquistadores #lixao",
-    "data": "2026-11-25T03:22:02Z",
-    "playlist": "lives do canal",
+    "id": "92UfFMY4PeQ",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆60/85 #26 #halldosconquistadores #lixao",
+    "data": "2026-11-25T11:45:22.376Z",
+    "playlist": "ao vivo",
     "jogo": {
       "id": 114,
       "titulo": "Raiden Densetsu: Raiden Trad",
@@ -274,12 +281,26 @@
       "conquistas": 85
     }
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
-  "proxima": null,
-  "proximaVertical": null,
+  "aoVivo": {
+    "id": "92UfFMY4PeQ",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆60/85 #26 #halldosconquistadores #lixao"
+  },
+  "aoVivoVertical": {
+    "id": "_vDaX7rZPO0",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 60/85 #26 | #HallDosConquistadores #Lixao"
+  },
+  "proxima": {
+    "id": "-ZRlbQMLnIg",
+    "titulo": "GON 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
+    "inicio": "2026-11-26T00:30:00Z"
+  },
+  "proximaVertical": {
+    "id": "v-S9eF7F_AI",
+    "titulo": "📱 VERTICAL | GON 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
+    "inicio": "2026-11-26T00:30:00Z"
+  },
   "placar": {
-    "atualizado": "2026-11-25T10:45:48.703Z",
+    "atualizado": "2026-11-25T11:45:22.380Z",
     "consoles": [
       {
         "nome": "PlayStation",
