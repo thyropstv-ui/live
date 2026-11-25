@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-24T23:36:45.693Z",
+  "atualizado": "2026-11-25T00:39:03.720Z",
   "guia": {
     "playlists": [
       {
@@ -261,14 +261,20 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "NQcAi5f8-Qg",
-    "titulo": "Art of Fighting 🏆00/35 #halldosconquistadores #roleta #01",
-    "data": "2026-11-24T12:55:01Z",
-    "playlist": "lives do canal",
+    "id": "zt37XBX6KD8",
+    "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
+    "data": "2026-11-25T00:39:03.713Z",
+    "playlist": "ao vivo",
     "jogo": null
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
+  "aoVivo": {
+    "id": "zt37XBX6KD8",
+    "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02"
+  },
+  "aoVivoVertical": {
+    "id": "AP2I6M0Ynrk",
+    "titulo": "📱 VERTICAL | Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02"
+  },
   "proxima": {
     "id": "zt37XBX6KD8",
     "titulo": "Art of Fighting 🏆05/35 #halldosconquistadores #roleta #02",
@@ -280,7 +286,7 @@
     "inicio": "2026-11-25T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-24T23:36:45.692Z",
+    "atualizado": "2026-11-25T00:39:03.719Z",
     "consoles": [
       {
         "nome": "PlayStation",
