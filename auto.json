@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-26T03:45:26.646Z",
+  "atualizado": "2026-11-26T04:53:22.550Z",
   "guia": {
     "playlists": [
       {
@@ -283,18 +283,10 @@
   },
   "aoVivo": null,
   "aoVivoVertical": null,
-  "proxima": {
-    "id": "-ZRlbQMLnIg",
-    "titulo": "GON | LIVE 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
-    "inicio": "2026-11-26T00:30:00Z"
-  },
-  "proximaVertical": {
-    "id": "v-S9eF7F_AI",
-    "titulo": "📱 VERTICAL | GON 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
-    "inicio": "2026-11-26T00:30:00Z"
-  },
+  "proxima": null,
+  "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-26T03:45:26.646Z",
+    "atualizado": "2026-11-26T04:53:22.550Z",
     "consoles": [
       {
         "nome": "PlayStation",
