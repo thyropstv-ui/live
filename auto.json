@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-26T21:39:31.379Z",
+  "atualizado": "2026-11-26T22:41:59.077Z",
   "guia": {
     "playlists": [
       {
@@ -175,6 +175,13 @@
     ],
     "shorts": [
       {
+        "id": "5TpZuAwPuNY",
+        "titulo": "Raiden Trad: Como Conseguir Do not bomb! V",
+        "data": "2026-11-26T16:39:03Z",
+        "jogo": "",
+        "console": ""
+      },
+      {
         "id": "uOrAzdbl9-U",
         "titulo": "Raiden Trad: Como Conseguir Do not bomb! IV",
         "data": "2026-11-25T19:22:44Z",
@@ -250,20 +257,13 @@
         "data": "2026-11-05T11:57:01Z",
         "jogo": "",
         "console": ""
-      },
-      {
-        "id": "KblBCL0kNEY",
-        "titulo": "Back to the Future III: Como Conseguir Doc's Love",
-        "data": "2026-11-03T16:53:37Z",
-        "jogo": "",
-        "console": ""
       }
     ]
   },
   "ultimoShort": {
-    "id": "uOrAzdbl9-U",
-    "titulo": "Raiden Trad: Como Conseguir Do not bomb! IV",
-    "data": "2026-11-25T19:22:44Z",
+    "id": "5TpZuAwPuNY",
+    "titulo": "Raiden Trad: Como Conseguir Do not bomb! V",
+    "data": "2026-11-26T16:39:03Z",
     "jogo": "",
     "console": ""
   },
@@ -286,7 +286,7 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-26T21:39:31.379Z",
+    "atualizado": "2026-11-26T22:41:59.077Z",
     "consoles": [
       {
         "nome": "PlayStation",
