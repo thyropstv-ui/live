@@ -492,7 +492,7 @@
     "volume": 10,
     "categoria": "Animes",
     "subcategoria": "Yu-Gi-Oh!",
-    "thumbnail": ""
+    "thumbnail": "https://static.wikia.nocookie.net/yugioh/images/d/dc/Seto_Kaiba.png/revision/latest/thumbnail/width/360/height/360?cb=20250724005644"
   },
   {
     "nome": "!hika_inoue",
@@ -609,7 +609,7 @@
     "volume": 15,
     "categoria": "Desenhos",
     "subcategoria": "Scooby-Doo",
-    "thumbnail": ""
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/pt/b/b2/Scooby.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
   },
   {
     "nome": "!scooby_doo_2",
@@ -771,7 +771,7 @@
     "volume": 35,
     "categoria": "Desenhos",
     "subcategoria": "Disney",
-    "thumbnail": ""
+    "thumbnail": "https://upload.wikimedia.org/wikipedia/pt/6/6f/Donald.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original"
   },
   {
     "nome": "!coragem",
@@ -848,10 +848,10 @@
   {
     "nome": "!luigi",
     "id": "e3d16e778fe3432a8f16299ef7f3b298",
-    "descricao": "Melhor em inglês",
-    "volume": -20,
-    "categoria": "Games",
-    "subcategoria": "Nintendo",
+    "descricao": "Luigi Mario",
+    "volume": 0,
+    "categoria": "Desenhos",
+    "subcategoria": "Mario Bross",
     "thumbnail": ""
   },
   {
@@ -920,6 +920,15 @@
   {
     "nome": "!lux",
     "id": "8a41f627200d4daf854c728310cd4b43",
+    "descricao": "De League of Legends",
+    "volume": 0,
+    "categoria": "Games",
+    "subcategoria": "League of Legends",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!evellyn",
+    "id": "73af1c6b921244eaad53679c204344fd",
     "descricao": "De League of Legends",
     "volume": 0,
     "categoria": "Games",
@@ -1073,6 +1082,15 @@
   {
     "nome": "!bibo",
     "id": "e8d514263b0e46bcba8efeec1b0b25fc",
+    "descricao": "De O Senhor dos Anéis",
+    "volume": 15,
+    "categoria": "Filmes e Heróis",
+    "subcategoria": "Outros filmes",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!gandalf",
+    "id": "dd7f2116f2f94c729ff4a9a0585ee77b",
     "descricao": "De O Senhor dos Anéis",
     "volume": 15,
     "categoria": "Filmes e Heróis",
@@ -1380,7 +1398,7 @@
     "nome": "!cortella",
     "id": "07686262fde04028a3a5c3a0c6e7c611",
     "descricao": "Filósofo",
-    "volume": 150,
+    "volume": 500,
     "categoria": "Personalidades",
     "subcategoria": "Educação e ciência",
     "thumbnail": ""
@@ -1389,7 +1407,7 @@
     "nome": "!cortella_2",
     "id": "6e4ca3680611414a97ebf4b9e312c211",
     "descricao": "Filósofo",
-    "volume": 5,
+    "volume": 500,
     "categoria": "Personalidades",
     "subcategoria": "Educação e ciência",
     "thumbnail": ""
@@ -1446,7 +1464,7 @@
     "volume": 10,
     "categoria": "Personalidades",
     "subcategoria": "Youtubers e streamers",
-    "thumbnail": ""
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt_j9U99SNiwGmka46mH62i5QH1W-JeTP7uiomerfZBxlx5PAlrOj878Cm&s=10"
   },
   {
     "nome": "!jj",
@@ -1494,10 +1512,37 @@
     "thumbnail": ""
   },
   {
+    "nome": "!tiao",
+    "id": "16fd78320d7743f9bb4ffd1306a30f61",
+    "descricao": "Meme da internet",
+    "volume": -5,
+    "categoria": "Personalidades",
+    "subcategoria": "Humor e memes",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!carlinhos",
+    "id": "ac2c4547fcc5421bbfb1ae8bee61cdba",
+    "descricao": "Meme da internet",
+    "volume": -5,
+    "categoria": "Personalidades",
+    "subcategoria": "Humor e memes",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!manoel_gomes",
+    "id": "d59d1a4c50d642b388c2a083f8b2a2d7",
+    "descricao": "Meme da internet",
+    "volume": -5,
+    "categoria": "Personalidades",
+    "subcategoria": "Humor e memes",
+    "thumbnail": ""
+  },
+  {
     "nome": "!away",
     "id": "73a52b2201ae48cf805cb4e7fbfedf2b",
     "descricao": "Humorista",
-    "volume": 0,
+    "volume": 500,
     "categoria": "Personalidades",
     "subcategoria": "Humor e memes",
     "thumbnail": ""
@@ -1515,7 +1560,7 @@
     "nome": "!isabela",
     "id": "5661bf8cb97740fcb10d2f756abf7779",
     "descricao": "Voz feminina",
-    "volume": 100,
+    "volume": 500,
     "categoria": "Outras vozes",
     "subcategoria": "Outras vozes",
     "thumbnail": ""
@@ -1575,6 +1620,51 @@
     "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdJxVhxFtlEtrDGjESXxhVC5-E2z0-xvtWoC_kB0zGLQ&s=10"
   },
   {
+    "nome": "!jessie",
+    "id": "75785b1808194839972250c4bb2bf5d5",
+    "descricao": "Voz da Jessie",
+    "volume": 10,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4KLWC4Ipib1BuUb1Yeq2CDKPkRjFNArIHq7sBEZXT350sDYpPb9IZrIuIzGOdBg3zpwNNp2AqusjrvqcRbVETjcoogCSz9DesJfy766_3&s=10"
+  },
+  {
+    "nome": "!soldados",
+    "id": "a7d40e83c649463e8f115a73389fef05",
+    "descricao": "Voz dos Soldados",
+    "volume": 10,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!rex",
+    "id": "1ee19a04d83f4a4aaf11c069e76e773a",
+    "descricao": "Voz do Rex",
+    "volume": 10,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": ""
+  },
+  {
+    "nome": "!buzz",
+    "id": "3d12f7ea5f8a44fa89cf8d644a2bf46a",
+    "descricao": "Voz do Buzz",
+    "volume": 10,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyKZ12MoXQbDBmDP-Rfn21o_-VF0sfL5-qMYtquYYEAe3t3obKdQNSnEcmOuAgHm3AG6fnImnSUsGlibIifdID6x3jE6PmV_CPYgX8DEJ6pA&s=10"
+  },
+  {
+    "nome": "!woody",
+    "id": "a5673dc240b84cf697c2ed6c345924e3",
+    "descricao": "Voz do Woody",
+    "volume": 10,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZj5x2PkskHQ3wb8wIHUtIffxiZG_niW6RvgfSQ7ollOqs8CDpy26nkNY&s=10"
+  },
+  {
     "nome": "!mickey",
     "id": "6bdf37402f6041b9bd3e2de6f6dc693c",
     "descricao": "Voz do Mickey Mouse",
@@ -1582,6 +1672,24 @@
     "categoria": "Desenhos",
     "subcategoria": "Disney",
     "thumbnail": ""
+  },
+  {
+    "nome": "!pumba",
+    "id": "e6a70a0dbdbf480cafc86b621929c9c3",
+    "descricao": "Voz do Pumba",
+    "volume": 10,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": "https://static.wikia.nocookie.net/disneypt/images/c/cf/It_means_no_worries.png/revision/latest?cb=20200128144126&path-prefix=pt"
+  },
+  {
+    "nome": "!timao",
+    "id": "ca68e9df629f4b7c9121c57099204e14",
+    "descricao": "Voz do Timão",
+    "volume": 500,
+    "categoria": "Desenhos",
+    "subcategoria": "Disney",
+    "thumbnail": "https://static.wikia.nocookie.net/herois/images/9/9c/Timon_option_3.png/revision/latest/thumbnail/width/360/height/360?cb=20210921023610&path-prefix=pt-br"
   },
   {
     "nome": "!irmaodojorel",
