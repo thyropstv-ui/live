@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-25T23:37:51.032Z",
+  "atualizado": "2026-11-26T00:39:05.584Z",
   "guia": {
     "playlists": [
       {
@@ -268,17 +268,17 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "92UfFMY4PeQ",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆60/85 #26 #halldosconquistadores #lixao",
-    "data": "2026-11-25T12:30:35Z",
+    "id": "-ZRlbQMLnIg",
+    "titulo": "GON | LIVE 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
+    "data": "2026-11-26T00:36:01Z",
     "playlist": "lives do canal",
     "jogo": {
-      "id": 114,
-      "titulo": "Raiden Densetsu: Raiden Trad",
-      "console": "Genesis/Mega Drive",
-      "imagem": "https://media.retroachievements.org/Images/064550.png",
-      "ganhas": 61,
-      "conquistas": 85
+      "id": 22873,
+      "titulo": "GON",
+      "console": "SNES/Super Famicom",
+      "imagem": "https://media.retroachievements.org/Images/070134.png",
+      "ganhas": 5,
+      "conquistas": 18
     }
   },
   "aoVivo": null,
@@ -294,7 +294,7 @@
     "inicio": "2026-11-26T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-25T23:37:51.032Z",
+    "atualizado": "2026-11-26T00:39:05.583Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -311,8 +311,8 @@
         "platinados": 17,
         "zerados": 17,
         "emLive": 1,
-        "emAndamento": 4,
-        "tempoSeg": 1436157
+        "emAndamento": 5,
+        "tempoSeg": 1436644
       },
       {
         "nome": "Game Boy Advance",
@@ -415,6 +415,20 @@
       }
     ],
     "jogos": [
+      {
+        "id": 22873,
+        "titulo": "GON",
+        "console": "SNES/Super Famicom",
+        "imagem": "https://media.retroachievements.org/Images/070134.png",
+        "conquistas": 18,
+        "ganhas": 5,
+        "pct": 28,
+        "platinado": false,
+        "zerado": false,
+        "data": "2026-11-26T00:24:32+00:00",
+        "emLive": true,
+        "tempoSeg": 487
+      },
       {
         "id": 114,
         "titulo": "Raiden Densetsu: Raiden Trad",
@@ -1624,6 +1638,71 @@
   },
   "conquistas": [
     {
+      "id": 301110,
+      "titulo": "Learning the Basics: I Can Glide!",
+      "descricao": "Do a double jump and press quickly the Jump button in air to glide for a while",
+      "pontos": 3,
+      "imagem": "https://media.retroachievements.org/Badge/334700.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T00:24:32Z",
+      "hardcore": true
+    },
+    {
+      "id": 301113,
+      "titulo": "Learning the Basics: Escape Technique",
+      "descricao": "While on the ground press d-pad Backwards and Forwards quickly several times",
+      "pontos": 2,
+      "imagem": "https://media.retroachievements.org/Badge/334697.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T00:23:56Z",
+      "hardcore": true
+    },
+    {
+      "id": 301109,
+      "titulo": "Learning the Basics: Double Jump",
+      "descricao": "Jump and then press the jump button again",
+      "pontos": 2,
+      "imagem": "https://media.retroachievements.org/Badge/334701.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T00:23:38Z",
+      "hardcore": true
+    },
+    {
+      "id": 301114,
+      "titulo": "Learning the Basics: Ground Pound",
+      "descricao": "In the air hold the Down button until you reach the ground",
+      "pontos": 2,
+      "imagem": "https://media.retroachievements.org/Badge/334696.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T00:23:27Z",
+      "hardcore": true
+    },
+    {
+      "id": 301112,
+      "titulo": "Learning the Basics: Foot Bite",
+      "descricao": "While on the ground press L+R a few times",
+      "pontos": 2,
+      "imagem": "https://media.retroachievements.org/Badge/334698.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T00:22:11Z",
+      "hardcore": true
+    },
+    {
       "id": 312087,
       "titulo": "Laser Master",
       "descricao": "Complete entire game using only Laser weapon [Can be combined with one of the sub-weapons]",
@@ -1650,19 +1729,6 @@
       "hardcore": true
     },
     {
-      "id": 224695,
-      "titulo": "Journey Has Ended?",
-      "descricao": "Defeat Mr. Karate as Robert on Hard difficulty with rounds set to 3 and time set to 60",
-      "pontos": 25,
-      "imagem": "https://media.retroachievements.org/Badge/248180.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:52:30Z",
-      "hardcore": true
-    },
-    {
       "id": 224694,
       "titulo": "Only Jokes Would Don a Mask",
       "descricao": "Defeat Mr. Karate as Robert with rounds set to 3 and time set to 60",
@@ -1673,58 +1739,6 @@
       "console": "Genesis/Mega Drive",
       "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
       "data": "2026-11-25T01:52:30Z",
-      "hardcore": true
-    },
-    {
-      "id": 224693,
-      "titulo": "Mini Mushroom",
-      "descricao": "Defeat Mr. Big as Robert on Hard difficulty with rounds set to 3 and time set to 60",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/248178.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:51:06Z",
-      "hardcore": true
-    },
-    {
-      "id": 224692,
-      "titulo": "Coming Up Small",
-      "descricao": "Defeat Mr. Big as Robert with rounds set to 3 and time set to 60",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/248177.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:51:06Z",
-      "hardcore": true
-    },
-    {
-      "id": 224691,
-      "titulo": "Strong Bones",
-      "descricao": "Defeat John as Robert on Hard difficulty with rounds set to 3 and time set to 60",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/248176.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:48:33Z",
-      "hardcore": true
-    },
-    {
-      "id": 224690,
-      "titulo": "Avoided Crushing",
-      "descricao": "Defeat John as Robert with rounds set to 3 and time set to 60",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/248175.png",
-      "jogo": "Art of Fighting",
-      "jogoId": 184,
-      "console": "Genesis/Mega Drive",
-      "jogoImagem": "https://media.retroachievements.org/Images/071350.png",
-      "data": "2026-11-25T01:48:32Z",
       "hardcore": true
     }
   ]
