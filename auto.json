@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-26T02:06:53.773Z",
+  "atualizado": "2026-11-26T03:45:26.646Z",
   "guia": {
     "playlists": [
       {
@@ -270,25 +270,19 @@
   "gameplayAtual": {
     "id": "dzBJ2d8tOJU",
     "titulo": "GON | LIVE 🏆 05/18 #02 | #HallDosConquistadores #baudosdesesperados",
-    "data": "2026-11-26T02:06:53.767Z",
-    "playlist": "ao vivo",
+    "data": "2026-11-26T03:29:21Z",
+    "playlist": "lives do canal",
     "jogo": {
       "id": 22873,
       "titulo": "GON",
       "console": "SNES/Super Famicom",
       "imagem": "https://media.retroachievements.org/Images/070134.png",
-      "ganhas": 13,
+      "ganhas": 18,
       "conquistas": 18
     }
   },
-  "aoVivo": {
-    "id": "dzBJ2d8tOJU",
-    "titulo": "GON | LIVE 🏆 05/18 #02 | #HallDosConquistadores #baudosdesesperados"
-  },
-  "aoVivoVertical": {
-    "id": "AlGeatvRCt0",
-    "titulo": "📱 VERTICAL | GON 🏆 05/18 #02 | #HallDosConquistadores #baudosdesesperados"
-  },
+  "aoVivo": null,
+  "aoVivoVertical": null,
   "proxima": {
     "id": "-ZRlbQMLnIg",
     "titulo": "GON | LIVE 🏆 00/18 #01 | #HallDosConquistadores #baudosdesesperados",
@@ -300,7 +294,7 @@
     "inicio": "2026-11-26T00:30:00Z"
   },
   "placar": {
-    "atualizado": "2026-11-26T02:06:53.772Z",
+    "atualizado": "2026-11-26T03:45:26.646Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -314,11 +308,11 @@
       {
         "nome": "SNES/Super Famicom",
         "sigla": "SF",
-        "platinados": 17,
-        "zerados": 17,
-        "emLive": 1,
-        "emAndamento": 5,
-        "tempoSeg": 1441258
+        "platinados": 18,
+        "zerados": 18,
+        "emLive": 2,
+        "emAndamento": 4,
+        "tempoSeg": 1446220
       },
       {
         "nome": "Game Boy Advance",
@@ -427,13 +421,13 @@
         "console": "SNES/Super Famicom",
         "imagem": "https://media.retroachievements.org/Images/070134.png",
         "conquistas": 18,
-        "ganhas": 13,
-        "pct": 72,
-        "platinado": false,
-        "zerado": false,
-        "data": "2026-11-26T02:05:48+00:00",
+        "ganhas": 18,
+        "pct": 100,
+        "platinado": true,
+        "zerado": true,
+        "data": "2026-11-26T03:27:30+00:00",
         "emLive": true,
-        "tempoSeg": 5101
+        "tempoSeg": 10063
       },
       {
         "id": 114,
@@ -1644,6 +1638,71 @@
   },
   "conquistas": [
     {
+      "id": 301104,
+      "titulo": "Rain and Portals",
+      "descricao": "Beat Stage 07 and have a nice rest",
+      "pontos": 25,
+      "imagem": "https://media.retroachievements.org/Badge/334706.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T03:27:30Z",
+      "hardcore": true
+    },
+    {
+      "id": 301103,
+      "titulo": "Wormhole Mountain",
+      "descricao": "Beat Stage 06 and go to Stage 07",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/334707.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T03:12:29Z",
+      "hardcore": true
+    },
+    {
+      "id": 301102,
+      "titulo": "Welcome to the Jungle",
+      "descricao": "Beat Stage 05 and go to Stage 06",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/334708.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T02:54:25Z",
+      "hardcore": true
+    },
+    {
+      "id": 301107,
+      "titulo": "Alligator Tag Challenge",
+      "descricao": "Catch 6 alligators in the Stage 05 bonus",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/334694.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T02:54:11Z",
+      "hardcore": true
+    },
+    {
+      "id": 301101,
+      "titulo": "Freezing Waters",
+      "descricao": "Beat Stage 04 and go to Stage 05",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/334709.png",
+      "jogo": "GON",
+      "jogoId": 22873,
+      "console": "SNES/Super Famicom",
+      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
+      "data": "2026-11-26T02:40:24Z",
+      "hardcore": true
+    },
+    {
       "id": 301100,
       "titulo": "Confusing Caves",
       "descricao": "Beat Stage 03 and go to Stage 04",
@@ -1680,71 +1739,6 @@
       "console": "SNES/Super Famicom",
       "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
       "data": "2026-11-26T01:22:03Z",
-      "hardcore": true
-    },
-    {
-      "id": 301105,
-      "titulo": "Apple Bite Challenge",
-      "descricao": "Get 6 Apples in the Stage 01 bonus",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334705.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T01:07:00Z",
-      "hardcore": true
-    },
-    {
-      "id": 301115,
-      "titulo": "Another Chance",
-      "descricao": "Have 4 continues",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334695.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T01:06:59Z",
-      "hardcore": true
-    },
-    {
-      "id": 301098,
-      "titulo": "I Came to See the Monkey!",
-      "descricao": "Beat Stage 01 and go to Stage 02",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334703.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T01:02:28Z",
-      "hardcore": true
-    },
-    {
-      "id": 301108,
-      "titulo": "Like a Potion",
-      "descricao": "Recover your health",
-      "pontos": 5,
-      "imagem": "https://media.retroachievements.org/Badge/334702.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T00:56:48Z",
-      "hardcore": true
-    },
-    {
-      "id": 301111,
-      "titulo": "Learning the Basics: The Secret to Going Higher",
-      "descricao": "While gliding, press the L or R button to go higher and higher",
-      "pontos": 4,
-      "imagem": "https://media.retroachievements.org/Badge/334699.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T00:50:42Z",
       "hardcore": true
     }
   ]
