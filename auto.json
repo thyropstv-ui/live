@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-27T21:43:01.209Z",
+  "atualizado": "2026-11-27T22:43:02.158Z",
   "guia": {
     "playlists": [
       {
@@ -175,6 +175,13 @@
     ],
     "shorts": [
       {
+        "id": "XzdHJjZTs60",
+        "titulo": "Raiden Trad: Como Conseguir Do not bomb! VI",
+        "data": "2026-11-27T17:14:36Z",
+        "jogo": "",
+        "console": ""
+      },
+      {
         "id": "5TpZuAwPuNY",
         "titulo": "Raiden Trad: Como Conseguir Do not bomb! V",
         "data": "2026-11-26T16:39:03Z",
@@ -250,20 +257,13 @@
         "data": "2026-11-06T16:39:45Z",
         "jogo": "",
         "console": ""
-      },
-      {
-        "id": "5CxgKI2tUmQ",
-        "titulo": "Back to the Future III: Como Conseguir Over Scored",
-        "data": "2026-11-05T11:57:01Z",
-        "jogo": "",
-        "console": ""
       }
     ]
   },
   "ultimoShort": {
-    "id": "5TpZuAwPuNY",
-    "titulo": "Raiden Trad: Como Conseguir Do not bomb! V",
-    "data": "2026-11-26T16:39:03Z",
+    "id": "XzdHJjZTs60",
+    "titulo": "Raiden Trad: Como Conseguir Do not bomb! VI",
+    "data": "2026-11-27T17:14:36Z",
     "jogo": "",
     "console": ""
   },
@@ -286,7 +286,7 @@
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-27T21:43:01.209Z",
+    "atualizado": "2026-11-27T22:43:02.158Z",
     "consoles": [
       {
         "nome": "PlayStation",
