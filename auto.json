@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-27T00:45:13.885Z",
+  "atualizado": "2026-11-27T02:10:53.115Z",
   "guia": {
     "playlists": [
       {
@@ -14,7 +14,7 @@
         "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
         "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
         "console": "",
-        "descricao": "30 vídeos"
+        "descricao": "31 vídeos"
       },
       {
         "pid": "PLCebeJpWeQPA",
@@ -268,31 +268,31 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "qNq03lzGKqA",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆61/85 #27 #halldosconquistadores #lixao",
-    "data": "2026-11-27T00:45:13.879Z",
+    "id": "KWJBDjKtuCo",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆69/85 #28 #halldosconquistadores #lixao",
+    "data": "2026-11-27T02:10:53.111Z",
     "playlist": "ao vivo",
     "jogo": {
       "id": 114,
       "titulo": "Raiden Densetsu: Raiden Trad",
       "console": "Genesis/Mega Drive",
       "imagem": "https://media.retroachievements.org/Images/064550.png",
-      "ganhas": 61,
+      "ganhas": 69,
       "conquistas": 85
     }
   },
   "aoVivo": {
-    "id": "qNq03lzGKqA",
-    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆61/85 #27 #halldosconquistadores #lixao"
+    "id": "KWJBDjKtuCo",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆69/85 #28 #halldosconquistadores #lixao"
   },
   "aoVivoVertical": {
-    "id": "mn3Cqg_qH6E",
-    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 61/85 #27 | #HallDosConquistadores #Lixao"
+    "id": "qTaH2fYMJhU",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 69/85 #28 | #HallDosConquistadores #Lixao"
   },
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-27T00:45:13.885Z",
+    "atualizado": "2026-11-27T02:10:53.114Z",
     "consoles": [
       {
         "nome": "PlayStation",
@@ -328,7 +328,7 @@
         "zerados": 7,
         "emLive": 5,
         "emAndamento": 1,
-        "tempoSeg": 509167
+        "tempoSeg": 516780
       },
       {
         "nome": "Nintendo 64",
@@ -414,6 +414,20 @@
     ],
     "jogos": [
       {
+        "id": 114,
+        "titulo": "Raiden Densetsu: Raiden Trad",
+        "console": "Genesis/Mega Drive",
+        "imagem": "https://media.retroachievements.org/Images/064550.png",
+        "conquistas": 85,
+        "ganhas": 69,
+        "pct": 81,
+        "platinado": false,
+        "zerado": false,
+        "data": "2026-11-27T01:31:46+00:00",
+        "emLive": true,
+        "tempoSeg": 213656
+      },
+      {
         "id": 22873,
         "titulo": "GON",
         "console": "SNES/Super Famicom",
@@ -426,20 +440,6 @@
         "data": "2026-11-26T03:27:30+00:00",
         "emLive": true,
         "tempoSeg": 10063
-      },
-      {
-        "id": 114,
-        "titulo": "Raiden Densetsu: Raiden Trad",
-        "console": "Genesis/Mega Drive",
-        "imagem": "https://media.retroachievements.org/Images/064550.png",
-        "conquistas": 85,
-        "ganhas": 61,
-        "pct": 72,
-        "platinado": false,
-        "zerado": false,
-        "data": "2026-11-25T12:26:03+00:00",
-        "emLive": true,
-        "tempoSeg": 206043
       },
       {
         "id": 184,
@@ -1636,107 +1636,107 @@
   },
   "conquistas": [
     {
-      "id": 301104,
-      "titulo": "Rain and Portals",
-      "descricao": "Beat Stage 07 and have a nice rest",
-      "pontos": 25,
-      "imagem": "https://media.retroachievements.org/Badge/334706.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T03:27:30Z",
+      "id": 312066,
+      "titulo": "Enemy Air Space [Ace]",
+      "descricao": "Complete Stage 7 on Hard difficulty without dying",
+      "pontos": 10,
+      "imagem": "https://media.retroachievements.org/Badge/345271.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:31:46Z",
       "hardcore": true
     },
     {
-      "id": 301103,
-      "titulo": "Wormhole Mountain",
-      "descricao": "Beat Stage 06 and go to Stage 07",
+      "id": 312065,
+      "titulo": "Enemy Air Space [Hard]",
+      "descricao": "Complete Stage 7 on Hard difficulty",
       "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334707.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T03:12:29Z",
+      "imagem": "https://media.retroachievements.org/Badge/345270.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:31:46Z",
       "hardcore": true
     },
     {
-      "id": 301102,
-      "titulo": "Welcome to the Jungle",
-      "descricao": "Beat Stage 05 and go to Stage 06",
+      "id": 312064,
+      "titulo": "Enemy Air Space [Normal]",
+      "descricao": "Complete Stage 7 on Normal difficulty or above",
       "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334708.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T02:54:25Z",
+      "imagem": "https://media.retroachievements.org/Badge/345269.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:31:45Z",
       "hardcore": true
     },
     {
-      "id": 301107,
-      "titulo": "Alligator Tag Challenge",
-      "descricao": "Catch 6 alligators in the Stage 05 bonus",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334694.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T02:54:11Z",
+      "id": 312056,
+      "titulo": "Floating Continent [Hard]",
+      "descricao": "Complete Stage 6 on Hard difficulty",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345261.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:23:21Z",
       "hardcore": true
     },
     {
-      "id": 301101,
-      "titulo": "Freezing Waters",
-      "descricao": "Beat Stage 04 and go to Stage 05",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334709.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T02:40:24Z",
+      "id": 312055,
+      "titulo": "Floating Continent [Normal]",
+      "descricao": "Complete Stage 6 on Normal difficulty or above",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345260.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:23:21Z",
       "hardcore": true
     },
     {
-      "id": 301100,
-      "titulo": "Confusing Caves",
-      "descricao": "Beat Stage 03 and go to Stage 04",
+      "id": 312049,
+      "titulo": "Unfinished Enemy Fortress [Ace]",
+      "descricao": "Complete Stage 5 on Hard difficulty without dying",
       "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334710.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T02:05:48Z",
+      "imagem": "https://media.retroachievements.org/Badge/345254.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:10:05Z",
       "hardcore": true
     },
     {
-      "id": 301106,
-      "titulo": "An Eternalized Hero",
-      "descricao": "Sculpt the Gon statue in the Stage 03 bonus",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334704.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T02:05:22Z",
+      "id": 312048,
+      "titulo": "Unfinished Enemy Fortress [Hard]",
+      "descricao": "Complete Stage 5 on Hard difficulty",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345253.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:10:05Z",
       "hardcore": true
     },
     {
-      "id": 301099,
-      "titulo": "Dispatched by an Elephant",
-      "descricao": "Beat Stage 02 and go to Stage 03",
-      "pontos": 10,
-      "imagem": "https://media.retroachievements.org/Badge/334711.png",
-      "jogo": "GON",
-      "jogoId": 22873,
-      "console": "SNES/Super Famicom",
-      "jogoImagem": "https://media.retroachievements.org/Images/070134.png",
-      "data": "2026-11-26T01:22:03Z",
+      "id": 312047,
+      "titulo": "Unfinished Enemy Fortress [Normal]",
+      "descricao": "Complete Stage 5 on Normal difficulty or above",
+      "pontos": 5,
+      "imagem": "https://media.retroachievements.org/Badge/345252.png",
+      "jogo": "Raiden Densetsu: Raiden Trad",
+      "jogoId": 114,
+      "console": "Genesis/Mega Drive",
+      "jogoImagem": "https://media.retroachievements.org/Images/064550.png",
+      "data": "2026-11-27T01:10:04Z",
       "hardcore": true
     }
   ]
