@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Overlay - curtidas (Squirtle)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  /* Browser Source em 1920x1080. Ajuste a posicao abaixo ao seu layout. */
+  :root {
+    --azul: #4f6bff; --fundo: #0c0a24; --texto: #eef0ff; --suave: #b9bdf0;
+    --likes-dir: 100px;   /* distancia da borda direita */
+    --likes-baixo: 355px; /* distancia da borda de baixo */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: transparent;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; color: var(--texto); }
+
+  #likes { position: absolute; right: var(--likes-dir); bottom: var(--likes-baixo); display: flex; align-items: center;
+    gap: 14px; opacity: 0; transform-origin: bottom right; transform: scale(.8);
+    transition: opacity .4s, transform .45s cubic-bezier(.2, 1.5, .4, 1); }
+  #likes.on { opacity: 1; }
+  /* Cresce ao entrar e fica grande ate sumir (o fade de saida nao encolhe). */
+  #likes.pop { transform: scale(1.5); }
+  #likes img { height: 96px; filter: drop-shadow(0 0 10px rgba(79, 107, 255, .8)); }
+  .cont { background: linear-gradient(135deg, #1b1650, var(--fundo)); border: 2px solid var(--azul); border-radius: 10px;
+    padding: 8px 22px; box-shadow: 0 0 18px rgba(79, 107, 255, .5); }
+  #total { font-size: 58px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+  #rotulo { font-size: 24px; font-weight: 600; color: var(--suave); }
+</style>
+</head>
+<body>
+
+<div id="likes">
+  <img id="imgSquirtle" alt="">
+  <div class="cont">
+    <div id="total">0</div>
+    <div id="rotulo">curtidas</div>
+  </div>
+</div>
+
+<script>
+  const WS_URL = 'ws://127.0.0.1:8080/';   // Streamer.bot > Servers/Clients > WebSocket Server
+  const LIKES_VISIVEL_MS = 4000;            // = duracao do tema "Win": o contador fica esse tempo e some
+
+  // Link de compartilhamento do Google Drive ("Qualquer pessoa com o link"). Se falhar, usa imagens/squirtle.png.
+  const IMG_SQUIRTLE = 'https://drive.google.com/file/d/1F2cBL6keaS8xt47-iOtonYAWJJNh1HuI/view?usp=sharing';
+
+  // Tema "Win": toca a cada curtida nova. Se o link do Drive falhar, usa audio/win.mp3 ao lado deste arquivo.
+  const AUDIO_SQUIRTLE = 'https://drive.google.com/file/d/1F3-2Bx2HmUhR3fCdb9r8R1QRB62tn-6u/view?usp=sharing';
+  const VOLUME_SOM = 0.8;
+
+  const $ = (id) => document.getElementById(id);
+
+  // ----- Imagem (link do Drive -> URL direta, com alternativas) -----
+  function urlsDaImagem(valor) {
+    valor = String(valor || '').trim();
+    if (!valor) return [];
+    const m = valor.match(/\/d\/([\w-]{10,})|[?&]id=([\w-]{10,})/);
+    const id = m ? (m[1] || m[2]) : (/^[\w-]{20,}$/.test(valor) ? valor : null);
+    if (!id) return [valor];
+    return ['https://lh3.googleusercontent.com/d/' + id,
+            'https://drive.google.com/thumbnail?id=' + id + '&sz=w1000'];
+  }
+
+  function carregarImagem(el, valor, local) {
+    const fila = urlsDaImagem(valor).concat([local]);
+    const tentar = () => {
+      const u = fila.shift();
+      if (!u) { el.style.visibility = 'hidden'; return; }
+      el.src = u;
+    };
+    el.onerror = tentar;
+    tentar();
+  }
+
+  carregarImagem($('imgSquirtle'), IMG_SQUIRTLE, 'imagens/squirtle.png');
+
+  // ----- Som (link do Drive -> download direto, com alternativas) -----
+  function urlsDoAudio(valor) {
+    valor = String(valor || '').trim();
+    if (!valor) return [];
+    const m = valor.match(/\/d\/([\w-]{10,})|[?&]id=([\w-]{10,})/);
+    const id = m ? (m[1] || m[2]) : null;
+    if (!id) return [valor];
+    return ['https://drive.google.com/uc?export=download&id=' + id,
+            'https://drive.usercontent.google.com/download?id=' + id + '&export=download'];
+  }
+
+  const som = new Audio();
+  som.preload = 'auto';
+  som.volume = VOLUME_SOM;
+  (function () {
+    const fila = urlsDoAudio(AUDIO_SQUIRTLE).concat(['audio/win.mp3']);
+    const tentar = () => { const u = fila.shift(); if (u) { som.src = u; som.load(); } };
+    som.onerror = tentar;
+    tentar();
+  })();
+
+  function tocarSom() {
+    som.currentTime = 0;
+    const p = som.play();
+    if (p && p.catch) p.catch(() => {});
+  }
+
+  function pararSom() {
+    som.pause();
+    som.currentTime = 0;
+  }
+
+  // ----- Likes -----
+  let timerSaida = 0, timerLimpa = 0;
+
+  function likes(total, novos, quem) {
+    total = Number(total) || 0;
+    $('total').textContent = total.toLocaleString('pt-BR');
+    if (!(Number(novos) > 0)) return;   // leitura silenciosa (recarga da fonte): so atualiza o numero
+
+    clearTimeout(timerSaida);
+    clearTimeout(timerLimpa);
+    $('rotulo').textContent = quem ? 'Valeu, ' + quem + '!' : 'Valeu pelo like!';
+    $('likes').classList.add('on', 'pop');
+    tocarSom();
+
+    timerSaida = setTimeout(() => {
+      pararSom();
+      $('likes').classList.remove('on');   // so some (fade), sem encolher
+      timerLimpa = setTimeout(() => {
+        $('likes').classList.remove('pop');
+        $('rotulo').textContent = 'curtidas';
+      }, 600);
+    }, LIKES_VISIVEL_MS);
+  }
+
+  // ----- Streamer.bot (WebSocket) -----
+  function conectar() {
+    let ws;
+    try { ws = new WebSocket(WS_URL); } catch (e) { setTimeout(conectar, 3000); return; }
+
+    ws.onopen = () => {
+      // Os broadcasts dos scripts (CPH.WebsocketBroadcastJson) chegam como o evento General > Custom.
+      ws.send(JSON.stringify({ request: 'Subscribe', id: 'sub', events: { General: ['Custom'] } }));
+      // Recupera o ultimo total de likes caso a fonte tenha sido recarregada (sem mostrar o contador).
+      ws.send(JSON.stringify({ request: 'GetGlobal', id: 'likesTotal', variable: 'likesTotal', persisted: false }));
+    };
+
+    ws.onmessage = (ev) => {
+      let m;
+      try { m = JSON.parse(ev.data); } catch (e) { return; }
+
+      // Desembrulha o evento General > Custom: {"event":{"source":"General","type":"Custom"},"data":{...}}
+      if (m.event && m.event.type === 'Custom' && m.data !== undefined) {
+        let d = m.data;
+        if (typeof d === 'string') { try { d = JSON.parse(d); } catch (e) { return; } }
+        m = d || {};
+      }
+
+      if (m.evento === 'likes') {
+        likes(m.total, m.novos, m.quem);
+      } else if (m.id === 'likesTotal') {
+        // Resposta do GetGlobal: {"id":"likesTotal","variables":{"likesTotal":{"value":"3",...}},"status":"ok"}
+        const v = (m.variables && m.variables.likesTotal) ? m.variables.likesTotal.value : m.value;
+        if (v) likes(v, 0);
+      }
+    };
+
+    ws.onclose = () => setTimeout(conectar, 3000);
+    ws.onerror = () => ws.close();
+  }
+
+  conectar();
+
+  // Teste: abra o arquivo no navegador com ?teste no final (clique uma vez na pagina para liberar o som).
+  if (location.search.indexOf('teste') >= 0) {
+    likes(128, 0);
+    setTimeout(() => likes(131, 3), 1000);
+  }
+</script>
+</body>
+</html>

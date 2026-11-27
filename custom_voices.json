@@ -1717,5 +1717,25 @@
     "categoria": "Desenhos",
     "subcategoria": "Rio",
     "thumbnail": ""
+  },
+  {
+    "nome": "!barney",
+    "id": "2981fc31ceab4d258d202ce2e8128256",
+    "descricao": "Voz do Barney Dinossauro",
+    "volume": 10,
+    "categoria": "Séries de TV",
+    "subcategoria": "Barney e seus amigos",
+    "thumbnail": ""
   }
+,
+  {
+    "nome": "!srdonizildo",
+    "id": "61e67803cb9840b8bf539934cc62b0bd",
+    "descricao": "Voz do Sr Donizildo",
+    "volume": 10,
+    "categoria": "Internet",
+    "subcategoria": "Mundo Canibal",
+    "thumbnail": ""
+  }
+
 ]

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Overlay - Pedido de like, follow e inscrição</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  /* Browser Source em 1920x1080. Ajuste a posicao abaixo ao seu layout (mesmo canto dos likes). */
+  :root {
+    --fundo: #0c0a24; --texto: #eef0ff; --suave: #b9bdf0;
+    --cor: #ff4d9a; --brilho: rgba(255, 77, 154, .5);
+    --pos-dir: 100px;     /* distancia da borda direita */
+    --pos-baixo: 355px;   /* distancia da borda de baixo */
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: transparent;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; color: var(--texto); }
+
+  #msg { position: absolute; right: var(--pos-dir); bottom: var(--pos-baixo); display: flex; align-items: center; gap: 14px;
+    opacity: 0; transform-origin: bottom right; transform: translateY(24px) scale(.96);
+    transition: opacity .4s, transform .45s cubic-bezier(.2, 1.3, .4, 1); }
+  #msg.on { opacity: 1; transform: none; }
+  #imagem { display: none; height: 150px; filter: drop-shadow(0 0 12px var(--brilho)); }
+  #icone { display: none; width: 110px; height: 110px; border-radius: 50%; place-items: center; font-size: 60px;
+    background: radial-gradient(circle at 35% 30%, #2a2466, var(--fundo) 75%); box-shadow: inset 0 0 0 2px var(--cor);
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif; }
+  .card { max-width: 700px; padding: 16px 30px; border-radius: 10px; border: 2px solid var(--cor);
+    background: linear-gradient(135deg, #1b1650, var(--fundo));
+    box-shadow: 0 0 22px var(--brilho), inset 0 0 18px rgba(79, 107, 255, .2); }
+  #titulo { font-size: 42px; font-weight: 800; line-height: 1.05; text-shadow: 0 0 12px var(--brilho); }
+  #sub { font-size: 27px; font-weight: 600; color: var(--suave); margin-top: 8px; line-height: 1.15; }
+
+  /* Painel de diagnostico (so aparece com DEBUG ligado) */
+  #dbg { position: fixed; left: 8px; top: 8px; z-index: 99; max-width: 640px; padding: 8px 12px; border-radius: 6px;
+    background: rgba(0, 0, 0, .78); color: #9be7a5; font: 14px/1.35 Consolas, monospace; white-space: pre-wrap; display: none; }
+</style>
+</head>
+<body>
+<div id="dbg"></div>
+
+<div id="msg">
+  <img id="imagem" alt="">
+  <div id="icone"></div>
+  <div class="card">
+    <div id="titulo"></div>
+    <div id="sub"></div>
+  </div>
+</div>
+
+<script>
+  const WS_URL = 'ws://127.0.0.1:8080/';   // Streamer.bot > Servers/Clients > WebSocket Server
+  const ID = "pidao";                        // precisa ser igual ao id em OVERLAY_IDS, no MsgRotativas.cs
+  const DURACAO_PADRAO_MS = 8000;           // usado se o Streamer.bot nao mandar a duracao
+
+  // >>> Cole aqui o link da imagem: Google Drive ("Qualquer pessoa com o link") ou arquivo local (PNG, GIF ou WebP).
+  // Vazio = mostra o emoji no lugar.
+  const IMAGEM = 'https://static.wikia.nocookie.net/shiny-pokemon/images/9/9f/Umbreon.png/revision/latest/thumbnail/width/360/height/360?cb=20260919160006';
+
+  const EMOJI = "🕹️";
+  const TITULO = "Tá curtindo a live?";
+  const SUB = "Deixa o like, se inscreve ou segue o canal e não perde nenhuma platina!";
+
+  const $ = (id) => document.getElementById(id);
+
+  // ----- Diagnostico -----
+  // DEBUG_FIXO = true liga o painel dentro do OBS. No navegador, basta abrir o arquivo com ?debug no final.
+  const DEBUG_FIXO = false;
+  const DEBUG = DEBUG_FIXO || location.search.indexOf('debug') >= 0;
+  const dbgLinhas = [];
+
+  function dbg(msg) {
+    console.log('[overlay ' + ID + '] ' + msg);
+    if (!DEBUG) return;
+    dbgLinhas.push(new Date().toLocaleTimeString('pt-BR') + '  ' + msg);
+    while (dbgLinhas.length > 8) dbgLinhas.shift();
+    const el = $('dbg');
+    el.style.display = 'block';
+    el.textContent = dbgLinhas.join('\n');
+  }
+  window.addEventListener('error', (e) => dbg('ERRO JS: ' + e.message));
+  window.addEventListener('unhandledrejection', (e) => dbg('PROMESSA REJEITADA: ' + ((e.reason && e.reason.message) || e.reason)));
+
+  // ----- Imagem (link do Drive -> URL direta, com alternativas) -----
+  function urlsDaImagem(valor) {
+    valor = String(valor || '').trim();
+    if (!valor) return [];
+    const m = valor.match(/\/d\/([\w-]{10,})|[?&]id=([\w-]{10,})/);
+    const id = m ? (m[1] || m[2]) : (/^[\w-]{20,}$/.test(valor) ? valor : null);
+    if (!id) return [valor];
+    return ['https://lh3.googleusercontent.com/d/' + id,
+            'https://drive.google.com/thumbnail?id=' + id + '&sz=w1000'];
+  }
+
+  function carregarImagem(el, valor, aoFalhar) {
+    const fila = urlsDaImagem(valor);
+    const tentar = () => {
+      const u = fila.shift();
+      if (!u) { el.style.display = 'none'; if (aoFalhar) aoFalhar(); return; }
+      el.src = u;
+    };
+    el.onerror = tentar;
+    tentar();
+  }
+
+  // ----- Montagem (fixa para este overlay) -----
+  $('titulo').textContent = TITULO;
+  $('sub').textContent = SUB;
+
+  function usarEmoji() {
+    $('icone').style.display = 'grid';
+    $('icone').textContent = EMOJI;
+  }
+
+  if (IMAGEM) {
+    $('imagem').style.display = 'block';
+    carregarImagem($('imagem'), IMAGEM, usarEmoji);
+  } else {
+    usarEmoji();
+  }
+
+  // ----- Exibicao -----
+  let timerSaida = 0;
+
+  function mostrar(duracaoMs) {
+    const ms = Number(duracaoMs) || DURACAO_PADRAO_MS;
+    clearTimeout(timerSaida);
+    $('msg').classList.add('on');
+    timerSaida = setTimeout(() => $('msg').classList.remove('on'), ms);
+    dbg('mostrando por ' + ms + ' ms');
+  }
+
+  // ----- Streamer.bot (WebSocket) -----
+  let ws = null;
+  let ultimaMsg = 0;
+  let tentativas = 0;
+
+  function conectar() {
+    dbg('conectando em ' + WS_URL + ' (tentativa ' + (++tentativas) + ')');
+    try { ws = new WebSocket(WS_URL); } catch (e) { dbg('falha ao abrir: ' + e.message); setTimeout(conectar, 3000); return; }
+    const meu = ws;
+
+    meu.onopen = () => {
+      tentativas = 0;
+      ultimaMsg = Date.now();
+      dbg('WebSocket conectado');
+      // Os broadcasts dos scripts (CPH.WebsocketBroadcastJson) chegam como o evento General > Custom.
+      meu.send(JSON.stringify({ request: 'Subscribe', id: 'sub', events: { General: ['Custom'] } }));
+    };
+
+    meu.onmessage = (ev) => {
+      ultimaMsg = Date.now();
+      let m;
+      try { m = JSON.parse(ev.data); } catch (e) { dbg('mensagem nao-JSON ignorada'); return; }
+
+      // Desembrulha o evento General > Custom: {"event":{"source":"General","type":"Custom"},"data":{...}}
+      if (m.event && m.event.type === 'Custom' && m.data !== undefined) {
+        let d = m.data;
+        if (typeof d === 'string') { try { d = JSON.parse(d); } catch (e) { dbg('Custom com dados invalidos'); return; } }
+        m = d || {};
+      }
+
+      if (m.evento === 'msg' && m.id === ID) {
+        dbg('evento msg recebido');
+        try { mostrar(m.duracao); } catch (e) { dbg('erro em mostrar(): ' + e.message); }
+      } else if (m.id === 'sub') {
+        dbg('inscricao em General > Custom: ' + (m.status || '?'));
+      }
+    };
+
+    meu.onclose = () => {
+      dbg('WebSocket fechado; nova tentativa em 3s');
+      if (ws === meu) setTimeout(conectar, 3000);
+    };
+    meu.onerror = () => { try { meu.close(); } catch (e) {} };
+  }
+
+  // Vigia: pede GetInfo a cada 15s; se ficar 45s sem nenhuma resposta, derruba e reconecta.
+  setInterval(() => {
+    if (!ws || ws.readyState !== 1) return;
+    if (Date.now() - ultimaMsg > 45000) { dbg('sem resposta ha 45s; reconectando'); try { ws.close(); } catch (e) {} return; }
+    try { ws.send(JSON.stringify({ request: 'GetInfo', id: 'ping' })); } catch (e) {}
+  }, 15000);
+
+  conectar();
+
+  // Previa parada na tela (para ajustar a arte): abra o arquivo no navegador com ?teste no final.
+  if (location.search.indexOf('teste') >= 0) mostrar(600000);
+</script>
+</body>
+</html>

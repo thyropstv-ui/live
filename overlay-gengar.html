@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Overlay - agradecimento (Gengar)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  /* Browser Source em 1920x1080. Ajuste a posicao abaixo ao seu layout. */
+  :root {
+    --roxo: #a855ff; --fundo: #0c0a24; --texto: #eef0ff; --suave: #b9bdf0; --azul: #4f6bff;
+    --alerta-x: 1111px;  /* centro da moldura do jogo */
+    --alerta-y: 80px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: transparent;
+    font-family: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif; color: var(--texto); }
+
+  #alerta { position: absolute; left: var(--alerta-x); top: var(--alerta-y); display: flex; align-items: center;
+    transform: translate(-50%, -40px); opacity: 0; transition: opacity .4s, transform .5s cubic-bezier(.2, 1.3, .4, 1); }
+  #alerta.on { opacity: 1; transform: translate(-50%, 0); }
+  #alerta img { height: 200px; margin-right: -34px; position: relative; z-index: 1;
+    filter: drop-shadow(0 0 14px rgba(168, 85, 255, .8)); }
+  #alerta.on img { animation: flutua 2.4s ease-in-out infinite; }
+  .cartao { padding: 22px 44px 22px 56px; border-radius: 10px; border: 2px solid var(--roxo);
+    background: linear-gradient(135deg, #1b1650, var(--fundo));
+    box-shadow: 0 0 24px rgba(79, 107, 255, .55), inset 0 0 18px rgba(168, 85, 255, .25); }
+  #quem { font-size: 54px; font-weight: 800; line-height: 1; max-width: 700px; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; text-shadow: 0 0 12px rgba(130, 110, 255, .6); }
+  #verbo { font-size: 32px; font-weight: 600; color: var(--suave); margin-top: 6px; }
+  @keyframes flutua { 50% { transform: translateY(-10px); } }
+
+  @media (prefers-reduced-motion: reduce) { #alerta.on img { animation: none; } }
+</style>
+</head>
+<body>
+
+<div id="alerta">
+  <img id="imgGengar" alt="">
+  <div class="cartao">
+    <div id="quem"></div>
+    <div id="verbo"></div>
+  </div>
+</div>
+
+<script>
+  const WS_URL = 'ws://127.0.0.1:8080/';   // Streamer.bot > Servers/Clients > WebSocket Server
+  const DURACAO_ALERTA_MS = 5000;           // tempo do alerta na tela
+
+  // Link de compartilhamento do Google Drive ("Qualquer pessoa com o link"). Se falhar, usa imagens/gengar.png.
+  const IMG_GENGAR = 'https://drive.google.com/file/d/1UOCkRZRXb1Wa0Xfj8lhxH6-GMAAXOs01/view?usp=sharing';
+
+  // Tema "Bonus intro": toca so enquanto o alerta esta na tela e termina com um fade curto.
+  // Se o link do Drive falhar, usa audio/bonus.mp3 ao lado deste arquivo.
+  const AUDIO_GENGAR = 'https://drive.google.com/file/d/18oPrByo0HzaFTCbCiUUHnEjIesH6VUUP/view?usp=sharing';
+  const VOLUME_SOM = 0.8;
+  const FADE_FINAL_MS = 500;
+
+  const $ = (id) => document.getElementById(id);
+
+  // ----- Imagem (link do Drive -> URL direta, com alternativas) -----
+  function urlsDaImagem(valor) {
+    valor = String(valor || '').trim();
+    if (!valor) return [];
+    const m = valor.match(/\/d\/([\w-]{10,})|[?&]id=([\w-]{10,})/);
+    const id = m ? (m[1] || m[2]) : (/^[\w-]{20,}$/.test(valor) ? valor : null);
+    if (!id) return [valor];
+    return ['https://lh3.googleusercontent.com/d/' + id,
+            'https://drive.google.com/thumbnail?id=' + id + '&sz=w1000'];
+  }
+
+  function carregarImagem(el, valor, local) {
+    const fila = urlsDaImagem(valor).concat([local]);
+    const tentar = () => {
+      const u = fila.shift();
+      if (!u) { el.style.visibility = 'hidden'; return; }
+      el.src = u;
+    };
+    el.onerror = tentar;
+    tentar();
+  }
+
+  carregarImagem($('imgGengar'), IMG_GENGAR, 'imagens/gengar.png');
+
+  // ----- Som (link do Drive -> download direto, com alternativas) -----
+  function urlsDoAudio(valor) {
+    valor = String(valor || '').trim();
+    if (!valor) return [];
+    const m = valor.match(/\/d\/([\w-]{10,})|[?&]id=([\w-]{10,})/);
+    const id = m ? (m[1] || m[2]) : null;
+    if (!id) return [valor];
+    return ['https://drive.google.com/uc?export=download&id=' + id,
+            'https://drive.usercontent.google.com/download?id=' + id + '&export=download'];
+  }
+
+  const som = new Audio();
+  som.preload = 'auto';
+  som.volume = VOLUME_SOM;
+  (function () {
+    const fila = urlsDoAudio(AUDIO_GENGAR).concat(['audio/bonus.mp3']);
+    const tentar = () => { const u = fila.shift(); if (u) { som.src = u; som.load(); } };
+    som.onerror = tentar;
+    tentar();
+  })();
+
+  function tocarSom() {
+    som.currentTime = 0;
+    som.volume = VOLUME_SOM;
+    const p = som.play();
+    if (p && p.catch) p.catch(() => {});
+  }
+
+  function pararSom(fadeMs) {
+    const t0 = performance.now();
+    (function passo() {
+      const k = (performance.now() - t0) / fadeMs;
+      if (k >= 1) { som.pause(); som.volume = VOLUME_SOM; return; }
+      som.volume = VOLUME_SOM * (1 - k);
+      requestAnimationFrame(passo);
+    })();
+  }
+
+  // ----- Fila de agradecimentos -----
+  const fila = [];
+  let ocupado = false;
+
+  function proximo() {
+    if (ocupado || !fila.length) return;
+    ocupado = true;
+    const a = fila.shift();
+    $('quem').textContent = 'Valeu, ' + a.quem + '!';
+    $('verbo').textContent = a.verbo;
+    $('alerta').classList.add('on');
+    tocarSom();
+    setTimeout(() => pararSom(FADE_FINAL_MS), Math.max(0, DURACAO_ALERTA_MS - FADE_FINAL_MS));
+    setTimeout(() => {
+      $('alerta').classList.remove('on');
+      setTimeout(() => { ocupado = false; proximo(); }, 700);
+    }, DURACAO_ALERTA_MS);
+  }
+
+  // ----- Streamer.bot (WebSocket) -----
+  function conectar() {
+    let ws;
+    try { ws = new WebSocket(WS_URL); } catch (e) { setTimeout(conectar, 3000); return; }
+
+    ws.onopen = () => {
+      // Os broadcasts dos scripts (CPH.WebsocketBroadcastJson) chegam como o evento General > Custom.
+      ws.send(JSON.stringify({ request: 'Subscribe', id: 'sub', events: { General: ['Custom'] } }));
+    };
+
+    ws.onmessage = (ev) => {
+      let m;
+      try { m = JSON.parse(ev.data); } catch (e) { return; }
+
+      // Desembrulha o evento General > Custom: {"event":{"source":"General","type":"Custom"},"data":{...}}
+      if (m.event && m.event.type === 'Custom' && m.data !== undefined) {
+        let d = m.data;
+        if (typeof d === 'string') { try { d = JSON.parse(d); } catch (e) { return; } }
+        m = d || {};
+      }
+
+      if (m.evento === 'alerta') {
+        fila.push({ quem: m.quem || 'alguem', verbo: m.verbo || '' });
+        proximo();
+      }
+    };
+
+    ws.onclose = () => setTimeout(conectar, 3000);
+    ws.onerror = () => ws.close();
+  }
+
+  conectar();
+
+  // Teste: abra o arquivo no navegador com ?teste no final.
+  if (location.search.indexOf('teste') >= 0) {
+    setTimeout(() => { fila.push({ quem: 'Thyrops', verbo: 'se inscreveu no YouTube' }); proximo(); }, 800);
+  }
+</script>
+</body>
+</html>
