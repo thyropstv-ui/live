@@ -1,5 +1,5 @@
 {
-  "atualizado": "2026-11-26T23:41:15.748Z",
+  "atualizado": "2026-11-27T00:45:13.885Z",
   "guia": {
     "playlists": [
       {
@@ -14,7 +14,7 @@
         "nome": "Raiden Densetsu: Raiden Trad - Hall Dos Conquistadores",
         "url": "https://www.youtube.com/playlist?list=PLSSy3oK-pcNU",
         "console": "",
-        "descricao": "29 vídeos"
+        "descricao": "30 vídeos"
       },
       {
         "pid": "PLCebeJpWeQPA",
@@ -268,25 +268,31 @@
     "console": ""
   },
   "gameplayAtual": {
-    "id": "dzBJ2d8tOJU",
-    "titulo": "GON | LIVE 🏆 05/18 #02 | #HallDosConquistadores #baudosdesesperados",
-    "data": "2026-11-26T03:29:21Z",
-    "playlist": "lives do canal",
+    "id": "qNq03lzGKqA",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆61/85 #27 #halldosconquistadores #lixao",
+    "data": "2026-11-27T00:45:13.879Z",
+    "playlist": "ao vivo",
     "jogo": {
-      "id": 22873,
-      "titulo": "GON",
-      "console": "SNES/Super Famicom",
-      "imagem": "https://media.retroachievements.org/Images/070134.png",
-      "ganhas": 18,
-      "conquistas": 18
+      "id": 114,
+      "titulo": "Raiden Densetsu: Raiden Trad",
+      "console": "Genesis/Mega Drive",
+      "imagem": "https://media.retroachievements.org/Images/064550.png",
+      "ganhas": 61,
+      "conquistas": 85
     }
   },
-  "aoVivo": null,
-  "aoVivoVertical": null,
+  "aoVivo": {
+    "id": "qNq03lzGKqA",
+    "titulo": "Raiden Densetsu: Raiden Trad | LIVE🏆61/85 #27 #halldosconquistadores #lixao"
+  },
+  "aoVivoVertical": {
+    "id": "mn3Cqg_qH6E",
+    "titulo": "📱 VERTICAL | Raiden Densetsu: Raiden Trad 🏆 61/85 #27 | #HallDosConquistadores #Lixao"
+  },
   "proxima": null,
   "proximaVertical": null,
   "placar": {
-    "atualizado": "2026-11-26T23:41:15.747Z",
+    "atualizado": "2026-11-27T00:45:13.885Z",
     "consoles": [
       {
         "nome": "PlayStation",
